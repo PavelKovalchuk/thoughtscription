@@ -33,45 +33,54 @@
 
 	<header id="masthead" class="site-header" role="banner">
 
-        <div class="container-fluid header-logo-part">
+        <div class="container-fluid header_full">
+            
+             <div class="row header_nav_part">
+                 
+                 <div class="col-lg-12">
+
+                        <nav class="navbar navbar-toggleable-md navbar-light">
+                            <div class="container ">
+
+                                <div class="row no-gutters navbar_row">
+                                    <div class="col-lg-6">
+
+                                        <a class="navbar-brand" href="<?php  get_home_url(); ?>">
+                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/build/img/site_logo-min.png" class="site_logo" alt="Site logo">
+                                        </a>
+
+                                    </div>
+
+                                    <div class="col-lg-6">
+
+                                        <button class="navbar-toggler ts-nav-menu-toggler" type="button" data-toggle="slide-collapse" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                            <span class="navbar-toggler-icon"></span>
+                                        </button>
+
+                                        <div class="collapse navbar-collapse " id="navbarNav">
+                                            <?php
+                                            $args = array(
+                                                'theme_location' => 'primary',
+                                                'depth'      => 2,
+                                                'container'  => false,
+                                                'menu_class'     => 'navbar-nav',
+                                                'walker'     => new Bootstrap_Walker_Nav_Menu()
+                                            );
+                                            if (has_nav_menu('primary')) {
+                                                wp_nav_menu($args);
+                                            }
+                                            ?>
+                                        </div>
+
+                                    </div>
 
 
-            <div class="container header_main_part">
-
-                <nav class="navbar navbar-toggleable-md navbar-light top_menu_container">
-                    <div class="container">
-
-                        <div class="row ">
-                            <div class="col-lg-12">
-
-                                <a class="navbar-brand" href="<?php  get_home_url(); ?>">
-                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/build/img/site_logo-min.png" class="site_logo" alt="Site logo">
-                                </a>
-
-                                <button class="navbar-toggler gm-nav-menu-toggler" type="button" data-toggle="slide-collapse" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                                    <span class="navbar-toggler-icon"></span>
-                                </button>
-
-                                <div class="collapse navbar-collapse" id="navbarNav">
-                                    <?php
-                                    $args = array(
-                                        'theme_location' => 'primary',
-                                        'depth'      => 2,
-                                        'container'  => false,
-                                        'menu_class'     => 'navbar-nav mr-auto',
-                                        'walker'     => new Bootstrap_Walker_Nav_Menu()
-                                    );
-                                    if (has_nav_menu('primary')) {
-                                        wp_nav_menu($args);
-                                    }
-                                    ?>
                                 </div>
 
                             </div>
-                        </div>
+                        </nav>
 
-                    </div>
-                </nav>
+               </div>
 
             </div>
 
@@ -90,4 +99,4 @@
     ?>
 
 
-	<div id="content" class="site-content">
+	<main id="content" class="site-content">

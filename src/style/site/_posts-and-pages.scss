@@ -1,6 +1,4 @@
-.sticky {
-	display: block;
-}
+
 
 .byline,
 .updated:not(.published){
@@ -75,6 +73,52 @@
 		@include make-col-ready();
 		@include make-col(12);	
 	}
+}
+
+html, body { height: 100%; }
+
+.site-content{
+    
+    //Test only
+    min-height: 1000px;
+    
+}
+
+main {
+ 
+ 
+}
+
+
+$scroll-factor : .5;
+
+$background: #333;
+$header-height : 50px;
+$image : "build/img/bg_home.jpg";
+
+.header_hero_image{
+   
+  
+  background: url($image);
+  /* Full height */
+    height: 500px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+@media only screen and (max-device-width: 1024px) {
+    .parallax {
+        background-attachment: scroll;
+    }
+}
+
+.wrapper {
+ 
 }
 
 

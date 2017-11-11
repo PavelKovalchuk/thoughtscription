@@ -16,6 +16,7 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="container">
 			<div class="site-info">
+
 				&copy; <?php bloginfo( 'name' );
 						echo ' - ';
 						echo date("Y"); ?>
@@ -23,7 +24,7 @@
 		</div><!--  .container -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
-
+<?php echo 'Dev info:' . $wpdb->num_queries; ?> <?php _e('queries'); ?>. <?php timer_stop(1); ?> <?php _e('seconds'); ?>
 <?php wp_footer(); ?>
 
 </body>

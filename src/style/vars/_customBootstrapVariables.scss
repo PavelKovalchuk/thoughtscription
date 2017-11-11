@@ -119,10 +119,6 @@ $brand-danger:              $red !default;
 $brand-inverse:             $gray-dark !default;
 
 
-//GreenMarket colors
-$gm-navbar-toggle: #c02d59;
-
-
 // Options
 //
 // Quickly modify global styling by enabling or disabling optional features.
@@ -146,39 +142,39 @@ $spacer:   1rem !default;
 $spacer-x: $spacer !default;
 $spacer-y: $spacer !default;
 $spacers: (
-  0: (
-    x: 0,
-    y: 0
-  ),
-  1: (
-    x: ($spacer-x * .25),
-    y: ($spacer-y * .25)
-  ),
-  2: (
-    x: ($spacer-x * .5),
-    y: ($spacer-y * .5)
-  ),
-  3: (
-    x: $spacer-x,
-    y: $spacer-y
-  ),
-  4: (
-    x: ($spacer-x * 1.5),
-    y: ($spacer-y * 1.5)
-  ),
-  5: (
-    x: ($spacer-x * 3),
-    y: ($spacer-y * 3)
-  )
+        0: (
+                x: 0,
+                y: 0
+        ),
+        1: (
+                x: ($spacer-x * .25),
+                y: ($spacer-y * .25)
+        ),
+        2: (
+                x: ($spacer-x * .5),
+                y: ($spacer-y * .5)
+        ),
+        3: (
+                x: $spacer-x,
+                y: $spacer-y
+        ),
+        4: (
+                x: ($spacer-x * 1.5),
+                y: ($spacer-y * 1.5)
+        ),
+        5: (
+                x: ($spacer-x * 3),
+                y: ($spacer-y * 3)
+        )
 ) !default;
 $border-width: 1px !default;
 
 // This variable affects the `.h-*` and `.w-*` classes.
 $sizes: (
-  25: 25%,
-  50: 50%,
-  75: 75%,
-  100: 100%
+        25: 25%,
+        50: 50%,
+        75: 75%,
+        100: 100%
 ) !default;
 
 // Body
@@ -207,11 +203,11 @@ $link-hover-decoration: underline !default;
 // adapting to different screen sizes, for use in media queries.
 
 $grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px
 ) !default;
 @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
 @include _assert-starts-at-zero($grid-breakpoints);
@@ -221,12 +217,20 @@ $grid-breakpoints: (
 //
 // Define the maximum width of `.container` for different screen sizes.
 
+
+/*$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1140px
+) !default;*/
 $container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1008px
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1500px
 ) !default;
+
 @include _assert-ascending($container-max-widths, "$container-max-widths");
 
 
@@ -237,18 +241,19 @@ $container-max-widths: (
 $grid-columns:               12 !default;
 $grid-gutter-width-base:     30px !default;
 $grid-gutter-widths: (
-  xs: $grid-gutter-width-base,
-  sm: $grid-gutter-width-base,
-  md: $grid-gutter-width-base,
-  lg: $grid-gutter-width-base,
-  xl: $grid-gutter-width-base
+        xs: $grid-gutter-width-base,
+        sm: $grid-gutter-width-base,
+        md: $grid-gutter-width-base,
+        lg: $grid-gutter-width-base,
+        xl: $grid-gutter-width-base
 ) !default;
 
 // Fonts
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif:  "Open Sans", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+//$font-family-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-sans-serif: "OpenSans-Regular", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
 $font-family-serif:      Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base:       $font-family-sans-serif !default;
@@ -540,12 +545,12 @@ $custom-file-box-shadow:    inset 0 .2rem .4rem rgba($black,.05) !default;
 $custom-file-button-color:  $custom-file-color !default;
 $custom-file-button-bg:     $gray-lighter !default;
 $custom-file-text: (
-  placeholder: (
-    en: "Choose file..."
-  ),
-  button-label: (
-    en: "Browse"
-  )
+        placeholder: (
+                en: "Choose file..."
+        ),
+        button-label: (
+                en: "Browse"
+        )
 ) !default;
 
 
@@ -627,7 +632,7 @@ $navbar-light-color:                rgba($black,.5) !default;
 $navbar-light-hover-color:          rgba($black,.7) !default;
 $navbar-light-active-color:         rgba($black,.9) !default;
 $navbar-light-disabled-color:       rgba($black,.3) !default;
-$navbar-light-toggler-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$gm-navbar-toggle}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"), "#", "%23") !default;
+$navbar-light-toggler-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"), "#", "%23") !default;
 $navbar-light-toggler-border:       rgba($black,.1) !default;
 
 // Navs

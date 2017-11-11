@@ -1,0 +1,6 @@
+npm install --save-dev gulp-autoprefixer gulp-clean-css gulp-imagemin gulp-jshint gulp-notify gulp-plumber gulp-sass gulp-sourcemaps gulp-uglify jshint jshint-stylish
+ npm install browser-sync gulp-install gulp-rename gulp-rigger gulp-watch imagemin-pngquant rimraf
+npm install -g critical --save-dev
+
+npm install --save critical
+

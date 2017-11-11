@@ -1,71 +1,32 @@
-.btn-gm{
-  background-color: $gm-green;
-  position: relative;
-  color: $white;
-  padding: 0.3rem 1rem;
-  font-size: 1.1rem;
-  transition-duration: $gm-standart-tansition-duration;
-  font-family: $font-family-base;
+.btn-ts{
+
 
   &:focus, &:hover{
-    color: $gm-red;
-    background-color: $gm-green-light;
-    transition-duration: $gm-standart-tansition-duration;
+
+    transition-duration: $ts-standart-tansition-duration;
   }
 
   &:hover{
-    box-shadow: 2px 2px 7px 1px $gm-red;
+
     cursor: pointer;
   }
 
   &:focus{
-    box-shadow: 0 0 0 2px rgba(216, 2, 51, 0.25)
+
   }
 
   @include media-breakpoint-down(sm) {
 
     width: 100%;
-    padding: .6rem 1rem;
+
 
   }
 
 
 }
 
-.btn-gm-red{
-  @extend .btn-gm;
-  background-color: $gm-red;
 
-  &:focus, &:hover{
-
-    cursor: pointer;
-    background-color: $gm-red-light;
-    color: $white;
-  }
-
-  &:hover{
-    box-shadow: 2px 2px 7px 1px $gm-green;
-    cursor: pointer;
-  }
-
-  &:focus{
-    box-shadow: 0 0 0 2px rgba(216, 2, 51, 0.25)
-  }
-
-  &.btn-header-find{
-    height: 34px;
-    border-radius: 0;
-
-    @include media-breakpoint-down(sm) {
-
-     height: auto;
-
-    }
-
-  }
-}
-
-.btn-gm-img{
+.btn-ts-img{
 
   padding: .3rem 1rem .3rem 32px;
 

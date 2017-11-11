@@ -1,13 +1,14 @@
 <?php
 /*
-Template Name: Accueil
+Template Name: Main page
 */
 get_header(); ?>
 
 <div class="wrapper" id="wrapper-home">
 
-	<div class="l-container">
-  </div><!-- Container end -->
+	<div class="container">
+
+    </div><!-- Container end -->
 
 </div><!-- Wrapper end -->
 

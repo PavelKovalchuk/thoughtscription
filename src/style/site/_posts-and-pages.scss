@@ -90,36 +90,120 @@ main {
 }
 
 
-$scroll-factor : .5;
+.section_title {
+    margin: 0px 0 80px;
+}
 
-$background: #333;
-$header-height : 50px;
-$image : "build/img/bg_home.jpg";
+.section_style{
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/* Hero image section start */
+.hero_container{
+    overflow: hidden;
+}
 
 .header_hero_image{
-   
-  
-  background: url($image);
-  /* Full height */
-    height: 500px; 
+    
+    background: url($home_hero_image_main);  
+    height: 100vh; 
+    max-height: 100vh;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
-    background-position: center;
+    background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
     
+    @include media-breakpoint-down(md) {
+
+        background-attachment: scroll;
+
+    }
+    
 }
 
-@media only screen and (max-device-width: 1024px) {
-    .parallax {
-        background-attachment: scroll;
+/* Hero image section end */
+
+/* Hero image button start*/
+
+.hero_btn{
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 277px;
+    margin: 25px auto 0;
+    padding: 0;
+    transition: top 0.8s ease-in;
+    
+    .hero_btn_img{
+        transform: scale(1.0);
+        transition: all .6s ease-in-out;
+        
+        &:hover{
+            transform: scale(1.1);
+            transition: all .2s ease-in-out;
+        }
     }
 }
 
-.wrapper {
- 
+/* Hero image button start*/
+
+
+/* Inpire block start*/
+
+.inspire_block{
+    
+    background-color: $ts_blue;
+    color: $white;
+    
 }
 
+.inspire_block_title{
+    text-align: center;
+}
+
+
+
+.inspire_items_outer{
+    padding: 0 15% 0;
+}
+
+.inspire_block_title_outer{
+    padding: 0 15% 0;
+}
+
+
+.inspire_title{
+    font-weight: 600;
+}
+
+.inspire_title_outer {
+    height: 50px;
+}
+
+.inspire_item{
+    
+    .inspire_img_outer{
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: $ts_standart_padding;
+        padding-top: $ts_standart_padding;
+        
+        transition: padding-left .4s ease-in-out;
+    }
+    
+    &:hover{
+        .inspire_img_outer{
+            padding-left: calc(100% - 45px);
+            transition: padding-left .4s ease-in-out;
+        }
+    }
+}
+
+/* Inpire block end*/
 
 

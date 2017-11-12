@@ -89,6 +89,28 @@
 //@import "bootstrap";
 
 /*--------------------------------------------------------------
+# Animate css
+--------------------------------------------------------------*/
+
+@import "libs/animate";
+
+/*--------------------------------------------------------------
+# Owl Carousel 2
+--------------------------------------------------------------*/
+
+//@import " ../../bower_components/owl.carousel/dist/assets/owl.theme.default.css";
+@import '../../bower_components/owl.carousel/src/scss/core';
+@import '../../bower_components/owl.carousel/src/scss/animate';
+@import '../../bower_components/owl.carousel/src/scss/autoheight';
+@import '../../bower_components/owl.carousel/src/scss/lazyload';
+@import '../../bower_components/owl.carousel/src/scss/video';
+
+@import '../../bower_components/owl.carousel/src/scss/theme';
+
+//@import " ../../bower_components/owl.carousel/src/scss/owl.carousel";
+//@import " ../../bower_components/owl.carousel/src/scss/owl.theme.default";
+
+/*--------------------------------------------------------------
 # Theme Styles and Layout
 --------------------------------------------------------------*/
 @import "site/site";

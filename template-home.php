@@ -2,41 +2,60 @@
 /*
 Template Name: Main page
 */
-get_header(); ?>
 
-<!--<div class="container-fluid">
-        <div class="row ">
-                <div class="col-lg-12">-->
-                    
-                  
-                <div class="header_hero_image"></div>
-<!--
-            
-                </div>
-            </div>
+/* variables of content */
+ $data = get_fields();
+ 
+ 
 
-           
-    </div>-->
+get_header();
+
+get_template_hero_section(true);  ?>
 
 <div class="wrapper" id="wrapper-home">
     
     
 
-    <div class="container ">
+    <section class="container section_style inspire_block">
         
-        <div class="row ">
+        <div class="row inspire_block_title_outer">
             <div class="col-lg-12">
-        
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, recusandae, at, labore velit eligendi amet nobis repellat natus sequi sint consectetur excepturi doloribus vero provident consequuntur accusamus quisquam nesciunt cupiditate soluta alias illo et deleniti voluptates facilis repudiandae similique dolore quaerat architecto perspiciatis officiis dolor ullam expedita suscipit neque minima rem praesentium inventore ab officia quos dignissimos esse quam placeat iste porro eius! Minus, aspernatur nesciunt consectetur. Sit, eius, itaque, porro, beatae impedit officia tenetur reiciendis autem vitae a quae ipsam repudiandae odio dolorum quaerat asperiores possimus corporis optio animi quisquam laboriosam nihil quam voluptatum quidem veritatis iste culpa iure modi perspiciatis recusandae ipsa libero officiis aliquam doloremque similique id quasi atque distinctio enim sapiente ratione in quia eum perferendis earum blanditiis. Nobis, architecto, veniam molestias minus iste necessitatibus est ab in earum ratione eveniet soluta molestiae sed illo nostrum nemo debitis. Minus, quod totam aliquam ea asperiores fugit quaerat excepturi dolores ratione numquam consequatur id unde alias provident vero incidunt exercitationem similique consequuntur hic possimus? Fuga, eveniet quaerat inventore corporis laborum eligendi enim soluta obcaecati aliquid veritatis provident amet laudantium est quisquam dolore exercitationem modi? Distinctio, pariatur, ab velit praesentium vitae quidem consequatur deleniti recusandae odit officiis. Quidem, cupiditate.</p>
-
+                <h1 class="section_title inspire_block_title"><?php echo $data['inspires_block_title']; ?></h1>
             </div>
         </div>
         
-    </div><!-- Container end -->
+        <div class="row inspire_items_outer">
+            
+            <?php foreach ($data['inspires_items'] as $item){ ?>
+                    
+            <div class="col-sm-12 col-md-6 col-lg-4 wow fadeInUp inspire_item" data-wow-duration="1s" data-wow-delay="0s" data-wow-offset="10">
+                
+                <div class="inspire_img_outer ">
+                    <img src="<?php echo $item['item_image']['url']; ?>" class="inspire_img" alt="<?php echo $item['item_image']['alt']; ?>">
+                </div>
+                
+                <div class="inspire_title_outer ">
+                    <h5 class="inspire_title"><?php echo $item['item_title']; ?></h5>
+                </div>
+                
+                <div class="inspire_text_outer ">
+                    <p class="inspire_text"><?php echo $item['item_text']; ?></p>
+                </div>
+                
+                
+            </div>
+                
+            <?php } ?>
+            
+        </div>
+        
+    </section>
+    
+    <?php //var_dump($data['slider_items']); ?>
+    <?php get_template_home_carousel($data['slider_block_title'], $data['slider_block_text'], $data['slider_items']); ?>
 
 </div><!-- Wrapper end -->
 
 
-
-<?php get_footer(); ?>
 <div class="header_hero_image"></div>
+<?php get_footer(); ?>

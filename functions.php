@@ -165,3 +165,10 @@ require get_template_directory() . '/inc/customizer.php';
  * Bootstrap Walker.
  */
 require get_template_directory() . '/inc/bootstrap-walker.php';
+
+
+/**
+ * Custom templates 
+ */
+require get_template_directory() . '/inc/template-parts.php';
+

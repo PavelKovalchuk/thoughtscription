@@ -11,9 +11,79 @@ jQuery(document).ready(function($){
     
     startStickyHeader();
     
+    $(window).scroll(function(e){
+        parallaxHeroButton();
+    });
+    
+    initWOW();
+    
+    initHomeCarousel();
+    
+    
     
     //Base functions area
     
+    function initHomeCarousel(){
+        
+        $('#home_articles').owlCarousel({
+            loop:true,
+            margin:10,
+            responsiveClass:true,
+            nav: false,
+            dots: true,
+            lazyLoad: true,
+            autoplay: false,
+            autoplayHoverPause: true,
+            animateOut: false,
+            animateIn: false,
+            
+            responsive:{
+                576:{
+                    items:1
+                    
+                },
+                768:{
+                    items:2
+                    
+                },
+                992:{
+                    items:3
+                    
+                }
+            }
+        });
+        
+    }
+    
+    function initWOW(){
+        
+        wow = new WOW(
+                      {
+                      boxClass:     'wow',      // default
+                      animateClass: 'animated', // default
+                      offset:       0,          // default
+                      mobile:       true,       // default
+                      live:         true        // default
+                    }
+                    );
+        wow.init();
+        
+    }
+    
+    function parallaxHeroButton(){
+        var scrolled = $(window).scrollTop();
+        
+        var btn = $('#hero_btn');
+        
+        if( !btn.length ){
+            
+            return false;
+        }
+        
+        btn.css('top', (scrolled * 1.4) + 'px');
+    }
+    
+        
     function startStickyHeader(){
         
         var navOuter = $('.header_nav_part');

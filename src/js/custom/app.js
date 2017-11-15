@@ -18,10 +18,24 @@ jQuery(document).ready(function($){
     initWOW();
     
     initHomeCarousel();
+
+    enableLeftScrollNav();
     
     
     
     //Base functions area
+
+
+
+    function enableLeftScrollNav(){
+        $('[data-toggle="slide-collapse"]').on('click', function() {
+
+            $navMenuCont = $($(this).data('target'));
+            $navMenuCont.animate({'width':'toggle'}, 280);
+
+
+        });
+    }
     
     function initHomeCarousel(){
         

@@ -35,15 +35,15 @@
 
         <div class="container-fluid header_full">
             
-             <div class="row header_nav_part">
+             <div class="row">
                  
                  <div class="col-lg-12">
 
-                        <nav class="navbar navbar-toggleable-md navbar-light">
-                            <div class="container ">
+                        <nav class="navbar navbar-toggleable-md header_nav_part navbar-light">
+                            <div class="container d-flex align-items-center">
 
-                                <div class="row no-gutters navbar_row">
-                                    <div class="col-lg-6">
+                                <div class="row no-gutters w-100 navbar_row">
+                                    <div class="col-sm-6">
 
                                         <a class="navbar-brand" href="<?php  get_home_url(); ?>">
                                             <img src="<?php echo get_stylesheet_directory_uri(); ?>/build/img/site_logo-min.png" class="site_logo" alt="Site logo">
@@ -51,13 +51,13 @@
 
                                     </div>
 
-                                    <div class="col-lg-6">
+                                    <div class="col-sm-6 d-flex justify-content-end">
 
-                                        <button class="navbar-toggler ts-nav-menu-toggler" type="button" data-toggle="slide-collapse" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                        <button class="navbar-toggler align-self-center navbar-expand-lg ts-nav-menu-toggler" type="button" data-toggle="slide-collapse" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                                             <span class="navbar-toggler-icon"></span>
                                         </button>
 
-                                        <div class="collapse navbar-collapse " id="navbarNav">
+                                        <div class="collapse navbar-collapse h-100" id="navbarNav">
                                             <?php
                                             $args = array(
                                                 'theme_location' => 'primary',

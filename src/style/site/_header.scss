@@ -1,15 +1,15 @@
 
 
 
-header{
+.site-header{
     
     .site_logo{
         width: $site_logo_width;
-        //height: $site_logo_height;
+
     }
     
     .navbar-collapse{
-        height: 100%;
+
         justify-content: flex-end;
     }
     
@@ -17,42 +17,86 @@ header{
         padding-top: .5rem;
         padding-bottom: .5rem;
     }
-    
-    .navbar_row{
-        width: 100%;
-    }
-    
-    
-    .header_full{
-    
-    
-    }
-    
+
     
     .navbar{
-        padding: 0rem 1rem;
+
+        .navbar-nav{
+            padding: 20px 5% 0;
+
+            @include media-breakpoint-down(md) {
+
+            }
+        }
+
+        .nav-item{
+            @include media-breakpoint-down(md) {
+                width: 100%;
+                padding: 15px 0;
+            }
+        }
+
+        .nav-link{
+            color: $black;
+
+            @include media-breakpoint-down(md) {
+                color: $white;
+                text-align: left;
+            }
+        }
+
     }
 
     .header_nav_part{
 
         position: fixed;
-        top: 0px;
-        /*max-height: 50px;*/
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 65px;
         z-index: 999;
-        width: 100%;
         overflow: hidden;
         transition: all 0.3s;
-        opacity: 0;
-        top: -100px;
+        opacity: 1;
+        background-color: $white;
+        border-bottom: 1px solid $menu_border_color;
 
     }
 
     .sticky {
-      display: block;  
-      background-color: $sticky_bg;
-      opacity: 1;
-      top: 0px;
-      border-bottom: 1px solid $gray-100;
+
+      transition: all 0.3s;
+      background-color: $ts_white_opacity;
+
+    }
+
+    .navbar-toggler:focus,
+    .navbar-toggler:hover {
+        background-color: $ts_blue;
+    }
+
+    /*  For appearing top menu from left to right*/
+    @include media-breakpoint-down(md) {
+
+        .collapsing{
+            height: auto;
+
+        }
+
+        #navbarNav {
+            position: fixed;
+            top: 65px;
+            right: 0;
+            z-index: 1;
+            width: 100%;
+            background-color: $ts_blue_muted;
+
+        }
+
+        .navbar-light .navbar-toggler{
+            border-color: transparent;
+        }
+
     }
     
 }

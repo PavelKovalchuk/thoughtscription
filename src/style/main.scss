@@ -12,10 +12,10 @@
  *
  */
 
-/*
-* Third Party
-*/
-//@import "../../bower_components/normalize.css/normalize.css";
+/*--------------------------------------------------------------
+# Mixins
+--------------------------------------------------------------*/
+@import "mixins/mixins";
 
 
 /*--------------------------------------------------------------
@@ -31,6 +31,10 @@
 //@import "variables";
 
 @import "vars/vars";
+
+/*
+* Third Party
+*/
 
 /*--------------------------------------------------------------
 # Bootstrap
@@ -109,6 +113,14 @@
 
 //@import " ../../bower_components/owl.carousel/src/scss/owl.carousel";
 //@import " ../../bower_components/owl.carousel/src/scss/owl.theme.default";
+
+
+/*--------------------------------------------------------------
+# ImageHover.css
+--------------------------------------------------------------*/
+
+@import '../../bower_components/imagehover.css/scss/imagehover.scss';
+
 
 /*--------------------------------------------------------------
 # Theme Styles and Layout

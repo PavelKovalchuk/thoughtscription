@@ -1,16 +1,28 @@
 $ts-standart-tansition-duration: 0.4s;
 $ts_standart_padding: 25px;
+$ts_standart_padding_sm: 15px;
 
 /* Fonts */
 $font-family-playfair: "Playfair_Display-Regular", Georgia, "Times New Roman", Times, serif ;
 $font-family-open-sans-bold: "OpenSans-Bold", Georgia, "Times New Roman", Times, serif;
-$font-family-playfair-bold: "Playfair_Display-Regular", Georgia, "Times New Roman", Times, serif;
+$font-family-playfair-bold: "Playfair_Display-Bold", Georgia, "Times New Roman", Times, serif;
+
+$font-family-fontawesome: "fontawesome";
 
 /* header */
 $site_logo_width: 187px;
 $site_logo_height: 42px;
 
+$site_nav_height: 65px;
+
+$site_title_margin: 80px;
+$site_title_margin_sm: 30px;
+
 /* Hero image */
 $home_hero_image_main: "build/img/bg_home.jpg";
 $home_hero_height_main: 100vh;
+
+/* carousel*/
+$carousel_image_btn: "build/img/ts_small_arrow-min.png";
+$carousel_image_btn_hover: "build/img/ts_arrow_blue-min.png";
 

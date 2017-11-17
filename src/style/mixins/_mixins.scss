@@ -1,0 +1,22 @@
+//////////////////////////////
+// Generalized Media Query Mixin
+//
+// Requires Sass 3.2+
+//////////////////////////////
+
+
+/* Usage*/
+
+/*#foo {
+  background-color: red;
+
+  @include media-query(500px) {
+    background-color: green;
+  }
+}*/
+
+@mixin media-query($value, $operator: 'min-width', $query: 'screen') {
+  @media #{$query} and (#{$operator}: #{$value}) {
+    @content;
+  }
+}

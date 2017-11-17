@@ -19,7 +19,7 @@
   font-family: 'Playfair_Display-Regular';
   font-style: normal;
   font-weight: 300;
-  src: url("build/fonts/Playfair_Display/Playfair_Display-Regular.ttf") format('truetype');
+  src: url("build/fonts/Playfair_Display/PlayfairDisplay-Regular.ttf") format('truetype');
 
 }
 
@@ -28,7 +28,19 @@
   font-family: 'Playfair_Display-Bold';
   font-style: normal;
   font-weight: 500;
-  src: url("build/fonts/Playfair_Display/Playfair_Display-Bold.ttf") format('truetype');
+  src: url("build/fonts/Playfair_Display/PlayfairDisplay-Bold.ttf") format('truetype');
+
+}
+
+@font-face {
+  font-family: 'fontawesome';
+  font-weight: normal;
+  font-style: normal;
+  src: url("build/fonts/fontawesome-webfont.ttf") format('truetype');
+  src: url('build/fonts/fontawesome-webfont.eot') format('embedded-opentype'),
+        url('build/fonts/fontawesome-webfont.woff2') format('woff2'),
+        url('build/fonts/fontawesome-webfont.woff') format('woff'),
+        url('build/fonts/fontawesome-webfont.ttf') format('truetype');
 
 }
 

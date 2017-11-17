@@ -172,3 +172,16 @@ require get_template_directory() . '/inc/bootstrap-walker.php';
  */
 require get_template_directory() . '/inc/template-parts.php';
 
+
+
+
+
+// Admin Section
+
+if ( is_admin() ) {
+
+	include 'inc\classes\option-pages\option-pages.php';
+
+	$ts_options_page = new OptionPages();
+}
+

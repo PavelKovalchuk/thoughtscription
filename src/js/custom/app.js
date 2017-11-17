@@ -50,19 +50,27 @@ jQuery(document).ready(function($){
             autoplayHoverPause: true,
             animateOut: false,
             animateIn: false,
-            
+
             responsive:{
-                576:{
+                0:{
+                    items:1
+
+                },
+                768:{
                     items:1
                     
                 },
-                768:{
-                    items:2
-                    
-                },
                 992:{
+                    items:2
+
+                },
+                1110:{
                     items:3
-                    
+
+                },
+                1300:{
+                    items:4
+
                 }
             }
         });
@@ -85,16 +93,33 @@ jQuery(document).ready(function($){
     }
     
     function parallaxHeroButton(){
+
+        if( $(window).width() < 1025 ){
+            return false;
+        }
+
         var scrolled = $(window).scrollTop();
+
+        var maxHeight = $('#js-header-hero-image').height();
+
+        var helperHeight = 200;
         
         var btn = $('#hero_btn');
         
-        if( !btn.length ){
+        if( !btn.length || maxHeight < 50){
             
             return false;
         }
+
+        if(scrolled < (maxHeight - helperHeight)){
+            btn.css('top', (scrolled * 1.4) + 'px');
+        }else{
+            btn.css('top', maxHeight - helperHeight + 'px');
+
+            return false;
+        }
         
-        btn.css('top', (scrolled * 1.4) + 'px');
+
     }
     
         
@@ -102,11 +127,12 @@ jQuery(document).ready(function($){
         
         var navOuter = $('.header_nav_part');
         
-        if( !navOuter.length ){
+        if( !navOuter.length){
             console.log("No element header_nav_part");
             return false;
         }
-        
+
+
         
         // Sticky Header
         $(window).scroll(function() {
@@ -118,16 +144,6 @@ jQuery(document).ready(function($){
             }
         });
 
-        // Mobile Navigation
-        $('.mobile-toggle').click(function() {
-            if ($('.main_header').hasClass('open-nav')) {
-                $('.main_header').removeClass('open-nav');
-            } else {
-                $('.main_header').addClass('open-nav');
-            }
-        });
-
-        
         
     }
 

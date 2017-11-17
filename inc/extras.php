@@ -56,3 +56,23 @@ function strappress_modify_read_more_link() {
     return '<a class="more-link btn btn-sm btn-secondary" href="' . get_permalink() . '">Read More</a>';
 }
 add_filter( 'the_content_more_link', 'strappress_modify_read_more_link' );
+
+
+function the_excerpt_max_charlength( $charlength , $post_id){
+	$excerpt = get_the_excerpt($post_id);
+	$charlength++;
+
+	if ( mb_strlen( $excerpt ) > $charlength ) {
+		$subex = mb_substr( $excerpt, 0, $charlength - 5 );
+		$exwords = explode( ' ', $subex );
+		$excut = - ( mb_strlen( $exwords[ count( $exwords ) - 1 ] ) );
+		if ( $excut < 0 ) {
+			echo mb_substr( $subex, 0, $excut );
+		} else {
+			echo $subex;
+		}
+		echo '[...]';
+	} else {
+		echo $excerpt;
+	}
+}

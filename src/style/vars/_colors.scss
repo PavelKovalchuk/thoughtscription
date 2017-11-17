@@ -4,10 +4,20 @@
 $sticky_bg:  rgba(255, 255, 255, 0.93);
 $ts_blue: #03a9f5;
 $ts_blue_muted: rgba(3, 169, 245, 0.7);
-$ts_grey_color: #ebebeb;
+$ts_grey: #ebebeb;
+$ts_grey_light: #cecece;
+$ts_grey_bg: #f6f6f6;
 $ts_white_opacity: rgba(255, 255, 255, 0.8);
+$ts_playfair_grey: rgb(206, 206, 206);
+$ts_playfair_grey_strong: rgb(108, 108, 108);
+$ts_graphit_color: #373737;
+$ts_graphit_light_color: #5d5c5c;
 
-$menu_border_color: $ts_grey_color;
+
+$menu_border_color: $ts_grey;
+$grey_title: $ts_grey_light;
+$footer_bg_color: $ts_graphit_color;
+$footer_border_color: $ts_graphit_light_color;
 
 
 /*--------------------------------------------------------------

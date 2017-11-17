@@ -22,10 +22,10 @@
     .navbar{
 
         .navbar-nav{
-            padding: 20px 5% 0;
+
 
             @include media-breakpoint-down(md) {
-
+                padding: 20px 5% 0;
             }
         }
 
@@ -33,11 +33,57 @@
             @include media-breakpoint-down(md) {
                 width: 100%;
                 padding: 15px 0;
+                border-bottom: 1px solid $white;
+
+                &:first-of-type{
+                    border-top: 1px solid $white;
+                }
             }
         }
 
         .nav-link{
             color: $black;
+            position: relative;
+            text-align: center;
+            padding: 0.5rem 1rem 0.5rem;
+
+            &:before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 6px;
+                bottom: 0;
+                left: 0;
+                background-color: $ts_blue;
+                visibility: hidden;
+                -webkit-transform: scaleX(0);
+                -moz-transform: scaleX(0);
+                -ms-transform: scaleX(0);
+                -o-transform: scaleX(0);
+                transform: scaleX(0);
+                -webkit-transition: all 0.2s ease;
+                -moz-transition: all 0.2s ease;
+                transition: all 0.2s ease;
+            }
+
+            &:hover{
+
+                color: $ts_blue;
+
+                &:before {
+                    visibility: visible;
+                    -webkit-transform: scaleX(0.8);
+                    -moz-transform: scaleX(0.8);
+                    -ms-transform: scaleX(0.8);
+                    -o-transform: scaleX(0.8);
+                    transform: scaleX(0.8);
+
+                    -webkit-transition: all 0.2s ease;
+                    -moz-transition: all 0.2s ease;
+                    transition: all 0.2s ease;
+                }
+
+            }
 
             @include media-breakpoint-down(md) {
                 color: $white;
@@ -53,7 +99,7 @@
         top: 0;
         right: 0;
         left: 0;
-        height: 65px;
+        height: $site_nav_height;
         z-index: 999;
         overflow: hidden;
         transition: all 0.3s;
@@ -70,10 +116,14 @@
 
     }
 
-    .navbar-toggler:focus,
-    .navbar-toggler:hover {
-        background-color: $ts_blue;
+    .navbar-toggler{
+        padding: 0;
+
+        &:hover, &:focus{
+            background-color: $ts_blue_muted;
+        }
     }
+
 
     /*  For appearing top menu from left to right*/
     @include media-breakpoint-down(md) {
@@ -85,7 +135,7 @@
 
         #navbarNav {
             position: fixed;
-            top: 65px;
+            top: $site_nav_height;
             right: 0;
             z-index: 1;
             width: 100%;

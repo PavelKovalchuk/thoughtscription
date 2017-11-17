@@ -81,6 +81,8 @@ html, body { height: 100%; }
     
     //Test only
     min-height: 1000px;
+
+  margin-top: $site_nav_height;
     
 }
 
@@ -90,13 +92,44 @@ main {
 }
 
 
+.blue_bg_block{
+
+  background-color: $ts_blue;
+  color: $white;
+
+}
+
+
 .section_title {
-    margin: 0px 0 80px;
+    margin: 0px 0 $site_title_margin;
+
+    font-size: 4.5rem;
+    line-height: 1.1;
+
+    @include media-breakpoint-down(lg) {
+      font-size: 3rem;
+    }
+
+    @include media-breakpoint-down(md) {
+      font-size: 2.5rem;
+      margin: 0px 0 $site_title_margin_sm;
+    }
+
+    @include media-breakpoint-down(sm) {
+      font-size: 2rem;
+    }
 }
 
 .section_style{
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: $site_title_margin;
+    padding-bottom: $site_title_margin;
+
+    @include media-breakpoint-down(md) {
+
+      padding-top: $site_title_margin_sm;
+      padding-bottom: $site_title_margin_sm;
+
+    }
 }
 
 /* Hero image section start */
@@ -107,19 +140,47 @@ main {
 .header_hero_image{
     
     background: url($home_hero_image_main);  
-    height: 100vh; 
-    max-height: 100vh;
+    //height: calc(100vh - 65px);
+    height: 540px;
+    //max-height: 100vh;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
-    background-position: top center;
+    background-position: 50% $site_nav_height;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 75% auto;
+
+
+    @include media-query(1700px, 'min-width') {
+      background-size: 65%;
+      height: 570px;
+    }
+    @include media-query(1500px, 'max-width') {
+      background-size: 80%;
+      height: 480px;
+    }
+    @include media-query(1400px, 'max-width') {
+      background-size: 80%;
+      height: 480px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      background-size: 85%;
+      height: 400px;
+    }
     
     @include media-breakpoint-down(md) {
+        background-size: 80%;
+        height: 330px;
+        background-position: 50% 110px;
+       //background-attachment: scroll;
 
-        background-attachment: scroll;
+    }
 
+    @include media-breakpoint-down(sm) {
+      background-size: 131%;
+      height: 330px;
+      background-position: 50% 110px;
     }
     
 }
@@ -135,9 +196,18 @@ main {
     left: 0;
     right: 0;
     width: 277px;
-    margin: 25px auto 0;
+    margin: $ts_standart_padding auto 0;
     padding: 0;
     transition: top 0.8s ease-in;
+
+    @include media-breakpoint-down(md) {
+
+      width: 215px;
+      margin: $ts_standart_padding_sm auto 0;
+
+    }
+
+
     
     .hero_btn_img{
         transform: scale(1.0);
@@ -155,25 +225,25 @@ main {
 
 /* Inpire block start*/
 
-.inspire_block{
-    
-    background-color: $ts_blue;
-    color: $white;
-    
-}
 
 .inspire_block_title{
-    text-align: center;
+   text-align: center;
+  font-family: $font-family-playfair;
+  font-weight: bold;
+
+
 }
 
 
 
 .inspire_items_outer{
-    padding: 0 15% 0;
+    padding: 0 3% 0;
 }
 
+
+
 .inspire_block_title_outer{
-    padding: 0 15% 0;
+    padding: 0 5% 0;
 }
 
 
@@ -192,18 +262,36 @@ main {
         padding-right: 0;
         padding-bottom: $ts_standart_padding;
         padding-top: $ts_standart_padding;
-        
-        transition: padding-left .4s ease-in-out;
+        transition: padding-left $ts-standart-tansition-duration ease-in-out;
+
+        @include media-breakpoint-down(md) {
+          padding-bottom: $ts_standart_padding_sm;
+          padding-top: $ts_standart_padding_sm;
+        }
     }
     
     &:hover{
         .inspire_img_outer{
             padding-left: calc(100% - 45px);
-            transition: padding-left .4s ease-in-out;
+            transition: padding-left $ts-standart-tansition-duration ease-in-out;
         }
     }
 }
 
-/* Inpire block end*/
+.inspire_item_inner{
+  width: 80%;
+  margin: auto;
+  padding-bottom: $site_title_margin;
 
+  @include media-breakpoint-down(md) {
+    padding-bottom: $site_title_margin_sm;
+    width: 100%;
+  }
+}
+
+.inspire_text{
+
+}
+
+/* Inpire block end*/
 

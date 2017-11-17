@@ -21,10 +21,10 @@ $nav-disabled-opacity: 	0.5 !default;
 
 //dots
 
-$dot-width:				10px !default;
-$dot-height:			10px !default;
+$dot-width:				15px;
+$dot-height:			15px;
 $dot-rounded:			30px !default;
-$dot-margin: 			5px 7px !default;
+$dot-margin: 			25px 7px 5px;
 $dot-background:		$color-gray !default;
 $dot-background-active:	$color-ts-base !default;
 

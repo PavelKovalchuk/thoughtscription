@@ -25,7 +25,8 @@ var initShufflePlugin = function (shuffle_element){
 
             // Hide current label, show current label in title
             if ( !isActive ) {
-                $('#sorter li').removeClass('active');
+                $('#sorter .js-filter-option').removeClass('active');
+
             }
 
             $this.toggleClass('active');

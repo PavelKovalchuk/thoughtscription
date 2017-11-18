@@ -106,6 +106,13 @@ main {
     font-size: 4.5rem;
     line-height: 1.1;
 
+    &.section_title_playfair_grey{
+      font-family: $font-family-playfair;
+      color: $ts_playfair_grey;
+      text-align: center;
+      font-weight: 600;
+    }
+
     @include media-breakpoint-down(lg) {
       font-size: 3rem;
     }

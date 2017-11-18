@@ -5,8 +5,6 @@ Template Name: Blog page
 
 /* variables of content */
  $data = get_fields();
- 
- 
 
 get_header();
 
@@ -23,43 +21,56 @@ get_header();
 
             <div class="row blog_top_title_outer">
                 <div class="col-lg-12">
-                    <h1 class="section_title blog_top_title"><?php echo $data['blog_page_title']; ?></h1>
+                    <h1 class="section_title section_title_playfair_grey blog_top_title"><?php echo $data['blog_page_title']; ?></h1>
                 </div>
             </div>
 
-            <div id="sorter" class="row justify-content-center blog_top_cat_outer">
+                <nav class="navbar navbar-toggleable-md navbar-expand-md navbar-light blog_top_cat_nav ">
+
+                    <button class="navbar-toggler align-self-center w-100 navbar_toggler_cat" type="button" data-toggle="collapse"
+                            data-target="#navbarNavCat" aria-controls="navbarNavCat"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar_cat_mobile">Categories</span>
+                    </button>
 
 
-                <div id="term_id_all"
-                     data-group="all"
-                     class="col-sm js-filter-option blog_top_cat_item active">
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarNavCat">
 
-                    <h5 class="blog_top_cat_item_title">All</h5>
+                        <div class="navbar-nav blog_top_cat_outer" id="sorter">
 
-                </div>
+                            <button type="button"
+                                    id="term_id_all"
+                                    data-group="all"
+                                    class="btn btn-link js-filter-option blog_top_cat_item">
+                                All
+                            </button>
 
+	                        <?php foreach($data['blog_page_categories'] as $cat){ ?>
 
-                <?php foreach($data['blog_page_categories'] as $cat){ ?>
+                                <button type="button"
+                                        id="term_id_<?php echo $cat->term_id; ?>"
+                                        data-group="<?php echo $cat->slug ?>"
+                                        class="btn btn-link js-filter-option blog_top_cat_item ">
+	                                <?php echo $cat->name; ?>
+                                </button>
 
-                    <div class="col-sm js-filter-option blog_top_cat_item"
-                        data-group="<?php echo $cat->slug ?>"
-                        id="term_id_<?php echo $cat->term_id; ?>" >
+	                        <?php } ?>
 
-                        <h5 class="blog_top_cat_item_title"><?php echo $cat->name ?></h5>
+                        </div>
 
                     </div>
 
-                <?php } ?>
+
+                </nav>
 
 
-            </div>
 
-            <div id="shuffle_grid_container" class="row shuffle">
+            <div id="shuffle_grid_container" class="row shuffle_container">
 
                 <?php
 
                 $args = array(
-	                'posts_per_page' => 10,
+	                'posts_per_page' => 20,
 	                'orderby' => 'datet'
                 );
 
@@ -71,8 +82,8 @@ get_header();
 
 
                     <?php get_template_article_preview($article_post,
-                                                        'grid__brick mt-3 col-6 col-md-4 col-xl-3 shuffle-item shuffle-item--visible'
-                                                        ,'Read full post'
+                                                        'grid__brick mt-3 col-sm-12 col-md-6 col-lg-4 col-xl-3 shuffle-item shuffle-item--visible'
+                                                        ,$data['blog_button_text']
                     );
                     ?>
 
@@ -91,49 +102,6 @@ get_header();
 
         
     </section>
-
-    <!--<section class="container section_style articles_block">
-
-
-
-        <div id="shuffle_grid_container" class="row shuffle">
-
-            <div data-groups='["best-practice"]' class="grid__brick mt-3 col-6 col-md-4 col-xl-3 shuffle-item shuffle-item--visible" >
-                <div class="card card-primary card-inverse">
-                    <div class="card-block">
-                        Return on investment product management equity crowdfunding stock pivot innovator sales ownership.
-                        Return on investment product management equity crowdfunding stock pivot innovator sales ownership.
-                    </div>
-                </div>
-            </div>
-
-            <div data-groups='["best-practice"]' class="grid__brick mt-3 col-6 col-md-4 col-xl-3 shuffle-item shuffle-item--visible" >
-                <div class="card card-primary card-inverse">
-                    <div class="card-block">
-                        Return on investment product management equity crowdfunding stock pivot innovator sales ownership.
-                        Return on investment product management equity crowdfunding stock pivot innovator sales ownership.
-                        Return on investment product management equity crowdfunding stock pivot innovator sales ownership.
-                    </div>
-                </div>
-            </div>
-
-            <div data-groups='["video-lesson"]' class="grid__brick mt-3 col-6 col-md-4 col-xl-3 shuffle-item shuffle-item--visible" >
-                <div class="card card-primary card-inverse">
-                    <div class="card-block">
-                        Return on investment product management equity crowdfunding stock pivot innovator sales ownership.
-                    </div>
-                </div>
-            </div>
-
-
-
-            <li class="grid__brick mt-3 col-6 col-md-4 col-xl-3 shuffle_sizer"></li>
-
-        </div>
-
-
-
-    </section>-->
 
 
 </div><!-- Wrapper end -->

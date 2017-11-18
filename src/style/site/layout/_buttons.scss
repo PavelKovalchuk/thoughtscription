@@ -55,7 +55,7 @@
 
 .animate_link_outer{
 
-  .animate_link{
+  %animate_link{
     position: inherit;
     color: $white;
     display: block;
@@ -65,6 +65,7 @@
     padding: .3rem 0rem;
     width: 0;
     transition: width $ts-standart-tansition-duration ease-in-out;
+
 
     &:hover {
       width: 100%;
@@ -79,14 +80,40 @@
     .animate_link_text{
 
       &::after{
-        content: url($carousel_image_btn);
+        content: url($small_arrow_image_btn);
         background-repeat: no-repeat;
         width: 20px;
-        padding-left: 15px;
+        margin-left: 15px;
       }
 
     }
 
+  }
+
+  .animate_link_white{
+    @extend %animate_link;
+  }
+
+  .animate_link_blue{
+
+    @extend %animate_link;
+
+    color: $ts_blue;
+
+    .animate_link_text{
+
+      &::after{
+        content: url($small_arrow_image_blue_btn);
+        vertical-align: text-top;
+      }
+
+    }
+
+    &:hover{
+      .animate_link_text::after{
+        content: '';
+      }
+    }
   }
 
 

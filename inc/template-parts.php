@@ -34,7 +34,7 @@ function get_template_home_carousel($title, $text, $items, $btn){
             <div class="row">
                 <div class="col-lg-12">
 
-                    <h2 class="section_title carousel_block_title"><?php echo $title; ?></h2>
+                    <h2 class="section_title section_title_playfair_grey carousel_block_title"><?php echo $title; ?></h2>
 
                 </div>
             </div>
@@ -97,7 +97,7 @@ function get_template_home_carousel($title, $text, $items, $btn){
                                             <?php } ?>
 
                                             <div class="d-flex align-items-end h-100 animate_link_outer carousel_post_link_outer">
-                                                <a href="<?php echo get_permalink($item['item_post']); ?>" class="btn animate_link carousel_post_link">
+                                                <a href="<?php echo get_permalink($item['item_post']); ?>" class="btn animate_link_white carousel_post_link">
 
                                                     <span class="animate_link_text carousel_post_link_text">
                                                         <?php
@@ -146,9 +146,8 @@ function get_template_article_preview($post_item, $classes, $btn){
     <div data-groups='["<?php echo $cat_data[0]->slug; ?>"]'
          class="<?php echo $classes; ?>" >
 
-        <figure class="h-100 w-100 imghvr-slide-down blog_item_inner">
 
-            <div class="row no-gutters">
+            <div class="row no-gutters blog_item">
 
 
                  <div class="col-lg-12 blog_item_img_outer">
@@ -166,7 +165,7 @@ function get_template_article_preview($post_item, $classes, $btn){
                  </div>
 
 
-                <div class="col-lg-12">
+                <div class="col-lg-12 ">
 
                     <div class="row no-gutters blog_item_info_block">
 
@@ -193,7 +192,7 @@ function get_template_article_preview($post_item, $classes, $btn){
                         <?php } ?>
 
                          <div class="d-flex col-lg-12 align-items-end h-100 animate_link_outer blog_item_link_outer">
-                                <a href="<?php echo get_permalink($post_item->ID); ?>" class="btn animate_link blog_item_link">
+                                <a href="<?php echo get_permalink($post_item->ID); ?>" class="btn animate_link animate_link_blue blog_item_link">
 
                                      <span class="animate_link_text blog_item_link_text">
                                          <?php   if($btn){	echo $btn;
@@ -210,13 +209,6 @@ function get_template_article_preview($post_item, $classes, $btn){
                 </div>
 
             </div>
-
-            <figcaption class="d-flex flex-column blog_item_bg">
-
-            </figcaption>
-
-        </figure>
-
 
     </div>
 

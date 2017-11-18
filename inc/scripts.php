@@ -9,7 +9,7 @@ function ts_scripts() {
 
 	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/bower_components/jquery/dist/jquery.min.js', array(), '3.2.1', true);
 
-	if ( is_page( 'blog' )){
+	if ( is_page( 'blog' ) || is_category()){
 
 		wp_enqueue_script( 'shuffle', get_template_directory_uri() . '/js/libs/shuffle/shuffle.min.js', array(), '2.0.1', true);
 	}

@@ -52,3 +52,42 @@
 
   }
 }
+
+.animate_link_outer{
+
+  .animate_link{
+    position: inherit;
+    color: $white;
+    display: block;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: left;
+    padding: .3rem 0rem;
+    width: 0;
+    transition: width $ts-standart-tansition-duration ease-in-out;
+
+    &:hover {
+      width: 100%;
+      text-decoration: none;
+      background-color: $white;
+      color: $ts_blue;
+      text-align: center;
+      transition: width $ts-standart-tansition-duration ease-in-out;
+
+    }
+
+    .animate_link_text{
+
+      &::after{
+        content: url($carousel_image_btn);
+        background-repeat: no-repeat;
+        width: 20px;
+        padding-left: 15px;
+      }
+
+    }
+
+  }
+
+
+}

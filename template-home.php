@@ -10,7 +10,7 @@ Template Name: Main page
 
 get_header();
 
-get_template_hero_section(true);  ?>
+get_template_hero_section(true, $data['homepage_hero_image_main']);  ?>
 
 <div class="wrapper" id="wrapper-home">
     

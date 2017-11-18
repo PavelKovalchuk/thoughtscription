@@ -1,17 +1,19 @@
 <?php
 
 
-function get_template_hero_section($show_btn){
+function get_template_hero_section($show_btn, $main_img){
     ?>
     <div class="container-fluid hero_container">
     <div class="row no-gutters">
         <div class="col-lg-12">
                     
-        <a class="btn hero_btn" id="hero_btn" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/build/img/btn_read_blog.jpg" class="hero_btn_img" alt="Read blog">
-        </a>   
-            
-        <div id="js-header-hero-image" class="header_hero_image wow fadeInLeft " data-wow-duration="2s" ></div>
+            <a class="btn hero_btn" id="hero_btn" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/build/img/btn_read_blog.jpg" class="hero_btn_img" alt="Read blog">
+            </a>
+
+            <div id="js-header-hero-image" class="header_hero_image_outer " data-wow-duration="2s" >
+                <img src="<?php echo get_stylesheet_directory_uri() . '/build/img/bg_home.jpg'; ?>" class="header_hero_image header_hero_image_main wow fadeInLeft  "/>
+            </div>
 
         </div>
     </div>
@@ -94,10 +96,10 @@ function get_template_home_carousel($title, $text, $items, $btn){
                                             </div>
                                             <?php } ?>
 
-                                            <div class="d-flex align-items-end h-100 carousel_post_link_outer">
-                                                <a href="<?php echo get_permalink($item['item_post']); ?>" class="btn carousel_post_link">
+                                            <div class="d-flex align-items-end h-100 animate_link_outer carousel_post_link_outer">
+                                                <a href="<?php echo get_permalink($item['item_post']); ?>" class="btn animate_link carousel_post_link">
 
-                                                    <span class="carousel_post_link_text">
+                                                    <span class="animate_link_text carousel_post_link_text">
                                                         <?php
                                                         if($btn){
 	                                                        echo $btn;
@@ -128,6 +130,98 @@ function get_template_home_carousel($title, $text, $items, $btn){
     </section>
     
 <?php 
+
+}
+
+
+
+function get_template_article_preview($post_item, $classes, $btn){
+
+	$cat_data = get_the_category( $post_item->ID );
+
+    ?>
+
+    <?php //var_dump($post_item); ?>
+
+    <div data-groups='["<?php echo $cat_data[0]->slug; ?>"]'
+         class="<?php echo $classes; ?>" >
+
+        <figure class="h-100 w-100 imghvr-slide-down blog_item_inner">
+
+            <div class="row no-gutters">
+
+
+                 <div class="col-lg-12 blog_item_img_outer">
+
+		            <?php
+
+		            $img = get_the_post_thumbnail_url( $post_item->ID, 'category-post-image' );
+
+		            if($img){ ?>
+
+                    <img class="blog_item_img" src="<?php echo $img; ?>" alt="<?php echo $post_item->post_title; ?>"/>
+
+		            <?php } ?>
+
+                 </div>
+
+
+                <div class="col-lg-12">
+
+                    <div class="row no-gutters blog_item_info_block">
+
+                        <div class="col-lg-12 blog_item_cat_outer">
+                            <h4 class="blog_item_cat">
+                                <?php echo $cat_data[0]->cat_name; ?>
+                            </h4>
+                        </div>
+
+                        <div class="col-lg-12 blog_item_title_outer">
+                            <h5 class="blog_item_title">
+                                <?php echo $post_item->post_title; ?>
+                            </h5>
+                        </div>
+
+                        <?php if( $post_item->post_excerpt ){ ?>
+
+                        <div class="col-lg-12 blog_item_excerpt_outer">
+                            <p class="blog_item_excerpt">
+                                <?php echo $post_item->post_excerpt; ?>
+                            </p>
+                        </div>
+
+                        <?php } ?>
+
+                         <div class="d-flex col-lg-12 align-items-end h-100 animate_link_outer blog_item_link_outer">
+                                <a href="<?php echo get_permalink($post_item->ID); ?>" class="btn animate_link blog_item_link">
+
+                                     <span class="animate_link_text blog_item_link_text">
+                                         <?php   if($btn){	echo $btn;
+                                                }else{
+                                                    echo 'Read full post'; } ?>
+                                     </span>
+
+
+                                </a>
+                         </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <figcaption class="d-flex flex-column blog_item_bg">
+
+            </figcaption>
+
+        </figure>
+
+
+    </div>
+
+
+	<?php
 
 }
 

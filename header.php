@@ -40,10 +40,11 @@
                  <div class="col-lg-12">
 
                         <nav class="navbar navbar-toggleable-md header_nav_part navbar-light">
-                            <div class="container d-flex align-items-center">
+                            <div class="container w-100">
 
-                                <div class="row no-gutters w-100 navbar_row">
-                                    <div class="col-sm-6">
+                                <div class="row justify-content-between no-gutters w-100 navbar_row">
+
+                                    <div class="d-flex justify-content-start navbar_brand_outer">
 
                                         <a class="navbar-brand" href="<?php  get_home_url(); ?>">
                                             <img src="<?php echo get_stylesheet_directory_uri(); ?>/build/img/site_logo-min.png" class="site_logo" alt="Site logo">
@@ -51,7 +52,7 @@
 
                                     </div>
 
-                                    <div class="col-sm-6 d-flex justify-content-end">
+                                    <div class="d-flex justify-content-end">
 
                                         <button class="navbar-toggler align-self-center navbar-expand-lg ts-nav-menu-toggler" type="button" data-toggle="slide-collapse" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                                             <span class="navbar-toggler-icon"></span>

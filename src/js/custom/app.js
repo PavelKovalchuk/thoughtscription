@@ -2,6 +2,8 @@
 //В этом фрагменте ваш код будет выполнен, когда страница полностью загрузится.
 jQuery(document).ready(function($){
 // Add your custom jQuery here
+
+
 });
 
 //Если нужно, чтобы код был выполнен сразу (без ожидания события «ready» в DOM)
@@ -20,10 +22,15 @@ jQuery(document).ready(function($){
     initHomeCarousel();
 
     enableLeftScrollNav();
+
+
+
+
     
     
     
     //Base functions area
+
 
 
 

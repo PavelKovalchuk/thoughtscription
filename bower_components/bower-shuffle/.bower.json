@@ -1,0 +1,15 @@
+{
+  "name": "bower-shuffle",
+  "homepage": "https://github.com/empiri-software/Shuffle",
+  "version": "2.0.5",
+  "_release": "2.0.5",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.0.5",
+    "commit": "f1c8c061626e9acf8407399dfc0adf654098c34f"
+  },
+  "_source": "https://github.com/empiri-software/Shuffle.git",
+  "_target": "^2.0.5",
+  "_originalSource": "bower-shuffle",
+  "_direct": true
+}

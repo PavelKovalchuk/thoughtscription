@@ -116,8 +116,16 @@ main {
     }
 
     @include media-breakpoint-down(sm) {
-      font-size: 2rem;
+        font-size: 2rem;
     }
+
+    @include media-breakpoint-down(xs) {
+      font-size: 1.5rem;
+    }
+}
+
+.group_block_title{
+  font-size: 1.25rem;
 }
 
 .section_style{
@@ -138,50 +146,11 @@ main {
 }
 
 .header_hero_image{
+
+  display: block;
+  margin: 0 auto;
     
-    background: url($home_hero_image_main);  
-    //height: calc(100vh - 65px);
-    height: 540px;
-    //max-height: 100vh;
 
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: 50% $site_nav_height;
-    background-repeat: no-repeat;
-    background-size: 75% auto;
-
-
-    @include media-query(1700px, 'min-width') {
-      background-size: 65%;
-      height: 570px;
-    }
-    @include media-query(1500px, 'max-width') {
-      background-size: 80%;
-      height: 480px;
-    }
-    @include media-query(1400px, 'max-width') {
-      background-size: 80%;
-      height: 480px;
-    }
-
-    @include media-breakpoint-down(lg) {
-      background-size: 85%;
-      height: 400px;
-    }
-    
-    @include media-breakpoint-down(md) {
-        background-size: 80%;
-        height: 330px;
-        background-position: 50% 110px;
-       //background-attachment: scroll;
-
-    }
-
-    @include media-breakpoint-down(sm) {
-      background-size: 131%;
-      height: 330px;
-      background-position: 50% 110px;
-    }
     
 }
 
@@ -294,4 +263,12 @@ main {
 }
 
 /* Inpire block end*/
+
+/* Blog page start*/
+
+.blog_section{
+  background-color: $blog_bg;
+}
+
+/* Blog page end*/
 

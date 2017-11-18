@@ -1,7 +1,7 @@
 /*
  * Third party
  */
-//= ../../bower_components/jquery/dist/jquery.js
+
 
 /* WOW JS */
 
@@ -24,3 +24,5 @@
  * Custom
  */
 //= custom/app.js
+
+//= custom/shuffle_init.js

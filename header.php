@@ -92,12 +92,5 @@
 	</header><!-- #masthead -->
 
 
-    <?php
-    /**
-    * Bootstrap modal window template.
-    */
-    require get_template_directory() . '/inc/template-modal-window.php';
-    ?>
-
 
 	<main id="content" class="site-content">

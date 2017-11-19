@@ -26,3 +26,5 @@
 //= custom/app.js
 
 //= custom/shuffle_init.js
+
+

@@ -73,15 +73,31 @@ get_header();
 					/* Start the Loop */
 					while ( have_posts() ) : the_post();
 
-						get_template_article_preview($post,
+                        ?><div class="grid__brick col-sm-12 col-md-6 col-lg-4 col-xl-3 shuffle-item shuffle-item--visible" data-groups='["<?php echo $cat_data[0]->slug; ?>"]' >
+
+                        <?php echo get_template_article_preview_string($post, $data['blog_button_text'] ); ?>
+
+                        </div> <?php
+
+						/*get_template_article_preview($post,
 							'grid__brick mt-3 col-sm-12 col-md-6 col-lg-4 col-xl-3 shuffle-item shuffle-item--visible'
-							,'Read full post'
-						);
+							,$data['blog_button_text']
+						);*/
 
 					endwhile;
 					?>
 
 				</div>
+
+                <div class="row ts_btn_more_posts_row">
+                    <div class="col-lg-12 ts_btn_more_posts_outer text-center">
+
+                        <button id="js_more_posts" type="button" class="btn btn-outline-primary btn-lg ts_btn_blue ts_btn_more_posts ">
+							<?php echo $data['blog_button_more_text']; ?>
+                        </button>
+
+                    </div>
+                </div>
 
 
 

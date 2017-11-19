@@ -217,3 +217,86 @@ function get_template_article_preview($post_item, $classes, $btn){
 
 }
 
+
+function get_template_article_preview_string($post_item, $btn){
+
+	$cat_data = get_the_category( $post_item->ID );
+	$cat_name = $cat_data[0]->cat_name;
+
+
+    $html = "<div class='row no-gutters blog_item'>";
+
+    //Image block start
+
+	$html .= "<div class='col-lg-12 blog_item_img_outer'>";
+
+        $img = get_the_post_thumbnail_url( $post_item->ID, 'category-post-image' );
+
+        if($img){
+
+            $html .= "<img class='blog_item_img' src='$img' alt=' $post_item->post_title' />";
+
+         }
+
+
+	$html .= "</div>";
+
+    //Image block end
+
+
+    //Main Text block start
+
+    $html .= "<div class='col-lg-12 '><div class='row no-gutters blog_item_info_block'>";
+
+        //Category block start
+        $html .= "<div class='col-lg-12 blog_item_cat_outer'><h4 class='blog_item_cat'>$cat_name</h4></div>";
+        //Category block end
+
+        //Title block start
+        $html .= "<div class='col-lg-12 blog_item_title_outer'><h5 class='blog_item_title'>$post_item->post_title</h5></div>";
+        //Title block end
+
+        //Excerpt block start
+        if( $post_item->post_excerpt ){
+
+            $html .= "<div class='col-lg-12 blog_item_excerpt_outer'><p class='blog_item_excerpt'>$post_item->post_excerpt</p></div>";
+
+        }
+        //Excerpt block end
+
+        //Link block start
+
+        $html .= "<div class='d-flex col-lg-12 align-items-end h-100 animate_link_outer blog_item_link_outer'>";
+
+            $html .= "<a href='" . get_permalink($post_item->ID) . "' class='btn animate_link animate_link_blue blog_item_link' >";
+
+                $html .= "<span class='animate_link_text blog_item_link_text'>";
+
+                    if($btn){
+	                    $html .= $btn;
+                    }else{
+	                    $html .= 'Read full post';
+                    }
+
+                $html .= "</span>";
+
+            $html .= "</a>";
+
+        $html .= "</div>";
+
+        //Link block end
+
+
+	$html .= "</div></div>";
+
+	//Main Text block end
+
+
+
+
+	$html .= "</div>";
+
+	return $html;
+}
+
+

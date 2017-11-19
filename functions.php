@@ -53,19 +53,6 @@ if ( ! function_exists( 'gm_wp_setup' ) ) :
         add_image_size( 'size-318-459', 318, 459, true );
         add_image_size( 'big-973-500', 972, 499, true );
 
-        add_image_size( 'two-images-1', 642, 393, true );
-        add_image_size( 'two-images-2', 317, 393, true );
-
-        add_image_size( 'three-images-1', 317, 393, true );
-        add_image_size( 'three-images-2', 317, 393, true );
-        add_image_size( 'three-images-3', 317, 393, true );
-
-
-        add_image_size( 'popular-posts', 230, 120, true );
-
-
-        add_image_size( 'related-post-thumbnail', 220, 165, true );
-
         add_image_size( 'popular-post-image', 230, 121, true );
 
         // This theme uses wp_nav_menu() in two locations.
@@ -171,6 +158,13 @@ require get_template_directory() . '/inc/bootstrap-walker.php';
  * Custom templates 
  */
 require get_template_directory() . '/inc/template-parts.php';
+
+/**
+ * Custom ajax handler
+ */
+require get_template_directory() . '/inc/ajax_handler.php';
+
+
 
 
 

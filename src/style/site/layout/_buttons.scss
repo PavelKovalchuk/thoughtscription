@@ -118,3 +118,25 @@
 
 
 }
+
+
+.ts_btn_more_posts_row{
+  padding-top: $ts_standart_padding;
+  padding-bottom: $ts_standart_padding;
+}
+
+.ts_btn_blue{
+
+  //position: absolute;
+  //bottom: -40px;
+
+  color: $ts_blue;
+  border-color: $ts_blue;
+
+  &:hover{
+    cursor: pointer;
+    background-color: $ts_blue;
+    border-color: $ts_blue;
+  }
+
+}

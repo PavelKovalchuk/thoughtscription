@@ -30,6 +30,15 @@
         }
 
         .nav-item{
+
+            &.active{
+
+                .nav-link{
+                    color: $ts_blue;
+                }
+
+            }
+
             @include media-breakpoint-down(md) {
                 width: 100%;
                 padding: 15px 0;

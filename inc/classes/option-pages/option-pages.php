@@ -102,6 +102,31 @@ class OptionPages{
 								),
 							),
 						),
+
+						array(
+							'id'	=> 'general_button_data_id',
+							'title'	=> 'General buttons title ',
+							'fields'		=> array(
+								//					A new field
+								array(
+									'id'	=> 'read_more_text',
+									'title'	=> 'Read more text',
+									'type'	=> 'text',
+									'description' => 'Appears in the buttons of the post preview.',
+									'value' => 'Read Full Post',
+								),
+
+								array(
+									'id'	=> 'get_more_posts_text',
+									'title'	=> 'Get more posts text',
+									'type'	=> 'text',
+									'description' => 'Appears in the Category page - to get more posts.',
+									'value' => 'More Posts',
+								),
+							),
+						),
+
+
 					),
 				),
 

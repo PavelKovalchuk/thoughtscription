@@ -25,7 +25,8 @@ function get_template_hero_section($show_btn, $main_img){
 
 }
 
-function get_template_home_carousel($title, $text, $items, $btn){
+function get_template_home_carousel($title, $text, $items, $btn = false){
+	$btn = ( $btn ) ? $btn :  get_option( '_thoughtscription_option_page_options' )['read_more_text'];
     ?>
     <section class="container-fluid section_style ">
 
@@ -218,10 +219,11 @@ function get_template_article_preview($post_item, $classes, $btn){
 }
 
 
-function get_template_article_preview_string($post_item, $btn){
+function get_template_article_preview_string($post_item, $btn = false){
 
 	$cat_data = get_the_category( $post_item->ID );
 	$cat_name = $cat_data[0]->cat_name;
+	$btn = ( $btn ) ? $btn :  get_option( '_thoughtscription_option_page_options' )['read_more_text'];
 
 
     $html = "<div class='row no-gutters blog_item'>";

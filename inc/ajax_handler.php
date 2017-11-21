@@ -41,7 +41,7 @@ function blog_loadmore_ajax_handler(){
 		$response[] = array(
 			'classes' => "grid__brick col-sm-12 col-md-6 col-lg-4 col-xl-3 shuffle-item shuffle-item--visible",
 			'data_groups' => $cat_data[0]->slug,
-			'html' => get_template_article_preview_string($post_item, 'More' )
+			'html' => get_template_article_preview_string($post_item)
 		);
 
 	 }

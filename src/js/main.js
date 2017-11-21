@@ -25,6 +25,6 @@
  */
 //= custom/app.js
 
+//= ../../bower_components/imagesloaded/imagesloaded.pkgd.min.js
+
 //= custom/shuffle_init.js
-
-

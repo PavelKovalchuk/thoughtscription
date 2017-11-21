@@ -5,6 +5,7 @@ Template Name: Blog page
 
 /* variables of content */
  $data = get_fields();
+ $more_posts = get_option( '_thoughtscription_option_page_options' )['get_more_posts_text'];
 
 get_header();
 
@@ -85,9 +86,10 @@ get_header();
 
                     ?>
 
-                    <div class="grid__brick col-sm-12 col-md-6 col-lg-4 col-xl-3 shuffle-item shuffle-item--visible" data-groups='["<?php echo $cat_data[0]->slug; ?>"]' >
+                    <div class="grid__brick col-sm-12 col-md-6 col-lg-4 col-xl-3 shuffle-item shuffle-item--visible"
+                         data-groups='["<?php echo $cat_data[0]->slug; ?>"]' >
 
-                    <?php echo get_template_article_preview_string($article_post, $data['blog_button_text'] ); ?>
+                        <?php echo get_template_article_preview_string($article_post); ?>
 
                     </div>
 
@@ -107,7 +109,7 @@ get_header();
                 <div class="col-lg-12 ts_btn_more_posts_outer text-center">
 
                     <button id="js_more_posts" type="button" class="btn btn-outline-primary btn-lg ts_btn_blue ts_btn_more_posts ">
-                        <?php echo $data['blog_button_more_text']; ?>
+                        <?php echo $more_posts ? $more_posts : 'More' ; ?>
                     </button>
 
                 </div>

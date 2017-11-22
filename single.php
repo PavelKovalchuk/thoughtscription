@@ -9,9 +9,13 @@
 
 get_header(); ?>
 
+<?php the_breadcrumb(); ?>
 	<div class="container">
+
+
+
 		<div class="row">
-			<div id="primary" class="content-area">
+			<div id="primary" class="col">
 				<main id="main" class="site-main" role="main">
 
 				<?php
@@ -33,5 +37,5 @@ get_header(); ?>
 			</div><!-- #primary -->
 
 <?php
-get_sidebar();
+
 get_footer();

@@ -100,6 +100,38 @@ class OptionPages{
 									'description' => 'Appears in the footer.',
 									'value' => 'Value',
 								),
+
+								array(
+									'id'	=> 'footer_facebook_link',
+									'title'	=> 'Footer facebook link',
+									'type'	=> 'text',
+									//'description' => 'Appears in the footer.',
+									'value' => 'https://uk-ua.facebook.com/',
+								),
+
+								array(
+									'id'	=> 'footer_google_link',
+									'title'	=> 'Footer google link',
+									'type'	=> 'text',
+									//'description' => 'Appears in the footer.',
+									'value' => 'https://plus.google.com/people',
+								),
+
+								array(
+									'id'	=> 'footer_linkediin_link',
+									'title'	=> 'Footer linkediin link',
+									'type'	=> 'text',
+									//'description' => 'Appears in the footer.',
+									'value' => 'https://www.linkedin.com/feed/',
+								),
+
+								array(
+									'id'	=> 'footer_twitter_link',
+									'title'	=> 'Footer twitter link',
+									'type'	=> 'text',
+									//'description' => 'Appears in the footer.',
+									'value' => 'https://twitter.com/?lang=ru',
+								),
 							),
 						),
 

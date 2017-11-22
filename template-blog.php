@@ -12,7 +12,7 @@ get_header();
  ?>
 
 <div class="wrapper" id="wrapper-bloh">
-    
+    <?php the_breadcrumb(); ?>
     
 
     <section class="container-fluid section_style blog_section ">

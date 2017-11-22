@@ -109,7 +109,7 @@ jQuery(document).ready(function($){
 
         var maxHeight = $('#js-header-hero-image').height();
 
-        var helperHeight = 200;
+        var helperHeight = 100;
         
         var btn = $('#hero_btn');
         
@@ -119,7 +119,7 @@ jQuery(document).ready(function($){
         }
 
         if(scrolled < (maxHeight - helperHeight)){
-            btn.css('top', (scrolled * 1.4) + 'px');
+            btn.css('top', (scrolled * 1.6) + 'px');
         }else{
             btn.css('top', maxHeight - helperHeight + 'px');
 

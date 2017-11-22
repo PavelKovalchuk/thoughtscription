@@ -37,6 +37,12 @@
 
   }
 
+  @include media-breakpoint-down(sm) {
+
+    //height: 350px;
+
+  }
+
 }
 
 .carousel_item{
@@ -47,6 +53,12 @@
     height: 450px;
 
   }
+
+  @include media-breakpoint-down(sm) {
+
+    //height: 250px;
+
+  }
 }
 
 .carousel_item_title_outer{
@@ -55,6 +67,12 @@
   @include media-breakpoint-down(md) {
 
     height: calc(450px - 350px);
+
+  }
+
+  @include media-breakpoint-down(sm) {
+
+    //height: calc(350px - 250px);
 
   }
 }

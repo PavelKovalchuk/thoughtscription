@@ -136,6 +136,11 @@ main {
     padding-top: $site_title_margin;
     padding-bottom: $site_title_margin;
 
+    @include media-query(1600px, 'max-width') {
+      padding-top: $site_title_margin_lg;
+      padding-bottom: $site_title_margin_lg;
+    }
+
     @include media-breakpoint-down(md) {
 
       padding-top: $site_title_margin_sm;
@@ -149,13 +154,16 @@ main {
     overflow: hidden;
 }
 
+.header_hero_image_outer{
+
+}
+
 .header_hero_image{
 
   display: block;
-  margin: 0 auto;
-    
+  margin: 0 auto $ts_standart_padding;
+  z-index: -3;
 
-    
 }
 
 /* Hero image section end */
@@ -171,13 +179,19 @@ main {
     width: 277px;
     margin: $ts_standart_padding auto 0;
     padding: 0;
-    transition: top 0.8s ease-in;
+    transition: top 0.5s ease-in;
+    z-index: 9;
+
 
     @include media-breakpoint-down(md) {
 
       width: 215px;
       margin: $ts_standart_padding_sm auto 0;
 
+    }
+
+    @include media-breakpoint-down(sm) {
+      top: 20%;
     }
 
 
@@ -275,4 +289,19 @@ main {
 }
 
 /* Blog page end*/
+
+
+/* breadcrumb start*/
+
+.breadcrumb_nav{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+
+
+/* breadcrumb end*/
 

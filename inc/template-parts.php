@@ -1,29 +1,86 @@
 <?php
 
 
-function get_template_hero_section($show_btn, $main_img){
+function get_template_hero_section($btn_link, $main_img, $mobile_img){
     ?>
-    <div class="container-fluid hero_container">
-    <div class="row no-gutters">
-        <div class="col-lg-12">
-                    
-            <a class="btn hero_btn" id="hero_btn" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/build/img/btn_read_blog.jpg" class="hero_btn_img" alt="Read blog">
-            </a>
+    <div class="container hero_container">
 
-            <div id="js-header-hero-image" class="header_hero_image_outer " data-wow-duration="2s" >
-                <img src="<?php echo get_stylesheet_directory_uri() . '/build/img/bg_home.jpg'; ?>" class="header_hero_image header_hero_image_main wow fadeInLeft  "/>
+        <div class="row no-gutters">
+            <div class="col-lg-12">
+
+                <a class="btn hero_btn" id="hero_btn" href="<?php echo $btn_link; ?>">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/build/img/btn_read_blog.jpg"
+                         class="wow fadeInDown hero_btn_img"
+                         alt="Read blog"
+                         data-wow-duration="1s"
+                    />
+                </a>
+
+                <div id="js-header-hero-image" class="hidden-sm-down header_hero_image_outer " >
+                    <img src="<?php echo $main_img; ?>" class="header_hero_image header_hero_image_main wow fadeInUp  data-wow-duration="2s""/>
+                </div>
+
+                <div id="js-header-hero-image-mobile" class="hidden-md-up header_hero_image_outer header_hero_image_outer_mobile" >
+                    <img src="<?php echo $mobile_img; ?>" class="header_hero_image header_hero_image_mobile wow fadeInDown  "  data-wow-duration="2s"/>
+                </div>
+
             </div>
-
         </div>
-    </div>
 
-           
-</div>
+
+    </div>
     
 <?php 
 
 }
+
+
+function the_breadcrumb() {
+    ?>
+    <div class="container breadcrumb_container">
+        <div class="row">
+            <div class="col-lg-12">
+                <nav class="breadcrumb_nav" aria-label="breadcrumb" role="navigation">
+                    <ol class="breadcrumb" id="breadcrumb">
+
+                        <?php
+                        if (!is_home()) {
+                            echo '<li class="breadcrumb-item" ><a href="';
+                            echo get_option('home');
+                            echo '">';
+                            echo 'Home';
+                            echo "</a></li>";
+
+                            if (is_category() || is_single()) {
+                                echo '<li class="breadcrumb-item" >';
+                                the_category(' </li><li> ');
+                                if (is_single()) {
+                                    echo "</li><li aria-current='page'>";
+                                    the_title();
+                                    echo '</li>';
+                                }
+                            } elseif (is_page()) {
+                                echo '<li class="breadcrumb-item" aria-current="page">';
+                                echo the_title();
+                                echo '</li>';
+                            }
+                        }
+                        elseif (is_tag()) {single_tag_title();}
+                        elseif (is_day()) {echo"<li class='breadcrumb-item'>Archive for "; the_time('F jS, Y'); echo'</li>';}
+                        elseif (is_month()) {echo"<li class='breadcrumb-item'>Archive for "; the_time('F, Y'); echo'</li>';}
+                        elseif (is_year()) {echo"<li class='breadcrumb-item'>Archive for "; the_time('Y'); echo'</li>';}
+                        elseif (is_author()) {echo"<li class='breadcrumb-item'>Author Archive"; echo'</li>';}
+                        elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {echo "<li class='breadcrumb-item'>Blog Archives"; echo'</li>';}
+                        elseif (is_search()) {echo"<li class='breadcrumb-item'>Search Results"; echo'</li>';}
+                        ?>
+                    </ol>
+	            </nav>
+            </div>
+        </div>
+    </div>
+<?php
+}
+
 
 function get_template_home_carousel($title, $text, $items, $btn = false){
 	$btn = ( $btn ) ? $btn :  get_option( '_thoughtscription_option_page_options' )['read_more_text'];

@@ -55,7 +55,7 @@ function the_breadcrumb() {
                                 echo '<li class="breadcrumb-item" >';
                                 the_category(' </li><li> ');
                                 if (is_single()) {
-                                    echo "</li><li aria-current='page'>";
+                                    echo "</li><li class='breadcrumb-item' aria-current='page'>";
                                     the_title();
                                     echo '</li>';
                                 }

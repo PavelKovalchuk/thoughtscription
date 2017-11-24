@@ -12,28 +12,29 @@ get_header(); ?>
 <?php the_breadcrumb(); ?>
 	<div class="container">
 
-
-
 		<div class="row">
-			<div id="primary" class="col">
-				<main id="main" class="site-main" role="main">
 
-				<?php
-				while ( have_posts() ) : the_post();
+			<div id="primary" class="col-lg-12">
 
-					get_template_part( 'template-parts/content', get_post_format() );
+				<main id="main" class="row site-main" role="main">
 
-					the_post_navigation();
+                    <?php
+                    while ( have_posts() ) : the_post();
 
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
+                        get_template_part( 'template-parts/content', get_post_format() );
 
-				endwhile; // End of the loop.
-				?>
+                        the_post_navigation();
+
+                        // If comments are open or we have at least one comment, load up the comment template.
+                        if ( comments_open() || get_comments_number() ) :
+                            comments_template();
+                        endif;
+
+                    endwhile; // End of the loop.
+                    ?>
 
 				</main><!-- #main -->
+
 			</div><!-- #primary -->
 
 <?php

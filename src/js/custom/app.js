@@ -1,4 +1,3 @@
-
 //В этом фрагменте ваш код будет выполнен, когда страница полностью загрузится.
 jQuery(document).ready(function($){
 // Add your custom jQuery here
@@ -10,15 +9,15 @@ jQuery(document).ready(function($){
 (function($) {
 
     // внутри этой функции $ будет работать как jQuery
-    
+
     startStickyHeader();
-    
+
     $(window).scroll(function(e){
         parallaxHeroButton();
     });
-    
+
     initWOW();
-    
+
     initHomeCarousel();
 
     enableLeftScrollNav();
@@ -26,9 +25,9 @@ jQuery(document).ready(function($){
 
 
 
-    
-    
-    
+
+
+
     //Base functions area
 
 
@@ -43,9 +42,9 @@ jQuery(document).ready(function($){
 
         });
     }
-    
+
     function initHomeCarousel(){
-        
+
         $('#home_articles').owlCarousel({
             loop:true,
             margin:10,
@@ -65,7 +64,7 @@ jQuery(document).ready(function($){
                 },
                 768:{
                     items:1
-                    
+
                 },
                 992:{
                     items:2
@@ -81,24 +80,24 @@ jQuery(document).ready(function($){
                 }
             }
         });
-        
+
     }
-    
+
     function initWOW(){
-        
+
         wow = new WOW(
-                      {
-                      boxClass:     'wow',      // default
-                      animateClass: 'animated', // default
-                      offset:       0,          // default
-                      mobile:       true,       // default
-                      live:         true        // default
-                    }
-                    );
+            {
+                boxClass:     'wow',      // default
+                animateClass: 'animated', // default
+                offset:       0,          // default
+                mobile:       true,       // default
+                live:         true        // default
+            }
+        );
         wow.init();
-        
+
     }
-    
+
     function parallaxHeroButton(){
 
         if( $(window).width() < 1025 ){
@@ -110,11 +109,11 @@ jQuery(document).ready(function($){
         var maxHeight = $('#js-header-hero-image').height();
 
         var helperHeight = 100;
-        
+
         var btn = $('#hero_btn');
-        
+
         if( !btn.length || maxHeight < 50){
-            
+
             return false;
         }
 
@@ -125,22 +124,22 @@ jQuery(document).ready(function($){
 
             return false;
         }
-        
+
 
     }
-    
-        
+
+
     function startStickyHeader(){
-        
+
         var navOuter = $('.header_nav_part');
-        
+
         if( !navOuter.length){
             console.log("No element header_nav_part");
             return false;
         }
 
 
-        
+
         // Sticky Header
         $(window).scroll(function() {
 
@@ -151,7 +150,7 @@ jQuery(document).ready(function($){
             }
         });
 
-        
+
     }
 
 

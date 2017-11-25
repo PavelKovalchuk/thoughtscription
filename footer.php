@@ -11,7 +11,7 @@
 
 ?>
 
-	</main><!-- #content -->
+
 
 	<footer id="colophon" class="container-fluid site_footer" role="contentinfo">
 		<div class="container">
@@ -53,6 +53,7 @@
 
 		</div><!--  .container -->
 	</footer><!-- #colophon -->
+
 </div><!-- #page -->
 
 <?php echo 'Dev info:' . $wpdb->num_queries; ?> <?php _e('queries'); ?>. <?php timer_stop(1); ?> <?php _e('seconds'); ?>

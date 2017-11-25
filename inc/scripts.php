@@ -13,6 +13,10 @@ function ts_scripts() {
 
 		global $wp_query;
 
+		//This is needed for working shuffle in IE
+		wp_register_script( 'shuffle_shim', 'https://unpkg.com/core-js/client/shim.min.js');
+		wp_enqueue_script( 'shuffle_shim' );
+
 		wp_enqueue_script( 'shuffle', get_template_directory_uri() . '/js/libs/shuffle/shuffle.min.js', array(), '2.0.1', true);
 
 		$published_posts = wp_count_posts()->publish;

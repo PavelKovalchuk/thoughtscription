@@ -10,7 +10,7 @@ Template Name: Blog page
 get_header();
 
  ?>
-
+<main id="content" class="site-content">
 <div class="wrapper" id="wrapper-bloh">
     <?php the_breadcrumb(); ?>
     
@@ -124,5 +124,5 @@ get_header();
 
 
 </div><!-- Wrapper end -->
-
+</main>
 <?php get_footer(); ?>

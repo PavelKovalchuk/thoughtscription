@@ -9,22 +9,24 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" col-lg-12 <?php echo join(' ', get_post_class() ); ?> >
+<article id="post-<?php the_ID(); ?>" class="col-lg-12 <?php echo join(' ', get_post_class() ); ?>" >
 
     <div class="post-container-outer row no-gutters">
 
         <div class="col-lg-12 post-container-inner">
 
                 <?php if ( has_post_thumbnail() && is_single() ) : ?>
-                    <div class="post-thumbnail">
-                        <?php the_post_thumbnail('full', array('class' => 'rounded')); ?>
+                    <div class="row post-thumbnail">
+                        <?php the_post_thumbnail('full', array('class' => 'col-lg-12 rounded')); ?>
                     </div><!--  .post-thumbnail -->
                     <?php else : ?>
-                        <div class="post-thumbnail">
+
+                    <div class="row post-thumbnail">
                         <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                            <?php the_post_thumbnail('full', array('class' => 'rounded')); ?>
+                            <?php the_post_thumbnail('full', array('class' => 'col-lg-12  rounded')); ?>
                         </a>
                     </div><!--  .post-thumbnail -->
+
                 <?php endif; ?>
 
                 <header class="entry-header">
@@ -64,4 +66,12 @@
 
         </div>
     </div>
+
+    <?php
+    if ( comments_open() || get_comments_number() ) :
+	    comments_template();
+    endif;
+    ?>
+
+
 </article><!-- #post-## -->

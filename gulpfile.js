@@ -48,6 +48,9 @@ var path = {
     home:{
         style: './'
     },
+    shuffle:{
+        file: 'js/libs/shuffle/shuffle.js'
+    },
     clean: './build'
 };
 
@@ -100,6 +103,7 @@ gulp.task('js:build', function () {
         .pipe(reload({stream: true})) //И перезагрузим сервер
         .pipe(notify({ title: 'JS', message: 'js:build task complete' }));
 });
+
 
 //Check main js code
 gulp.task('js:check', function () {

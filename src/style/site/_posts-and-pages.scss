@@ -10,27 +10,121 @@
 	display: inline;
 }
 
-.post {
-	margin-bottom: 4em;
-	padding-bottom: 1em;
+
+
+/* post template start*/
+
+.post_header_container{
+
+
+  background-color: $white;
+
 }
 
-.post-thumbnail {
-	margin-bottom: 1em;
+.post_title{
+
+  font-size: 4.2rem;
+  font-family: $font-family-playfair-bold;
+  color: $ts_playfair_grey;
+  background-color: $white;
+  padding-top: $site_title_margin;
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: $site_title_margin_sm;
+
+
 }
+
+.post_content_container{
+  font-size: 1rem;
+  text-align: left;
+
+
+  .post_content{
+    padding-top: $post_margin_top;
+
+    p{
+      margin-bottom: 2rem;
+    }
+
+    blockquote{
+      font-family: $font-family-playfair;
+      font-size: 32px;
+      color: $ts_grey_blockquote;
+      font-weight: bold;
+      font-style: italic;
+      text-align: left;
+      padding: $ts_standart_padding 0;
+      border-top: 1px solid $ts_grey_blockquote_border;
+      border-bottom: 1px solid $ts_grey_blockquote_border;
+      margin-bottom: 2rem;
+
+      p{
+        margin-bottom: 0;
+      }
+
+    }
+
+  }
+}
+
+.post_image{
+  margin: auto;
+
+}
+
+.has-post-thumbnail{
+  .post_container{
+    margin: -$site_title_margin_lg auto 0;
+  }
+}
+
+
+.post_container{
+
+  width: 80%;
+  max-width: $post_header_width;
+  margin: 0 auto 0;
+
+  .post_element{
+
+    padding-top: 0;
+    padding-left: 130px;
+    padding-right: 130px;
+    padding-bottom: 0;
+
+    &.disqus_contaainer{
+      padding-top: $site_title_margin;
+    }
+  }
+
+
+
+}
+
+
+/* post template end*/
+
+
 
 .entry-meta,
 .entry-footer {
   font-size: .75rem;
-  margin: .75em 0 2em;
+
 
   .fa {
     color: $gray-600;
     margin-right: .3em;
   }
+
+  .meta_separetor{
+    margin: 0 0.4em .4em 0;
+  }
   span {
-    margin: 0 1.5em .4em 0;
+    margin: 0 0em .4em 0;
     display: inline-block;
+    font-size: 1rem;
+    color: $ts_playfair_grey;
 
     &:last-child {
       margin: 0;
@@ -38,10 +132,11 @@
 
     a {
       text-decoration: none;
-      color: $gray-600;
+      color: $ts_playfair_grey;
+      font-size: 16px;
 
       &:hover {
-        color: $gray-900;
+        color: $ts_blue;
       }
     }
   }
@@ -84,7 +179,7 @@ html, body { height: 100%; }
 }
 
 main {
- 
+
  
 }
 
@@ -302,13 +397,6 @@ main {
 }
 
 
-
-/* post template start*/
-
-
-
-
-/* post template end*/
 
 
 

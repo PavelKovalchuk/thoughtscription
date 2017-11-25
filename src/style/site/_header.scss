@@ -18,6 +18,12 @@
         padding-bottom: .5rem;
     }
 
+    .header_nav_part_container{
+        @include media-breakpoint-down(xs) {
+            width: 100%;
+        }
+    }
+
     
     .navbar{
 

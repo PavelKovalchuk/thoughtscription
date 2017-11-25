@@ -82,7 +82,7 @@ function the_breadcrumb() {
 }
 
 
-function get_template_home_carousel($title, $text, $items, $btn = false){
+function get_template_carousel($title, $text, $items, $carousel_id, $btn = false){
 	$btn = ( $btn ) ? $btn :  get_option( '_thoughtscription_option_page_options' )['read_more_text'];
     ?>
     <section class="container-fluid section_style ">
@@ -108,54 +108,56 @@ function get_template_home_carousel($title, $text, $items, $btn = false){
             <div class="row no-gutters">
                 <div class="col-lg-12">
 
-                    <div class="owl-carousel owl-theme" id="home_articles">
+                    <div class="owl-carousel owl-theme" id="<?php echo $carousel_id; ?>">
 
-				        <?php foreach ($items as $item) { ?>
+				        <?php foreach ($items as $item){ ?>
 
                             <div class="carousel_item">
 
                                     <figure class="h-100 w-100 imghvr-slide-down carousel_item_inner">
 
                                         <?php
-                                        $img = get_the_post_thumbnail_url( $item['item_post'], 'large' );
+                                        $img = get_the_post_thumbnail_url( $item->ID, 'large' );
 
                                         if(!$img){
-                                            $default_img = get_field('slider_default_image');
-	                                        $img = wp_get_attachment_image_url( $default_img, 'large' );
+                                            $default_img = get_option( '_thoughtscription_option_page_options' )['slider_default_image_id'];;
+	                                        $img = wp_get_attachment_image_url( $default_img, 'post-large-imagee' );
                                         }
                                         ?>
 
                                         <div class="carousel_item_img_outer " style="background-image:url(<?php echo $img; ?>)"></div>
 
                                         <div class="d-flex align-items-center carousel_item_title_outer ">
-                                            <h5 class="carousel_item_title"><?php echo $item['item_title'] ? $item['item_title'] : get_the_title( $item['item_post']); ?></h5>
+                                            <h5 class="carousel_item_title">
+                                                <?php echo $item->post_title; ?>
+                                            </h5>
                                         </div>
 
                                         <figcaption class="d-flex flex-column carousel_item_text">
 
                                             <div class="carousel_post_cat_outer">
                                                 <h4 class="carousel_post_cat">
-			                                        <?php echo get_the_category( $item['item_post'] )[0]->cat_name; ?>
+			                                        <?php echo get_the_category( $item->ID )[0]->cat_name; ?>
                                                 </h4>
                                             </div>
 
                                             <div class="carousel_post_title_outer">
                                                 <h5 class="carousel_post_title">
-			                                        <?php echo get_the_title( $item['item_post'] ); ?>
+	                                                <?php echo $item->post_title; ?>
                                                 </h5>
                                             </div>
 
-	                                        <?php if( has_excerpt($item['item_post']) ){ ?>
+	                                        <?php if( has_excerpt($item->ID) ){ ?>
 
                                             <div class="carousel_post_excerpt_outer">
                                                 <p class="carousel_post_excerpt">
-			                                        <?php the_excerpt_max_charlength( 220 , $item['item_post']); ?>
+			                                        <?php the_excerpt_max_charlength( 220 , $item->ID); ?>
                                                 </p>
                                             </div>
                                             <?php } ?>
 
                                             <div class="d-flex align-items-end h-100 animate_link_outer carousel_post_link_outer">
-                                                <a href="<?php echo get_permalink($item['item_post']); ?>" class="btn animate_link_white carousel_post_link">
+                                                <a href="<?php echo get_permalink($item->ID); ?>" class="btn animate_link_white carousel_post_link">
 
                                                     <span class="animate_link_text carousel_post_link_text">
                                                         <?php

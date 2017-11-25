@@ -10,7 +10,7 @@ Template Name: Blog page
 get_header();
 
  ?>
-<main id="content" class="site-content">
+<main id="content" class="site-content" role="main">
 <div class="wrapper" id="wrapper-bloh">
     <?php the_breadcrumb(); ?>
     

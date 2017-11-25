@@ -8,70 +8,122 @@
  */
 
 ?>
-
+<?php the_breadcrumb(); ?>
 <article id="post-<?php the_ID(); ?>" class="col-lg-12 <?php echo join(' ', get_post_class() ); ?>" >
 
-    <div class="post-container-outer row no-gutters">
+    <div class="row no-gutters post_container_outer">
 
-        <div class="col-lg-12 post-container-inner">
+        <div class="col-lg-12 post_container_inner">
 
                 <?php if ( has_post_thumbnail() && is_single() ) : ?>
                     <div class="row post-thumbnail">
-                        <?php the_post_thumbnail('full', array('class' => 'col-lg-12 rounded')); ?>
+                        <?php the_post_thumbnail('post-full-image-cropped', array('class' => 'rounded post_image')); ?>
                     </div><!--  .post-thumbnail -->
                     <?php else : ?>
 
                     <div class="row post-thumbnail">
                         <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                            <?php the_post_thumbnail('full', array('class' => 'col-lg-12  rounded')); ?>
+                            <?php the_post_thumbnail('full', array('class' => 'col-lg-12 rounded post_image')); ?>
                         </a>
                     </div><!--  .post-thumbnail -->
 
                 <?php endif; ?>
 
-                <header class="entry-header">
-                    <?php
-                    if ( is_single() ) :
-                        the_title( '<h1 class="entry-title">', '</h1>' );
-                    else :
-                        the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-                    endif;
+                <div class="row post_container">
+                    <div class="col-lg-12">
 
-                    if ( 'post' === get_post_type() ) : ?>
-                    <div class="entry-meta">
-                        <?php strappress_posted_on(); ?>
-                    </div><!-- .entry-meta -->
-                    <?php
-                    endif; ?>
-                </header><!-- .entry-header -->
+                        <header class="row entry-header post_element post_header_container">
+                            <div class="col-lg-12 entry-title ">
 
-                <div class="entry-content">
-                    <?php
-                        the_content( sprintf(
-                            /* translators: %s: Name of current post. */
-                            wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'gm_wp' ), array( 'span' => array( 'class' => array() ) ) ),
-                            the_title( '<span class="screen-reader-text">"', '"</span>', false )
-                        ) );
+		                    <?php
+		                    if ( is_single() ) :
+			                    the_title( '<h1 class="post_title  ">', '</h1>' );
+		                    else :
+			                    the_title( '<h2 class="post_title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		                    endif;
 
-                        wp_link_pages( array(
-                            'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'gm_wp' ),
-                            'after'  => '</div>',
-                        ) );
-                    ?>
-                </div><!-- .entry-content -->
+		                    if ( 'post' === get_post_type() ) : ?>
 
-                <footer class="entry-footer">
-                    <?php strappress_entry_footer(); ?>
-                </footer><!-- .entry-footer -->
+                                <div class="row">
+                                    <div class="col-lg-12 entry-meta post_meta">
+
+		                                <?php strappress_posted_on(); ?>
+
+                                    </div><!-- .entry-meta -->
+                                </div>
+
+			                <?php endif; ?>
+
+
+                            </div>
+                        </header><!-- .entry-header -->
+
+                        <div class="row entry-content post_element post_content_container">
+                            <div class="col-lg-12 post_content">
+
+			                    <?php
+			                    the_content( sprintf(
+			                    /* translators: %s: Name of current post. */
+				                    wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'gm_wp' ), array( 'span' => array( 'class' => array() ) ) ),
+				                    the_title( '<span class="screen-reader-text">"', '"</span>', false )
+			                    ) );
+
+			                    wp_link_pages( array(
+				                    'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'gm_wp' ),
+				                    'after'  => '</div>',
+			                    ) );
+			                    ?>
+
+                            </div>
+                        </div><!-- .entry-content -->
+
+                        <footer class="row entry-footer post_element post_footer_container">
+		                    <?php strappress_entry_footer(); ?>
+                        </footer><!-- .entry-footer -->
+
+	                    <?php
+	                    if ( comments_open() || get_comments_number() ) : ?>
+                            <div class="post_element disqus_contaainer">
+                                <?php comments_template(); ?>
+                            </div>
+
+	                    <?php endif; ?>
+
+	                    <?php
+	                    $args = array(
+		                    'numberposts' => 8,
+		                    'category'    => 0,
+		                    'orderby'     => 'date',
+		                    'order'       => 'DESC',
+		                    'include'     => array(),
+		                    'exclude'     => array(),
+		                    'meta_key'    => '',
+		                    'meta_value'  =>'',
+		                    'post_type'   => 'post',
+		                    'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+	                    );
+
+	                    $recent_posts = get_posts( $args );
+
+	                    //var_dump($data['slider_items']); ?>
+                        <div class="row entry-content post_element post_slider_container">
+                            <div class="col-lg-12 post_slider">
+
+                            <?php get_template_carousel('Title', '', $recent_posts, 'post_articles'); ?>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
 
         </div>
     </div>
 
-    <?php
-    if ( comments_open() || get_comments_number() ) :
-	    comments_template();
-    endif;
-    ?>
+
 
 
 </article><!-- #post-## -->

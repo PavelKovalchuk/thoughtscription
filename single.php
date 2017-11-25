@@ -9,24 +9,21 @@
 
 get_header(); ?>
 
-<?php //the_breadcrumb(); ?>
-    <main id="main" class="container site-main"  role="main">
 
-        <div class="row ">
+    <main id="main" class="site-content"  role="main">
+        <div class="container">
+            <div class="row ">
 
-                     <?php while ( have_posts() ) : the_post();
+                         <?php while ( have_posts() ) : the_post();
 
-                            get_template_part( 'template-parts/content', get_post_format() );
+                                get_template_part( 'template-parts/content', get_post_format() );
 
-                            //the_post_navigation();
+                                //the_post_navigation();
 
-                            // If comments are open or we have at least one comment, load up the comment template.
+                            endwhile; // End of the loop. ?>
 
-
-                        endwhile; // End of the loop. ?>
-
+            </div>
         </div>
-
     </main><!-- #main -->
 
 <?php

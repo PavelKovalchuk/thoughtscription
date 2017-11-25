@@ -40,7 +40,7 @@
                  <div class="col-lg-12">
 
                         <nav class="navbar navbar-toggleable-md header_nav_part navbar-light">
-                            <div class="container w-100">
+                            <div class="container header_nav_part_container">
 
                                 <div class="row justify-content-between no-gutters w-100 navbar_row">
 

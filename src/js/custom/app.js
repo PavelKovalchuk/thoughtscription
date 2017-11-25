@@ -20,6 +20,8 @@ jQuery(document).ready(function($){
 
     initHomeCarousel();
 
+    initPostCarousel();
+
     enableLeftScrollNav();
 
 
@@ -41,6 +43,38 @@ jQuery(document).ready(function($){
 
 
         });
+    }
+
+    function initPostCarousel(){
+
+        $('#post_articles').owlCarousel({
+            loop:true,
+            margin:10,
+            responsiveClass:true,
+            nav: false,
+            dots: true,
+            lazyLoad: true,
+            autoplay: false,
+            autoplayHoverPause: true,
+            animateOut: false,
+            animateIn: false,
+
+            responsive:{
+                0:{
+                    items:1
+
+                },
+                768:{
+                    items:1
+
+                },
+                992:{
+                    items:2
+
+                }
+            }
+        });
+
     }
 
     function initHomeCarousel(){

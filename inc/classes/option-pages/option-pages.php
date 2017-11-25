@@ -136,6 +136,23 @@ class OptionPages{
 						),
 
 						array(
+							'id'	=> 'slider_data',
+							'title'	=> 'Slider data ',
+							'fields'		=> array(
+
+								array(
+									'id'	=> 'slider_default_image_id',
+									'title'	=> 'Slider default image ID',
+									'type'	=> 'number',
+									'description' => 'Default image for post in slider',
+									'value' => '',
+								),
+
+
+							),
+						),
+
+						array(
 							'id'	=> 'general_button_data_id',
 							'title'	=> 'General buttons title ',
 							'fields'		=> array(

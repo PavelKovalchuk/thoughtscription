@@ -181,7 +181,7 @@ require get_template_directory() . '/inc/ajax_handler.php';
 
 if ( is_admin() ) {
 
-	include 'inc\classes\option-pages\option-pages.php';
+	require get_template_directory() . '/inc/classes/option-pages/option-pages.php';
 
 	$ts_options_page = new OptionPages();
 }

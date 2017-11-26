@@ -56,7 +56,6 @@
 
 </div><!-- #page -->
 
-<?php //echo 'Dev info:' . $wpdb->num_queries; ?> <?php //_e('queries'); ?>. <?php //timer_stop(1); ?> <?php //_e('seconds'); ?>
 
 <?php wp_footer(); ?>
 

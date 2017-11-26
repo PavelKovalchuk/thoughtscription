@@ -153,6 +153,54 @@ class OptionPages{
 						),
 
 						array(
+							'id'	=> 'posts_template_data',
+							'title'	=> 'Posts option ',
+							'fields'		=> array(
+
+								array(
+									'id'	=> 'prev_article_text',
+									'title'	=> 'Title for PREVIOUS ARTICLE link',
+									'type'	=> 'text',
+									//'description' => 'Default image for post in slider',
+									'value' => 'PREVIOUS ARTICLE',
+								),
+
+								array(
+									'id'	=> 'next_article_text',
+									'title'	=> 'Title for NEXT ARTICLE link',
+									'type'	=> 'text',
+									//'description' => 'Default image for post in slider',
+									'value' => 'NEXT ARTICLE',
+								),
+
+								array(
+									'id'	=> 'slider_post_text',
+									'title'	=> 'Title for slider',
+									'type'	=> 'text',
+									//'description' => 'Default image for post in slider',
+									'value' => 'You will also be interested',
+								),
+
+								array(
+									'id'	=> 'slider_posts_id',
+									'title'	=> 'Posts id for slider',
+									'type'	=> 'text',
+									'description' => 'Comma separeted posts id',
+									'value' => '',
+								),
+								array(
+									'id'	=> 'slider_number_items',
+									'title'	=> 'Number of poststo displayr',
+									'type'	=> 'text',
+									'description' => 'Max number of posts',
+									'value' => '4',
+								),
+
+
+							),
+						),
+
+						array(
 							'id'	=> 'general_button_data_id',
 							'title'	=> 'General buttons title ',
 							'fields'		=> array(

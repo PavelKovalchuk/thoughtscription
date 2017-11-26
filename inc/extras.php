@@ -76,3 +76,40 @@ function the_excerpt_max_charlength( $charlength , $post_id){
 		echo $excerpt;
 	}
 }
+
+function get_random_posts(){
+
+	$posts_id_raw = get_option( '_thoughtscription_option_page_options' )['slider_posts_id'];
+
+	$posts_id_trimed = preg_replace('/\s+/', '', $posts_id_raw);
+
+	$posts_id_array = explode(",", $posts_id_trimed);
+
+	$max = get_option( '_thoughtscription_option_page_options' )['slider_number_items'];
+
+	shuffle($posts_id_array);
+
+	$posts_id = array_slice($posts_id_array, 0, $max);
+
+	$args = array(
+		//'numberposts' => 3,
+		'category'    => 0,
+		'orderby'     => 'post__in',
+		'order'       => 'DESC',
+		'include'     => $posts_id,
+		'exclude'     => array(),
+		'meta_key'    => '',
+		'meta_value'  =>'',
+		'post_type'   => 'post',
+		'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+	);
+
+	$recent_posts = get_posts( $args );
+
+	if($recent_posts){
+		return $recent_posts;
+	}else{
+		return false;
+	}
+
+}

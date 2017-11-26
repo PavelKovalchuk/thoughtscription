@@ -71,6 +71,10 @@ jQuery(document).ready(function($){
                 992:{
                     items:2
 
+                },
+                1300:{
+                    items:2
+
                 }
             }
         });
@@ -88,8 +92,8 @@ jQuery(document).ready(function($){
             lazyLoad: true,
             autoplay: false,
             autoplayHoverPause: true,
-            animateOut: false,
-            animateIn: false,
+            /*animateOut: 'fadeOut',
+            animateIn: 'flipInX',*/
 
             responsive:{
                 0:{
@@ -114,6 +118,7 @@ jQuery(document).ready(function($){
                 }
             }
         });
+
 
     }
 

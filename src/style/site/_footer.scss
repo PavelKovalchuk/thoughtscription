@@ -4,55 +4,11 @@
 }
 
 .footer_social_block{
+
   text-align: center;
   color: $black;
   padding: $ts_standart_padding 0 35px;
   border-bottom: 2px groove $footer_border_color;
-
-  .icon_facebook:before {
-    font-family: $font-family-fontawesome;
-    content: "\f09a";
-  }
-
-  .icon_google_plus:before {
-    font-family: $font-family-fontawesome;
-    content: "\f0d5";
-  }
-
-  .icon_linkedin:before {
-    font-family: $font-family-fontawesome;
-    content: "\f0e1";
-  }
-
-  .icon_twitter:before {
-    font-family: $font-family-fontawesome;
-    content: "\f099";
-  }
-
-  .social_icon{
-    font-size: 24px;
-    font-style: normal;
-
-  }
-
-  .social_item{
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    color: $black;
-    margin: 0 $ts_standart_padding 0;
-
-    &:hover{
-      color: $white;
-      text-decoration: none;
-    }
-
-    @include media-breakpoint-down(sm) {
-      width: 30px;
-      height: 30px;
-      margin: 0 $ts_standart_padding_sm 0;
-    }
-  }
 
 }
 

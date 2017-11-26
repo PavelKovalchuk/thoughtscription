@@ -16,7 +16,7 @@
 	<footer id="colophon" class="container-fluid site_footer" role="contentinfo">
 		<div class="container">
 
-            <div class="row footer_social_block">
+            <div class="row footer_social_block social_block">
                 <div class="col-lg-12 justify-content-center">
 
                         <a class="d-inline-flex align-items-center justify-content-center social_item footer_social_item"
@@ -56,7 +56,7 @@
 
 </div><!-- #page -->
 
-<?php echo 'Dev info:' . $wpdb->num_queries; ?> <?php _e('queries'); ?>. <?php timer_stop(1); ?> <?php _e('seconds'); ?>
+<?php //echo 'Dev info:' . $wpdb->num_queries; ?> <?php //_e('queries'); ?>. <?php //timer_stop(1); ?> <?php //_e('seconds'); ?>
 
 <?php wp_footer(); ?>
 

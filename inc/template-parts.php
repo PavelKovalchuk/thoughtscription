@@ -1,5 +1,76 @@
 <?php
 
+function get_siblings_links(){
+
+	if(is_singular()){
+
+		$prev_text = get_option( '_thoughtscription_option_page_options' )['prev_article_text'];
+		$next_text = get_option( '_thoughtscription_option_page_options' )['next_article_text'];
+
+        $prev =  get_previous_post_link('%link', $prev_text, false);
+        $next =  get_next_post_link('%link', $next_text, false);
+
+        ?>
+
+        <div class="col-lg-12 siblings_block">
+
+            <div class="row siblings_block_inner">
+
+
+
+                    <div class="d-flex siblings_item siblings_item_prev"> <?php echo $prev; ?></div>
+                    <div class="d-flex siblings_item siblings_item_next"><?php echo $next; ?></div>
+
+
+
+            </div>
+
+        </div>
+
+<?php }
+}
+
+function get_social_sharing_buttons() {
+	//global $post;
+	if(is_singular()){
+
+		// Get current page URL
+		$text_url = urlencode(get_permalink());
+
+		// Get current page title
+		$text_title = str_replace( ' ', '%20', get_the_title());
+
+		// Get Post Thumbnail for pinterest
+		//$crunchifyThumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
+
+		// Construct sharing URL without using any script
+		$facebookURL = 'https://www.facebook.com/sharer/sharer.php?u='.$text_url;
+		$twitterURL = 'https://twitter.com/intent/tweet?text='.$text_title.'&amp;url='.$text_url.'&amp;via=Crunchify';
+		$linkedInURL = 'https://www.linkedin.com/shareArticle?mini=true&url='.$text_url.'&amp;title='.$text_url;
+		$googleURL = 'https://plus.google.com/share?url='.$text_url;
+		?>
+
+        <div class="justify-content-between  d-flex d-md-block social_block share_buttons_outer">
+
+            <a class="d-inline-flex d-sm-flex align-items-center justify-content-center social_item share_social_item" href="<?php echo $facebookURL; ?>" target="_blank">
+               <i class="social_icon share_social_icon icon_facebook" aria-hidden="true"></i>
+            </a>
+
+            <a class="d-inline-flex d-sm-flex align-items-center justify-content-center social_item share_social_item" href="<?php echo  $twitterURL; ?>" target="_blank">
+                <i class="social_icon sharesocial_icon icon_twitter" aria-hidden="true"></i>
+            </a>
+
+            <a class="d-inline-flex d-sm-flex align-items-center justify-content-center social_item share_social_item" href="<?php echo $linkedInURL; ?>" target="_blank">
+                <i class="social_icon share_social_icon icon_linkedin" aria-hidden="true"></i>
+            </a>
+
+            <a class="d-inline-flex d-sm-flex align-items-center justify-content-center social_item share_social_item" href="<?php echo $googleURL; ?>" target="_blank">
+                <i class="social_icon share_social_icon icon_google_plus" aria-hidden="true"></i>
+            </a>
+        </div>
+<?php
+	}
+};
 
 function get_template_hero_section($btn_link, $main_img, $mobile_img){
     ?>
@@ -82,12 +153,16 @@ function the_breadcrumb() {
 }
 
 
-function get_template_carousel($title, $text, $items, $carousel_id, $btn = false){
+function get_template_carousel($title, $text, $items, $carousel_id, $container = false, $btn = false){
 	$btn = ( $btn ) ? $btn :  get_option( '_thoughtscription_option_page_options' )['read_more_text'];
     ?>
-    <section class="container-fluid section_style ">
+
+    <?php if($container){ ?>
+        <section class="container-fluid section_style ">
 
         <div class="container carousel_container">
+	<?php } ?>
+
 
             <div class="row">
                 <div class="col-lg-12">
@@ -97,6 +172,7 @@ function get_template_carousel($title, $text, $items, $carousel_id, $btn = false
                 </div>
             </div>
 
+            <?php if($text){ ?>
             <div class="row">
                 <div class="col-lg-12">
 
@@ -104,6 +180,7 @@ function get_template_carousel($title, $text, $items, $carousel_id, $btn = false
 
                 </div>
             </div>
+            <?php } ?>
 
             <div class="row no-gutters">
                 <div class="col-lg-12">
@@ -120,12 +197,12 @@ function get_template_carousel($title, $text, $items, $carousel_id, $btn = false
                                         $img = get_the_post_thumbnail_url( $item->ID, 'large' );
 
                                         if(!$img){
-                                            $default_img = get_option( '_thoughtscription_option_page_options' )['slider_default_image_id'];;
+                                            $default_img = get_option( '_thoughtscription_option_page_options' )['slider_default_image_id'];
 	                                        $img = wp_get_attachment_image_url( $default_img, 'post-large-imagee' );
                                         }
                                         ?>
 
-                                        <div class="carousel_item_img_outer " style="background-image:url(<?php echo $img; ?>)"></div>
+                                        <div class="carousel_item_img_outer wow flipInX" style="background-image:url(<?php echo $img; ?>)"></div>
 
                                         <div class="d-flex align-items-center carousel_item_title_outer ">
                                             <h5 class="carousel_item_title">
@@ -185,9 +262,12 @@ function get_template_carousel($title, $text, $items, $carousel_id, $btn = false
                 </div>
             </div>
 
+    <?php if($container){ ?>
         </div>
 
-    </section>
+        </section>
+	<?php } ?>
+
     
 <?php 
 

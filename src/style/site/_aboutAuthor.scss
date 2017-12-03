@@ -1,0 +1,223 @@
+
+.author_top_image_outer{
+
+  text-align: center;
+  position: relative;
+  height: $author_hero_image_height;
+
+}
+
+.author_top_image_bg{
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: $about_author_top_bg;
+
+}
+
+.author_top_text_outer{
+
+  position: absolute;
+  top: $site_title_margin_lg;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 3;
+
+}
+
+%author_top_text{
+
+
+
+  font-style: italic;
+  color: $ts_playfair_grey;
+  text-align: center;
+  font-family: $font-family-playfair;
+
+}
+
+.author_top_text_question{
+
+  @extend %author_top_text;
+
+  font-size: 2.4rem;
+  font-weight: 300;
+  font-family: $font-family-playfair-italic;
+
+}
+
+
+.author_top_text_answer{
+
+  @extend %author_top_text;
+
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 700;
+
+}
+
+.author_content_outer{
+
+  margin: -$site_title_margin_lg auto 0;
+  width: 90%;
+  max-width: $author_content_width;
+
+
+
+  @include media-breakpoint-down(lg) {
+    max-width: $post_header_width_lg;
+  }
+
+}
+
+.author_content_inner{
+
+  background-color: $white;
+  z-index: 1;
+
+}
+
+.author_content{
+
+
+  width: calc(100% - 33px);
+  padding-left: 100px;
+  padding-right: 130px;
+  padding-top: $site_title_margin;
+
+  @include media-breakpoint-down(lg) {
+    padding-top: $site_title_margin_sm;
+    padding-left: 60px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding-left: 0px;
+    width: 100%;
+  }
+
+}
+
+.author_content_container{
+
+  position: relative;
+  font-size: 1rem;
+
+}
+
+.author_content_image{
+
+  padding: $ts-standart_padding;
+  border: 1px solid $ts_grey_blockquote_border;
+
+  &.author_profile{
+
+
+  }
+
+  &.author_place{
+
+    border-left: none;
+  }
+
+  &.author_speaker{
+    border: none;
+  }
+
+}
+
+.author-right{
+  position: relative;
+}
+
+.author-left{
+  position: relative;
+  text-align: left;
+}
+
+.data_shifted_left{
+
+  margin-left: -$author_shifted_width;
+
+
+}
+
+.author_name{
+
+    font-size: 5.8rem;
+    font-family: $font-family-playfair;
+    color: $ts_playfair_grey;
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: left;
+    margin: -20px 0 0 0;
+
+
+}
+
+.author_position{
+
+  font-size: 1.7rem;
+  font-family: $font-family-playfair;
+  color: $ts_playfair_grey;
+  font-style: italic;
+  text-align: center;
+  margin: 0;
+  padding: 0 0 0 60px;
+
+}
+
+.position_description{
+  font-size: 1rem;
+  color: $black;
+  text-align: left;
+  margin: 0 0 0 20%;
+  width: 80%;
+  padding: 0 $ts-standart_padding 65px 0;
+}
+
+.author_speaker_img_outer{
+
+  text-align: right;
+
+}
+
+.author_blog_aim{
+
+  padding: 150px $author_shifted_width 0 0;
+
+}
+
+.author_blog_aim_title{
+
+  font-size: 42px;
+  color: $ts_black;
+  font-family: $font-family-playfair;
+  line-height: 1.2;
+  text-align: left;
+
+  margin-right: 30px;
+
+}
+
+.author_blog_aim_text{
+
+  margin-right: 30px;
+
+}
+
+.author_blog_aim_quote{
+
+  margin-right: 30px;
+
+
+}
+
+
+
+

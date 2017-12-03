@@ -100,12 +100,16 @@ jQuery(document).ready(function($){
                     items:1
 
                 },
-                768:{
+                500:{
                     items:1
 
                 },
-                992:{
+                768:{
                     items:2
+
+                },
+                992:{
+                    items:3
 
                 },
                 1110:{

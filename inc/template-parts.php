@@ -14,14 +14,11 @@ function get_siblings_links(){
 
         <div class="col-lg-12 siblings_block">
 
-            <div class="row siblings_block_inner">
-
+            <div class="row no-gutters justify-content-between siblings_block_inner">
 
 
                     <div class="d-flex siblings_item siblings_item_prev"> <?php echo $prev; ?></div>
                     <div class="d-flex siblings_item siblings_item_next"><?php echo $next; ?></div>
-
-
 
             </div>
 
@@ -194,7 +191,7 @@ function get_template_carousel($title, $text, $items, $carousel_id, $container =
                                     <figure class="h-100 w-100 imghvr-slide-down carousel_item_inner">
 
                                         <?php
-                                        $img = get_the_post_thumbnail_url( $item->ID, 'large' );
+                                        $img = get_the_post_thumbnail_url( $item->ID, 'post-carousel-image' );
 
                                         if(!$img){
                                             $default_img = get_option( '_thoughtscription_option_page_options' )['slider_default_image_id'];

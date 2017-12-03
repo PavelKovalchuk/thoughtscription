@@ -16,6 +16,11 @@
     .navbar-brand{
         padding-top: .5rem;
         padding-bottom: .5rem;
+
+        @include media-breakpoint-down(md) {
+            padding-top: 0rem;
+            padding-bottom: 0rem;
+        }
     }
 
     .header_nav_part_container{
@@ -26,6 +31,11 @@
 
     
     .navbar{
+
+        @include media-breakpoint-down(md) {
+            padding-top: 0.3rem;
+            padding-bottom:  0.3rem;
+        }
 
         .navbar-nav{
 
@@ -122,6 +132,10 @@
         background-color: $white;
         border-bottom: 1px solid $menu_border_color;
 
+        @include media-breakpoint-down(md) {
+            height: $site_nav_height_sticky;
+        }
+
     }
 
     .sticky {
@@ -160,6 +174,10 @@
             z-index: 1;
             width: 100%;
             background-color: $ts_blue_muted;
+
+            @include media-breakpoint-down(md) {
+                top: $site_nav_height_sticky;
+            }
 
         }
 

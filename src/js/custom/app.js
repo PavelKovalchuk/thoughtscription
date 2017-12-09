@@ -12,9 +12,9 @@ jQuery(document).ready(function($){
 
     startStickyHeader();
 
-    $(window).scroll(function(e){
+   /* $(window).scroll(function(e){
         parallaxHeroButton();
-    });
+    });*/
 
     initWOW();
 
@@ -22,7 +22,7 @@ jQuery(document).ready(function($){
 
     initPostCarousel();
 
-    enableLeftScrollNav();
+    //enableLeftScrollNav();
 
 
 

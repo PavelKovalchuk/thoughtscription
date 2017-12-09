@@ -29,11 +29,14 @@ get_header(); ?>
 
             <div class="row inspire_items_outer">
 
-		        <?php foreach ($data['inspires_items'] as $item){ ?>
+                <?php $i = 0; ?>
+		        <?php foreach ($data['inspires_items'] as $item){
+		            $i++;
+		            ?>
 
-                    <div class="col-sm-12 col-md-6 col-lg-4 wow fadeInUp inspire_item" data-wow-duration="1s" data-wow-delay="0s" data-wow-offset="10">
+                    <div class="col-sm-12 col-md-6 col-lg-4 wow fadeInUp inspire_item inspire_item_<?php echo $i; ?>" data-wow-duration="1s" data-wow-delay="0s" data-wow-offset="10">
 
-                        <div class="inspire_item_inner">
+                        <div class="inspire_item_inner inspire_item_inner_<?php echo $i; ?>">
                             <div class="inspire_img_outer ">
                                 <img src="<?php echo $item['item_image']['url']; ?>" class="inspire_img wow wobble " data-wow-duration="1s" data-wow-delay="1s" alt="<?php echo $item['item_image']['alt']; ?>">
                             </div>

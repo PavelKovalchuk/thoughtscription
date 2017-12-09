@@ -217,7 +217,10 @@ function get_template_carousel($title, $text, $items, $carousel_id, $container =
 
                                             <div class="carousel_post_title_outer">
                                                 <h5 class="carousel_post_title">
-	                                                <?php echo $item->post_title; ?>
+                                                    <a class="carousel_post_title_link" href="<?php echo get_permalink($item->ID); ?>">
+                                                        <?php echo $item->post_title; ?>
+
+                                                    </a>
                                                 </h5>
                                             </div>
 

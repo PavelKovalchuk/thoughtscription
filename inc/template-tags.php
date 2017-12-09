@@ -123,3 +123,22 @@ function strappress_category_transient_flusher() {
 }
 add_action( 'edit_category', 'strappress_category_transient_flusher' );
 add_action( 'save_post',     'strappress_category_transient_flusher' );
+
+
+
+add_action('wp_head','add_favicon_harrix');
+function add_favicon_harrix() {
+	$title = get_option('blogname');
+	?>
+	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=4">
+	<link rel="icon" type="image/png" href="/favicon/favicon-32x32.png?v=4" sizes="32x32">
+	<link rel="icon" type="image/png" href="/favicon/favicon-16x16.png?v=4" sizes="16x16">
+	<link rel="manifest" href="/favicon/manifest.json?v=4">
+	<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=4" color="#03a9f5">
+	<link rel="shortcut icon" href="/favicon/favicon.ico?v=4">
+	<meta name="apple-mobile-web-app-title" content="<? echo $title;?>">
+	<meta name="application-name" content="<? echo $title;?>">
+	<meta name="msapplication-config" content="/favicon/browserconfig.xml?v=4">
+	<meta name="theme-color" content="#03a9f5">
+	<?
+}

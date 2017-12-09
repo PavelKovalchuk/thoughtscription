@@ -97,7 +97,7 @@ if ( ! function_exists( 'gm_wp_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'gm_wp_setup' );
 
-
+/*
 if ( ! function_exists( 'gm_custom_sizes' ) ) :
     function gm_custom_sizes( $sizes ) {
         return array_merge( $sizes, array(
@@ -113,7 +113,7 @@ if ( ! function_exists( 'gm_custom_sizes' ) ) :
         ) );
     }
 endif;
-add_filter( 'image_size_names_choose', 'gm_custom_sizes' );
+add_filter( 'image_size_names_choose', 'gm_custom_sizes' );*/
 
 
 
@@ -171,6 +171,12 @@ require get_template_directory() . '/inc/template-parts.php';
  * Custom ajax handler
  */
 require get_template_directory() . '/inc/ajax_handler.php';
+
+
+/**
+ * Custom functions in the admin panel
+ */
+require get_template_directory() . '/inc/admin_functions.php';
 
 
 

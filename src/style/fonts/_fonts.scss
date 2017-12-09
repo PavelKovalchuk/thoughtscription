@@ -22,14 +22,14 @@
   src: url("build/fonts/Playfair_Display/PlayfairDisplay-Regular.ttf") format('truetype');
 
 }
-
+/*
 @font-face {
   font-family: 'Playfair_Display-BoldItalic';
   font-style: normal;
   font-weight: 300;
   src: url("build/fonts/Playfair_Display/PlayfairDisplay-BoldItalic.ttf") format('truetype');
 
-}
+}*/
 
 
 @font-face {
@@ -37,6 +37,14 @@
   font-style: normal;
   font-weight: 500;
   src: url("build/fonts/Playfair_Display/PlayfairDisplay-Bold.ttf") format('truetype');
+
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 300;
+  src: url("build/fonts/Lora/Lora-Regular.ttf") format('truetype');
 
 }
 

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="language" content="en"/>
 <link rel="profile" href="http://gmpg.org/xfn/11">
-<link href="<?php echo get_stylesheet_directory_uri(); ?>/favicon/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<!--<link href="<?php /*echo get_stylesheet_directory_uri(); */?>/favicon/favicon.ico" rel="shortcut icon" type="image/x-icon" />-->
 
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -28,7 +28,8 @@
                  
                  <div class="col-lg-12">
 
-                        <nav class="navbar navbar-toggleable-md header_nav_part navbar-light">
+                        <!--<nav class="navbar navbar-toggleable-md header_nav_part navbar-light">-->
+                        <nav class="navbar header_nav_part navbar-light">
                             <div class="container header_nav_part_container">
 
                                 <div class="row justify-content-between no-gutters w-100 navbar_row">
@@ -41,13 +42,16 @@
 
                                     </div>
 
-                                    <div class="d-flex justify-content-end">
+                                    <div class="d-flex justify-content-end navbar_links_outer">
 
-                                        <button class="navbar-toggler align-self-center navbar-expand-lg ts-nav-menu-toggler" type="button" data-toggle="slide-collapse" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                        <button class="navbar-toggler align-self-center navbar-expand-lg ts-nav-menu-toggler"
+                                                type="button" data-toggle="slide-collapse"
+                                                    data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                                             <span class="navbar-toggler-icon"></span>
                                         </button>
 
-                                        <div class="collapse navbar-collapse h-100" id="navbarNav">
+                                        <!--<div class="collapse navbar-collapse h-100" id="navbarNav">-->
+                                        <div class="navbar-collapse h-100" id="navbarNav">
                                             <?php
                                             $args = array(
                                                 'theme_location' => 'primary',

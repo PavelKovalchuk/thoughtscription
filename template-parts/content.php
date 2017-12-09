@@ -29,7 +29,7 @@
 
                 <?php endif; ?>
 
-                <div class="row post_container_inner">
+                <div class="row no-gutters post_container_inner">
 
                     <?php get_siblings_links(); ?>
 

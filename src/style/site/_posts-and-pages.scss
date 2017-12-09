@@ -14,8 +14,13 @@ p{
   color: $black;
 }
 
+.ts_bg_highlighter {
+  background-color:#aae4fe;
+}
+
+
 blockquote{
-  font-family: $font-family-playfair-italic;
+  font-family: 'Georgia';
   font-size: 2rem;
   line-height: 1.2;
   color: $ts_grey_blockquote;
@@ -208,7 +213,7 @@ blockquote{
     }
 
     &.siblings_item_prev{
-      left: -35px;
+      left: -55px;
      /* -moz-transform: rotate(-90deg); !* Для Firefox *!
       -ms-transform: rotate(-90deg); !* Для IE *!*/
      /* -webkit-transform: rotate(-90deg); !* Для Safari, Chrome, iOS *!
@@ -222,7 +227,7 @@ blockquote{
     }
 
     &.siblings_item_next{
-      right: -35px;
+      right: -40px;
      /* -moz-transform: rotate(90deg); !* Для Firefox *!
       -ms-transform: rotate(90deg); !* Для IE *!
       -webkit-transform: rotate(90deg); !* Для Safari, Chrome, iOS *!
@@ -401,6 +406,12 @@ html, body { height: 100%; }
 .site-content{
 
   margin-top: $site_nav_height;
+
+  @include media-breakpoint-down(xs) {
+
+    margin-top: $site_nav_mobile;
+
+  }
     
 }
 
@@ -419,7 +430,7 @@ main {
 
 
 .section_title {
-    margin: 0px 0 $site_title_margin;
+    margin: 0px 0 $site_title_margin_sm;
 
     font-size: 4.5rem;
     line-height: 1.1;
@@ -437,11 +448,12 @@ main {
 
     @include media-breakpoint-down(md) {
       font-size: 2.5rem;
-      margin: 0px 0 $site_title_margin_sm;
+      margin: 0px 0 $site_title_margin_xs;
     }
 
     @include media-breakpoint-down(sm) {
         font-size: 2rem;
+        //margin: 0px 0 $site_title_margin_xs;
     }
 
     @include media-breakpoint-down(xs) {
@@ -494,7 +506,7 @@ main {
 .hero_btn{
     
     position: absolute;
-    top: 0;
+    top: 80px;
     left: 0;
     right: 0;
     width: 277px;
@@ -503,9 +515,14 @@ main {
     transition: top 0.5s ease-in;
     z-index: 9;
 
+    @include media-breakpoint-down(lg) {
+      top: 40px;
+    }
+
 
     @include media-breakpoint-down(md) {
 
+      top: 25px;
       width: 215px;
       margin: $ts_standart_padding_sm auto 0;
 
@@ -595,7 +612,15 @@ main {
   @include media-breakpoint-down(md) {
     padding-bottom: $site_title_margin_sm;
     width: 100%;
+
   }
+
+  &.inspire_item_inner_4
+  ,&.inspire_item_inner_5
+  ,&.inspire_item_inner_6{
+    padding-bottom: 0;
+  }
+
 }
 
 .inspire_text{

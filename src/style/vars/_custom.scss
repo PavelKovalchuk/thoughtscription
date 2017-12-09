@@ -6,7 +6,8 @@ $ts_standart_padding_sm: 15px;
 $font-family-playfair: "Playfair_Display-Regular", Georgia, "Times New Roman", Times, serif ;
 $font-family-open-sans-bold: "OpenSans-Bold", Georgia, "Times New Roman", Times, serif;
 $font-family-playfair-bold: "Playfair_Display-Bold", Georgia, "Times New Roman", Times, serif;
-$font-family-playfair-italic: "Playfair_Display-BoldItalic", Georgia, "Times New Roman", Times, serif ;
+/*$font-family-playfair-italic: "Playfair_Display-BoldItalic", Georgia, "Times New Roman", Times, serif ;*/
+$font-family-lora: "Lora", Georgia, "Times New Roman", Times, serif;
 
 $font-family-fontawesome: "fontawesome";
 
@@ -16,10 +17,12 @@ $site_logo_height: 42px;
 
 $site_nav_height: 65px;
 $site_nav_height_sticky: 50px;
+$site_nav_mobile: 145px;
 
 $site_title_margin: 80px;
 $site_title_margin_lg: 50px;
 $site_title_margin_sm: 30px;
+$site_title_margin_xs: 15px;
 
 /* Hero image */
 $home_hero_image_main: "build/img/bg_home.jpg";

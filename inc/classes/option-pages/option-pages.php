@@ -190,9 +190,9 @@ class OptionPages{
 								),
 								array(
 									'id'	=> 'slider_number_items',
-									'title'	=> 'Number of poststo displayr',
+									'title'	=> 'Number of posts to display',
 									'type'	=> 'text',
-									'description' => 'Max number of posts',
+									'description' => 'Max number of posts to display in post slider',
 									'value' => '4',
 								),
 

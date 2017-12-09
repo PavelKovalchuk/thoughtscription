@@ -4,9 +4,11 @@
 
 }
 
+
 .blog_top_cat_item{
   color: $ts_playfair_grey_strong;
   font-style: italic;
+  font-family: $font-family-lora;
   font-size: 1.5rem;
   text-align: center;
   text-decoration: none;
@@ -76,12 +78,22 @@
 
   }
 
+  &:last-of-type{
+
+    &::after{
+
+      display: none;
+
+    }
+
+  }
+
 }
 
 .blog_top_cat_nav{
   padding: $ts_standart_padding 0;
-  border-bottom: 1px solid $ts_playfair_grey_strong;
-  border-top: 1px solid $ts_playfair_grey_strong;
+  border-bottom: 1px solid $ts_grey_4;
+  border-top: 1px solid $ts_grey_4;
 }
 
 .navbar_toggler_cat{

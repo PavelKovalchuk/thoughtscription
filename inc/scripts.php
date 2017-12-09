@@ -2,8 +2,12 @@
 /**
  * Enqueue scripts and styles.
  */
+add_action( 'wp_enqueue_scripts', 'ts_scripts', 200 );
+add_action( 'admin_print_styles', 'ts_admin_menu_assets' );
+
+
 function ts_scripts() {
-	wp_enqueue_style( 'ts-style', get_stylesheet_directory_uri() . '/style.css', array(), '0.0.1' );
+	wp_enqueue_style( 'ts-style', get_stylesheet_directory_uri() . '/style.css', array(), filemtime( get_theme_file_path('/style.css')) );
 
     wp_deregister_script( 'jquery' );
 
@@ -41,4 +45,7 @@ function ts_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'ts_scripts', 200 );
+
+function ts_admin_menu_assets() {
+	wp_enqueue_style( 'TSadminStyle', get_stylesheet_directory_uri() . '/css/adminStyle.css' );
+}

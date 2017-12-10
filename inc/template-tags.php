@@ -139,6 +139,6 @@ function add_favicon_harrix() {
 	<meta name="apple-mobile-web-app-title" content="<? echo $title;?>">
 	<meta name="application-name" content="<? echo $title;?>">
 	<meta name="msapplication-config" content="/favicon/browserconfig.xml?v=4">
-	<meta name="theme-color" content="#03a9f5">
+	<!--<meta name="theme-color" content="#03a9f5">-->
 	<?
 }

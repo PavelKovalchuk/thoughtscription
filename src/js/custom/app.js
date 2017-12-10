@@ -24,14 +24,6 @@ jQuery(document).ready(function($){
 
     //enableLeftScrollNav();
 
-    menuTitleFixing();
-
-    $(window).on('resize', function(){
-        menuTitleFixing();
-    });
-
-
-
 
 
 
@@ -201,41 +193,7 @@ jQuery(document).ready(function($){
 
     }
 
-    function menuTitleFixing(){
 
-        var items = $('.nav-link');
-
-        if( !items.length){
-
-            return false;
-        }
-
-        if($(window).width() < 575){
-
-            items.each(function( indx, element) {
-
-                var text = $(element).text().split(" ").join("<br>");
-                $(element).html(text);
-
-            });
-
-        }else{
-
-            /*items.each(function( indx, element) {
-
-                var text = $(element).text();
-                var textNew = text.replace("<br>", "/s");
-                $(element).html(textNew);
-
-            });*/
-
-        }
-
-
-
-
-
-    }
 
 
 

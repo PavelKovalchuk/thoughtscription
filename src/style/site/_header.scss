@@ -275,7 +275,22 @@
                 padding: 5px 0 10px;
                 text-align: center;
                 width: 100%;
+                height: 100%;
                 transition: padding $ts-standart-tansition-duration ease-out;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .nav-link-inner{
+
+                    width: 50px;
+                    word-wrap: break-word;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+
+                }
+
             }
         }
 

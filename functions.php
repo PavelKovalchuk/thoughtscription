@@ -58,7 +58,7 @@ if ( ! function_exists( 'gm_wp_setup' ) ) :
 
         add_image_size( 'post-full-image-cropped', 1500, 600, true );
 
-	    add_image_size( 'post-full-image', 1500, 600, false );
+	    add_image_size( 'post-full-image', 1560, 600, false );
 
 	    add_image_size( 'post-large-imagee', 1000, 400, true );
 
@@ -116,7 +116,19 @@ endif;
 add_filter( 'image_size_names_choose', 'gm_custom_sizes' );*/
 
 
+function get_responsive_image(){
 
+	$html = '<img src="banner.jpg" 
+	srcset="banner.jpg 1280w,
+	banner-300x90.jpg 300w,
+	banner-768x231.jpg 768w,
+	banner-1024x308.jpg 1024w" 
+	sizes="(max-width: 1280px) 100vw, 1280px"
+	alt="Front page banner alt text">';
+
+	return $html;
+
+}
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.

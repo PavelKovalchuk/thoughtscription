@@ -11,6 +11,8 @@
     .navbar-collapse{
 
         justify-content: flex-end;
+        display: flex;
+        width: 100%;
 
         @include media-breakpoint-down(xs) {
 
@@ -56,6 +58,7 @@
         @include media-breakpoint-down(xs) {
             padding-top: 25px;
             margin: auto;
+            transition: padding $ts-standart-tansition-duration ease-out;
         }
     }
 
@@ -89,7 +92,8 @@
 
             @include media-breakpoint-down(xs) {
 
-                justify-content: space-between;
+                //justify-content: space-between;
+                width: 100%;
 
             }
         }
@@ -104,6 +108,7 @@
                     @include media-breakpoint-down(xs) {
 
                         color: $black;
+                        width: 100%;
 
                         &:before{
 
@@ -195,6 +200,13 @@
 
                 flex-grow: 1;
                 max-width: 100%;
+                width: 33.33%;
+
+                height: 75px;
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                transition: height $ts-standart-tansition-duration ease-out;
 
             }
         }
@@ -259,8 +271,11 @@
             }
 
             @include media-breakpoint-down(xs) {
-                padding: 25px 0 25px;
+                //padding: 25px 0 25px;
+                padding: 5px 0 10px;
                 text-align: center;
+                width: 100%;
+                transition: padding $ts-standart-tansition-duration ease-out;
             }
         }
 
@@ -280,11 +295,15 @@
         background-color: $white;
         border-bottom: 1px solid $menu_border_color;
 
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+
         @include media-breakpoint-down(md) {
             height: $site_nav_height_sticky;
         }
 
-        @include media-breakpoint-down(md) {
+        @include media-breakpoint-down(xs) {
             height: auto;
         }
 
@@ -303,6 +322,30 @@
         @include media-breakpoint-down(xs) {
             background-color: $white;
             overflow: visible;
+
+
+            .navbar-brand{
+
+                padding-top: 0;
+                transition: padding $ts-standart-tansition-duration ease-out;
+
+            }
+
+            &.navbar{
+
+                .nav-item{
+                    height: 50px;
+                    transition: height $ts-standart-tansition-duration ease-out;
+                }
+
+                .nav-link{
+
+                    padding: 5px 0 10px;
+                    transition: padding $ts-standart-tansition-duration ease-out;
+
+                }
+
+            }
 
         }
 

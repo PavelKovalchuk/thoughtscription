@@ -317,7 +317,9 @@ function get_template_article_preview($post_item, $classes, $btn){
 
                         <div class="col-lg-12 blog_item_title_outer">
                             <h5 class="blog_item_title">
-                                <?php echo $post_item->post_title; ?>
+                                <a href="<?php echo get_permalink($post_item->ID); ?>" class="blog_item_title">
+                                    <?php echo $post_item->post_title; ?>
+                                </a>
                             </h5>
                         </div>
 
@@ -363,6 +365,7 @@ function get_template_article_preview_string($post_item, $btn = false){
 	$cat_data = get_the_category( $post_item->ID );
 	$cat_name = $cat_data[0]->cat_name;
 	$btn = ( $btn ) ? $btn :  get_option( '_thoughtscription_option_page_options' )['read_more_text'];
+	$link = get_permalink($post_item->ID);
 
 
     $html = "<div class='row no-gutters blog_item'>";
@@ -394,7 +397,7 @@ function get_template_article_preview_string($post_item, $btn = false){
         //Category block end
 
         //Title block start
-        $html .= "<div class='col-lg-12 blog_item_title_outer'><h5 class='blog_item_title'>$post_item->post_title</h5></div>";
+        $html .= "<div class='col-lg-12 blog_item_title_outer'><h5 class='blog_item_title'><a href='$link' class='blog_item_title_link'>$post_item->post_title</a></h5></div>";
         //Title block end
 
         //Excerpt block start
@@ -409,7 +412,7 @@ function get_template_article_preview_string($post_item, $btn = false){
 
         $html .= "<div class='d-flex col-lg-12 align-items-end h-100 animate_link_outer blog_item_link_outer'>";
 
-            $html .= "<a href='" . get_permalink($post_item->ID) . "' class='btn animate_link animate_link_blue blog_item_link' >";
+            $html .= "<a href='$link' class='btn animate_link animate_link_blue blog_item_link' >";
 
                 $html .= "<span class='animate_link_text blog_item_link_text'>";
 

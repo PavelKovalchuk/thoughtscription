@@ -12,7 +12,7 @@ get_header(); ?>
 
     <main id="main" class="site-content"  role="main">
         <div class="container">
-            <div class="row ">
+            <div class="row no-gutters">
 
                          <?php while ( have_posts() ) : the_post();
 

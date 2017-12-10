@@ -147,6 +147,17 @@
   font-weight: 600;
   margin: 0;
   padding: 0 0 $ts_standart_padding_sm 0;
+
+  .blog_item_title_link{
+
+    color: inherit;
+
+    &:hover{
+      color: $ts_blue;
+      text-decoration: none;
+    }
+
+  }
 }
 
 

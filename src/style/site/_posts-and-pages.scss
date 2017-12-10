@@ -55,27 +55,30 @@ blockquote{
   font-family: $font-family-playfair-bold;
   color: $ts_playfair_grey;
   background-color: $white;
-  padding-top: $site_title_margin;
+  padding-top: $site_title_margin_lg;
   text-align: left;
   font-weight: bold;
   margin-bottom: $site_title_margin_sm;
 
   @include media-breakpoint-down(lg) {
     font-size: 3rem;
-    padding-top: $site_title_margin_sm;
+    //padding-top: $site_title_margin_sm;
   }
 
   @include media-breakpoint-down(md) {
     font-size: 2.5rem;
     margin: 0px 0 $site_title_margin_sm;
+    padding-top: $site_title_margin_sm;
   }
 
   @include media-breakpoint-down(sm) {
     font-size: 2rem;
+    padding-top: $site_title_margin_xs;
   }
 
   @include media-breakpoint-down(xs) {
     font-size: 1.5rem;
+
   }
 
 
@@ -117,6 +120,53 @@ blockquote{
   }
 }
 
+
+.single-post{
+
+  .post-thumbnail{
+
+    @include media-query(1500px, 'max-width') {
+
+      position: relative;
+      height: $post_image_height_notebook;
+      overflow: hidden;
+
+      .post_image{
+
+        position: absolute;
+        left: 0;
+        top: 0;
+
+      }
+
+    }
+
+    @include media-query(1200px, 'max-width') {
+
+      height: $post_image_height_notebook_sm;
+
+    }
+
+    @include media-breakpoint-down(md) {
+
+      //height: $post_image_height_notebook_tablet;
+     // height: -webkit-fill-available;
+      height: auto;
+
+      .post_image{
+
+        position: relative;
+        height: 100%;
+
+      }
+
+    }
+
+  }
+
+}
+
+
 .post_image{
   margin: 0 auto;
 
@@ -128,8 +178,14 @@ blockquote{
 
     margin: -$site_title_margin_lg auto 0;
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
+
       margin: -$site_title_margin_sm auto 0;
+
+    }
+
+    @include media-breakpoint-down(sm) {
+      margin: -$site_title_margin_xs auto 0;
     }
 
   }
@@ -163,6 +219,7 @@ blockquote{
   height: calc(100% - 400px);
   width: 100%;
   padding-top: 500px;
+  -ms-overflow-x: hidden;
 
   @include media-breakpoint-down(sm) {
     /*position: absolute;
@@ -406,6 +463,12 @@ html, body { height: 100%; }
 .site-content{
 
   margin-top: $site_nav_height;
+
+  @include media-breakpoint-down(md) {
+
+    margin-top: $site_nav_height_sticky;
+
+  }
 
   @include media-breakpoint-down(xs) {
 

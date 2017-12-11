@@ -61,9 +61,13 @@ get_header();
 
                             <div class="row no-gutters">
 
-                                <div class="col-lg-6 author-left">
+                                <div class="col-md-6 author-left">
 
                                     <div class="author_profile_img_outer">
+
+                                        <p class="author_position">
+		                                    <?php echo $data['author_position']; ?>
+                                        </p>
 
                                         <img src="<?php echo $data['author_photo_1']['url']; ?>" class="author_content_image author_profile" alt="<?php echo $data['author_photo_1']['alt']; ?>" />
 
@@ -90,14 +94,14 @@ get_header();
 
                                 </div>
 
-                                <div class="col-lg-6 author-right">
+                                <div class="col-md-6 author-right">
 
                                     <div class="data_shifted_left">
 
 
-                                        <p class="author_position">
-		                                    <?php echo $data['author_position']; ?>
-                                        </p>
+                                        <!--<p class="author_position">
+		                                    <?php /*echo $data['author_position']; */?>
+                                        </p>-->
 
                                         <h3 class="author_name">
 		                                    <?php echo $data['author_name']; ?>

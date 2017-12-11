@@ -57,7 +57,7 @@
 
         @include media-breakpoint-down(xs) {
             padding-top: 25px;
-            margin: auto;
+            //margin: auto;
             transition: padding $ts-standart-tansition-duration ease-out;
         }
     }

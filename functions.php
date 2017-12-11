@@ -50,15 +50,19 @@ if ( ! function_exists( 'gm_wp_setup' ) ) :
         add_image_size( 'post-main-image', 973, 500, true );
 	    add_image_size( 'post-carousel-image', 370, 240, true );
 
+	    add_image_size( 'post-tablet-image', 1000, 500, true );
+
+	    add_image_size( 'post-mobile-image', 600, 400, true );
+
         //add_image_size( 'size-645-459', 645, 459, true );
         //add_image_size( 'size-318-459', 318, 459, true );
         //add_image_size( 'big-973-500', 972, 499, true );
 
 	    add_image_size( 'popular-post-image', 230, 121, true );
 
-        add_image_size( 'post-full-image-cropped', 1500, 600, true );
+        add_image_size( 'post-full-image-cropped', 1530, 600, true );
 
-	    add_image_size( 'post-full-image', 1560, 600, false );
+	    add_image_size( 'post-full-image', 1530, 600, false );
 
 	    add_image_size( 'post-large-imagee', 1000, 400, true );
 

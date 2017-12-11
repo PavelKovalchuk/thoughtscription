@@ -25,8 +25,15 @@
 	                    $image_url = wp_get_attachment_image_url( $image_id, 'post-full-image-cropped');
 	                    $image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true);
 	                    ?>
-                        <img src="<?php echo $image_url; ?>"
-                             class="col-lg-12 rounded post_image wp-post-image" alt="<?php echo $image_alt; ?>">
+
+
+                        <picture>
+                            <source media="(min-width: 992px)" srcset="<?php echo $image_url; ?>">
+                            <source media="(min-width: 600px)" srcset="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'post-tablet-image' );  ?>">
+                            <source media="(min-width: 300px)" srcset="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'post-mobile-image' );  ?>">
+                            <img src="<?php echo $image_url; ?>" class="col-lg-12 rounded post_image wp-post-image" alt="<?php echo $image_alt; ?>" >
+                        </picture>
+
 
                     </div><!--  .post-thumbnail -->
                     <?php else : ?>

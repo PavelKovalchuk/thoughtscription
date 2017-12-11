@@ -126,7 +126,7 @@ add_action( 'save_post',     'strappress_category_transient_flusher' );
 
 
 
-add_action('wp_head','add_favicon_harrix');
+//add_action('wp_head','add_favicon_harrix');
 function add_favicon_harrix() {
 	$title = get_option('blogname');
 	?>

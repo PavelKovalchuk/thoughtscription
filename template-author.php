@@ -19,7 +19,7 @@ get_header();
 
         <div class="container">
 
-            <div class="row author_top_outer">
+            <div class="row no-gutters author_top_outer">
                 <div class="col-lg-12">
 
                     <div class="author_top_image_outer">
@@ -27,7 +27,14 @@ get_header();
 
                         <div class="author_top_image_bg"></div>
 
-                        <img src="<?php echo $data['page_hero_image_main']['url']; ?>" class="author_top_image" alt="<?php echo $data['page_hero_image_main']['alt']; ?>"/>
+                        <picture>
+                            <source media="(min-width: 992px)" srcset="<?php echo $data['page_hero_image_main']['sizes']['post-full-image-cropped']; ?>">
+                            <source media="(min-width: 600px)" srcset="<?php echo  $data['page_hero_image_main']['sizes']['post-tablet-image'];  ?>">
+                            <source media="(min-width: 300px)" srcset="<?php echo $data['page_hero_image_main']['sizes']['post-mobile-image'];  ?>">
+                            <img src="<?php echo $data['page_hero_image_main']['sizes']['post-full-image-cropped']; ?>" class="author_top_image" alt="<?php echo $data['page_hero_image_main']['alt']; ?>" >
+                        </picture>
+
+                        <!--<img src="<?php /*echo $data['page_hero_image_main']['url']; */?>" class="author_top_image" alt="<?php /*echo $data['page_hero_image_main']['alt']; */?>"/>-->
 
                         <div class="author_top_text_outer">
                             <h2 class="author_top_text_question">
@@ -55,7 +62,7 @@ get_header();
 
                     <div class="row no-gutters author_content_container">
 
-	                    <?php  get_social_sharing_buttons(); ?>
+                        <div class="author_share"><?php  get_social_sharing_buttons(); ?></div>
 
                         <div class="author_content">
 
@@ -68,6 +75,11 @@ get_header();
                                         <p class="author_position">
 		                                    <?php echo $data['author_position']; ?>
                                         </p>
+
+                                        <h3 class="author_name author_name_mobile">
+		                                    <?php echo $data['author_name']; ?>
+		                                    <?php echo $data['author_surname']; ?>
+                                        </h3><?php //var_dump( $data['author_photo_1']); ?>
 
                                         <img src="<?php echo $data['author_photo_1']['url']; ?>" class="author_content_image author_profile" alt="<?php echo $data['author_photo_1']['alt']; ?>" />
 
@@ -103,7 +115,7 @@ get_header();
 		                                    <?php /*echo $data['author_position']; */?>
                                         </p>-->
 
-                                        <h3 class="author_name">
+                                        <h3 class="author_name author_name_desktop">
 		                                    <?php echo $data['author_name']; ?>
 		                                    <?php echo $data['author_surname']; ?>
                                         </h3>

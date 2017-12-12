@@ -37,7 +37,7 @@
                                     <div class="d-flex justify-content-start navbar_brand_outer">
 
                                         <a class="navbar-brand" href="<?php echo get_home_url(); ?>">
-                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/build/img/logo_ts-min.jpg" class="site_logo" alt="Site logo">
+                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/build/img/site_logo-min.png" class="site_logo" alt="Site logo">
                                         </a>
 
                                     </div>

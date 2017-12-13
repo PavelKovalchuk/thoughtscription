@@ -12,9 +12,10 @@ get_header();
 <main id="content" class="site-content" role="main">
 <div class="wrapper" id="wrapper-bloh">
     <?php //the_breadcrumb(); ?>
-    
 
-    <section class="container-fluid author_page">
+
+   <!-- <section class="container-fluid author_page">-->
+    <section class="author_page">
 
 
         <div class="container">
@@ -140,14 +141,77 @@ get_header();
 
                             </div>
 
+                            <div class="row no-gutters author_marketing_outer ">
+                                <!--<div class="author-helper"></div>-->
+                                <div class="col-lg-12 author_marketing_inner">
+
+                                    <div class="row no-gutters author_marketing_container">
+
+                                        <div class="col-md-6 marketing_left">
+
+                                            <div class="row marketing_title_row">
+                                                <div class="col-md-12">
+
+                                                    <h3 class="marketing_title">
+								                        <?php echo $data['marketing_blog_title']; ?>
+                                                    </h3>
+
+                                                    <h4 class="marketing_title_second">
+								                        <?php echo $data['marketing_blog_title_second']; ?>
+                                                    </h4>
+
+                                                    <p class="marketing_title_description">
+								                        <?php echo $data['marketing_blog_title_description']; ?>
+                                                    </p>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-md-6 marketing_right">
+
+                                            <div class="row marketing_text_row">
+                                                <div class="col-md-12">
+
+                                                    <p class="marketing_text_1">
+								                        <?php echo $data['marketing_blog_text_1']; ?>
+                                                    </p>
+
+                                                    <p class="marketing_text_2">
+								                        <?php echo $data['marketing_blog_text_2']; ?>
+                                                    </p>
+
+                                                    <p class="marketing_text_3">
+								                        <?php echo $data['marketing_blog_text_3']; ?>
+                                                    </p>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
 
 
                         </div>
+
+
 
                     </div>
 
                 </div>
             </div>
+
+
+
+
+
+
+
+
 
 
 

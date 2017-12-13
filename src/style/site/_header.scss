@@ -100,6 +100,13 @@
 
         .nav-item{
 
+            &.menu-item-last{
+
+                .nav-link{
+                    //padding-right: 0;
+                }
+            }
+
             &.active{
 
                 .nav-link{
@@ -216,6 +223,8 @@
             position: relative;
             text-align: center;
             padding: 0.5rem 1rem 0.5rem;
+
+
 
             &:before {
                 content: "";

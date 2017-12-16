@@ -153,6 +153,30 @@ class OptionPages{
 						),
 
 						array(
+							'id'	=> 'recaptcha_data',
+							'title'	=> 'Recaptcha data ',
+							'fields'		=> array(
+
+								array(
+									'id'	=> 'recaptcha_key',
+									'title'	=> 'Recaptcha key',
+									'type'	=> 'text',
+									'description' => '',
+									'value' => '',
+								),
+
+								array(
+									'id'	=> 'recaptcha_secret_key',
+									'title'	=> 'Recaptcha secret key',
+									'type'	=> 'text',
+									'description' => '',
+									'value' => '',
+								),
+
+							),
+						),
+
+						array(
 							'id'	=> 'posts_template_data',
 							'title'	=> 'Posts option ',
 							'fields'		=> array(

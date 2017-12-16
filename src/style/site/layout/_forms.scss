@@ -1,0 +1,61 @@
+
+.form-header{
+
+  font-size: 3rem;
+  font-family: $font-family-playfair;
+  line-height: 1.2;
+  text-align: center;
+  color: $ts_black;
+  margin-bottom: $site_title_margin_sm;
+
+  @include media-breakpoint-down(sm) {
+
+    font-size: 2.0rem;
+
+  }
+
+}
+
+.form_group_ts{
+
+  margin-top: 1rem;
+
+}
+
+.g_recaptcha_outer{
+
+  @include media-breakpoint-down(lg) {
+
+    margin-bottom: 1rem;
+
+  }
+
+}
+
+.form_btn_outer{
+
+  @include media-breakpoint-down(lg) {
+
+    margin-top: 1rem;
+
+  }
+
+}
+
+.form-control {
+
+  &.invalid{
+
+    color: $ts_error;
+    border-color: $ts_error;
+
+  }
+
+}
+
+.js_message_wrapper{
+    margin-top: .25rem;
+  font-size: .875rem;
+  color: $ts_error;
+}
+

@@ -36,8 +36,15 @@ function ts_scripts() {
 			'max_page' => $page_number_max
 		) );
 
- 	    //wp_enqueue_script( 'my_loadmore' );
+
 	}
+
+	if( is_page( 11 ) ){
+
+		wp_register_script( 'captcha', 'https://www.google.com/recaptcha/api.js#asyncload', array(), '2', false);
+		wp_enqueue_script( 'captcha' );
+	}
+
 
 	wp_enqueue_script( 'ts-js', get_template_directory_uri() . '/build/js/main.min.js', array(), filemtime( get_theme_file_path('/build/js/main.min.js')), true );
 
@@ -49,3 +56,15 @@ function ts_scripts() {
 function ts_admin_menu_assets() {
 	wp_enqueue_style( 'TSadminStyle', get_stylesheet_directory_uri() . '/css/adminStyle.css' );
 }
+
+// Async load
+function ts_async_scripts($url)
+{
+	if ( strpos( $url, '#asyncload') === false )
+		return $url;
+	else if ( is_admin() )
+		return str_replace( '#asyncload', '', $url );
+	else
+		return str_replace( '#asyncload', '', $url )."' async='async";
+}
+add_filter( 'clean_url', 'ts_async_scripts', 11, 1 );

@@ -67,7 +67,7 @@
 
 
   font-style: italic;
-  color: $ts_playfair_grey;
+  color: $white;
   text-align: center;
   font-family: $font-family-playfair;
 
@@ -132,6 +132,7 @@
   margin: -$site_title_margin_lg auto 0;
   width: 90%;
   max-width: $author_content_width;
+  -ms-overflow-x: hidden;
 
 
 
@@ -284,8 +285,9 @@
 
     &.author_name_mobile{
       display: block;
-      text-align: center;
-      margin: $ts_standart_padding_sm 0 $ts_standart_padding_sm 0;
+      text-align: left;
+      padding-right: 20%;
+      margin: -10px 0 $ts_standart_padding_sm 0;
     }
 
   }
@@ -440,6 +442,11 @@
 .author_blog_aim_quote{
 
   margin-right: 30px;
+  font-family: $font-family-playfair-italic;
+
+  @include media-query(1400px, 'max-width') {
+    font-size: 1.5rem;
+  }
 
   @include media-breakpoint-down(lg) {
 
@@ -457,17 +464,28 @@
 
 /*** Marketing block***/
 
+
+
 .author_marketing_outer{
 
-  padding-top: $site_title_margin;
-  padding-bottom: $site_title_margin;
+  /*padding-top: $site_title_margin_lg;
+  padding-bottom: $site_title_margin_lg;*/
   background-color: $ts_grey_5;
   position: relative;
+
+
+  @include media-breakpoint-down(lg) {
+
+   margin-top: $site_title_margin_sm;
+
+  }
 
   &:before{
     content: '';
     background-color: $ts_grey_5;
-    width: calc(100vw - 60px - 14px);
+
+    //width: calc(100vw - 60px - 14px);
+    width: calc( 1560px - 30px);
     position: absolute;
     margin: auto;
     top: 0;
@@ -475,10 +493,12 @@
     z-index: -1;
     left: 50%;
     -webkit-transform: translateX(-50%);
+   // -ms-transform: none;
     transform: translateX(-50%);
 
+
     @include media-query(1560px, 'max-width') {
-      width: calc(100vw - 60px );
+      width: calc(100vw - 30px );
     }
 
     @include media-breakpoint-down(lg) {
@@ -495,6 +515,7 @@
 
     @include media-breakpoint-down(sm) {
 
+      //content: none;
       width: calc( 540px - 30px );
 
     }
@@ -512,29 +533,71 @@
 
 .marketing_title{
 
-  font-size: 90px;
+  //font-size: 90px;
+  font-size: 5.6rem;
   font-family: $font-family-playfair;
   color: $ts_playfair_grey;
   font-weight: bold;
   line-height: 1.2;
   text-align: left;
   margin-bottom: $ts_standart_padding;
+  margin-top: -25px;
+
+
+  @include media-query(1400px, 'max-width') {
+    font-size: 5.3rem;
+  }
+
+  @include media-breakpoint-down(lg) {
+
+    margin-top: 0px;
+    font-size: 3rem;
+    text-align: center;
+
+  }
+
+  @include media-breakpoint-down(sm) {
+
+    font-size: 2.5rem;
+    margin-bottom: $ts_standart_padding_sm;
+
+  }
 
 }
 
 .marketing_title_second{
 
-  font-size: 50px;
+  //font-size: 50px;
+  font-size: 3rem;
   font-family: $font-family-playfair;
   color: $ts_playfair_grey;
-  line-height: 2;
+  line-height: 1;
   text-align: center;
+  margin-bottom: $ts_standart_padding;
+
+  @include media-query(1400px, 'max-width') {
+    font-size: 2rem;
+  }
+
+  @include media-breakpoint-down(lg) {
+
+    font-size: 2rem;
+
+  }
+
+  @include media-breakpoint-down(sm) {
+
+    font-size: 1.8rem;
+    margin-bottom: $ts_standart_padding_sm;
+
+  }
 
 }
 
 .marketing_title_description{
 
-  font-size: 18px;
+  //font-size: 18px;
+  font-size: 1rem;
   text-align: right;
   padding-right: $site_title_margin;
 
@@ -551,19 +614,66 @@
   margin-left: $marketing_text_margin_left;
   margin-bottom: 0;
 
+  @include media-breakpoint-down(lg) {
+
+    margin-left: $marketing_text_margin_lg;
+
+  }
+
+  @include media-breakpoint-down(xs) {
+
+    padding: 25px 35px 15px 15px;
+    margin-left: $marketing_text_margin_sm;
+    margin-right: $marketing_text_margin_xs;
+
+  }
+
+  @include media-query(380px, 'max-width') {
+
+    margin-left: 10px;
+    margin-right: 10px;
+
+  }
+
 }
 
 
 .marketing_text_2{
 
-  font-size: 32px;
+  //font-size: 32px;
+  font-size: 2rem;
   font-family: $font-family-playfair-italic;
   color: rgb(76, 76, 76);
-  line-height: 1.2;
+  line-height: 1.3;
   text-align: left;
   padding: 30px 35px 35px 40px;
   background-color: $white;
   margin-bottom: 0;
+
+  @include media-query(1400px, 'max-width') {
+    font-size: 1.5rem;
+  }
+
+  @include media-breakpoint-down(lg) {
+
+    font-size: 1.5rem;
+
+  }
+
+  @include media-breakpoint-down(xs) {
+
+    padding: 15px 25px 25px 20px;
+    margin-left: $marketing_text_margin_xs;
+    margin-right: $marketing_text_margin_xs;
+
+  }
+
+  @include media-query(380px, 'max-width') {
+
+    margin-left: 30px;
+    margin-right: 10px;
+
+  }
 
 }
 

@@ -28,3 +28,5 @@
 //= ../../bower_components/imagesloaded/imagesloaded.pkgd.min.js
 
 //= custom/shuffle_init.js
+
+//= custom/forms.js

@@ -32,7 +32,7 @@
 
   &:before{
 
-    background-image:url(build/img/arrow-ok.png);
+    background-image:url(build/img/ts_arrow_blue-min.png);
     background-repeat:no-repeat;
     background-position:center center;
     content:"";
@@ -139,6 +139,58 @@
     border-color: $ts_blue;
   }
 
+}
+
+.ts_btn_white{
+
+  color: $ts_blue;
+  border-color: $ts_blue;
+  position: relative;
+  font-size: 20px;
+  //line-height: 1.75;
+
+
+  &:hover{
+    cursor: pointer;
+    background-color: $white;
+    border-color: $ts_blue;
+    color: $ts_blue;
+  }
+
+}
+
+
+
+
+
+.btn-ts-arrow{
+
+  padding: 25px 25px 24px 110px;
+
+  border-radius: 0;
+
+  &:before{
+
+    background-image:url(build/img/ts_arrow_blue-min.png);
+    background-repeat:no-repeat;
+    background-position:center center;
+    content:"";
+    width: 50px;
+    height: 12px;
+    position:absolute;
+    left: 0px;
+    top:50%;
+    margin-top: -8px;
+    margin-left: 25px;
+
+
+  }
+
+  @include media-breakpoint-down(sm) {
+
+    width: 100%;
+
+  }
 }
 
 

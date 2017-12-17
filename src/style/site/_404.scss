@@ -1,0 +1,74 @@
+.not_found_page{
+
+  background-color: $ts_grey_green;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  @include media-breakpoint-down(sm) {
+
+    padding-top: $site_title_margin_lg;
+    padding-bottom: $site_title_margin_lg;
+
+
+  }
+
+}
+
+.not_found_hero_img{
+
+  margin-bottom: 40px;
+
+}
+
+.not_found_page_title{
+
+  font-size: 4rem;
+  font-family: $font-family-playfair;
+  color: $ts_playfair_grey;
+  font-weight: bold;
+  line-height: 1.5;
+  text-align: center;
+
+  @include media-breakpoint-down(md) {
+
+    font-size: 3rem;
+    line-height: 1.2;
+
+  }
+
+  @include media-breakpoint-down(xs) {
+    font-size: 2rem;
+  }
+
+}
+
+.not_found_page_text{
+
+  font-size: 1.7rem;
+  font-family: $font-family-lora;
+  color: $ts_playfair_grey_strong;
+  font-style: italic;
+  text-align: center;
+
+  @include media-breakpoint-down(xs) {
+
+    font-size: 1.2rem;
+
+  }
+
+
+}
+
+.not_found_page_link_img{
+
+  transform: scale(1);
+  transition: all .6s ease-in-out;
+
+  &:hover{
+
+    transform: scale(1.1);
+    transition: all .2s ease-in-out;
+
+  }
+
+}

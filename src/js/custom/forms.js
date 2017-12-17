@@ -75,7 +75,7 @@
 
                 }
 
-                console.log('options.status', options.status);
+                //console.log('options.status', options.status);
 
                 if(options.status == true && options.dataCaptcha.length > 0){
                     var data = {
@@ -99,7 +99,6 @@
 
         var __performSend = function(data, form){
 
-            console.log('__performSend');
 
             jQuery.ajax({
                 url: SiteParams.ajaxurl,
@@ -108,7 +107,7 @@
                 type: 'POST',
                 success: function(response){
 
-                    console.log(response);
+                    //console.log(response);
 
                     if(response.status == 'ok'){
 

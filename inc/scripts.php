@@ -45,8 +45,12 @@ function ts_scripts() {
 		wp_enqueue_script( 'captcha' );
 	}
 
-
 	wp_enqueue_script( 'ts-js', get_template_directory_uri() . '/build/js/main.min.js', array(), filemtime( get_theme_file_path('/build/js/main.min.js')), true );
+
+	wp_localize_script( 'ts-js', 'SiteParams', array(
+		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
+
+	) );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

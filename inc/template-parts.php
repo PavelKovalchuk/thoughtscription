@@ -4,6 +4,15 @@ function get_form($form_class){
 
     ?>
 
+    <div class="row form_ts_row form_success_message_outer" id="js-form_success_message_outer">
+
+            <div class="col-lg-12">
+
+                <p class="form_success_message" id="js-form_success_message"></p>
+
+            </div>
+    </div>
+
     <form class="form_ts_outer <?php echo $form_class; ?>" id="contact_form">
 
         <div class="row form_ts_row">

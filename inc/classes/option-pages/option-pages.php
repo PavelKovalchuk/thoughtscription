@@ -177,6 +177,30 @@ class OptionPages{
 						),
 
 						array(
+							'id'	=> 'form_data',
+							'title'	=> 'Form data ',
+							'fields'		=> array(
+
+								array(
+									'id'	=> 'form_success_message',
+									'title'	=> 'Form success message',
+									'type'	=> 'textarea',
+									'description' => 'Appears after success sending message',
+									'value' => 'Thank you',
+								),
+
+								array(
+									'id'	=> 'destination_email',
+									'title'	=> 'Destination email',
+									'type'	=> 'text',
+									'description' => '',
+									'value' => '',
+								),
+
+							),
+						),
+
+						array(
 							'id'	=> 'posts_template_data',
 							'title'	=> 'Posts option ',
 							'fields'		=> array(

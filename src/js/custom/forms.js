@@ -5,8 +5,12 @@
         var options = {
             'error': 'invalid',
             'valid': 'valid',
-            'status': false,
+            'status': true,
             'messageClass': 'js_message_wrapper',
+            'btn': '#js-form-btn',
+            'dataCaptcha': false,
+            'finalMessageOuter': '#js-form_success_message_outer',
+            'finalMessageContainer': '#js-form_success_message',
 
             messages: {
                 'invalidEmail': 'Please provide a valid email.',
@@ -16,7 +20,7 @@
 
         var initSendEvent = function (form){
 
-            var btn = $('#js-form-btn');
+            var btn = $(options.btn);
 
             if(btn.length <= 0){
                 return;
@@ -24,28 +28,66 @@
 
             btn.on('click', function() {
 
+                options.status = true;
+                options.dataCaptcha = false;
                 event.preventDefault();
 
+                __delErrorMessage(form);
+
                 var fdata = form.serializeArray();
-                console.log(fdata);
+
                 var nameField = fdata[0],
                     emailField = fdata[1],
-                    messageField = fdata[2],
-                    recaptchaField = fdata[3];
+                    messageField = fdata[2];
 
-                if(nameField.name == 'contact_name' && nameField.value.length < 1){
+                var captchaResponse = grecaptcha.getResponse();
 
-                    __addErrorClass(false, nameField.name,  options.messages.required);
-
-                    options.status = false;
+                if(captchaResponse.length == 0){
+                    options.dataCaptcha = false;
+                }else{
+                    options.dataCaptcha = captchaResponse;
                 }
 
-                if(emailField.name == 'contact_email' && emailField.value.length < 1){
-                    __addErrorClass(false, emailField.name, options.messages.required);
+                if(nameField.name == 'contact_name'){
 
-                    __checkEmail(emailField.value, emailField.name,  options.messages.invalidEmail);
+                    if(nameField.value.length < 1){
 
-                    options.status = false;
+                        __addErrorClass(false, nameField.name,  options.messages.required);
+
+                    }else{
+                        __addErrorClass(true, nameField.name,  false);
+                    }
+
+                }
+
+                if(emailField.name == 'contact_email'){
+
+                    if(emailField.value.length < 1){
+
+                        __addErrorClass(false, emailField.name, options.messages.required);
+
+                    }else{
+
+                        var resultEmail = __checkEmail(emailField.value, emailField.name,  options.messages.invalidEmail);
+
+                        __addErrorClass(resultEmail, emailField.name,  false);
+                    }
+
+                }
+
+                console.log('options.status', options.status);
+
+                if(options.status == true && options.dataCaptcha.length > 0){
+                    var data = {
+                            action: 'ajax_contact',
+                            name: nameField.value,
+                            email: emailField.value,
+                            message: messageField.value,
+                            captcha: options.dataCaptcha
+
+                    };
+
+                    __performSend(data, form);
                 }
 
 
@@ -55,31 +97,50 @@
         };
 
 
-        var __performSubscribe = function(formElement){
+        var __performSend = function(data, form){
 
-            var form = $(formElement);
+            console.log('__performSend');
 
-            form.submit(function() {
+            jQuery.ajax({
+                url: SiteParams.ajaxurl,
+                async: true,
+                data: data,
+                type: 'POST',
+                success: function(response){
 
-                jQuery.ajax({
-                    url: mainSiteBasePath + 'dialogs/subscribe' + '?blog=blog',
-                    async: true,
-                    data: fdata,
-                    type: 'POST',
-                    success: function(msg){
+                    console.log(response);
 
-                        $('#js-modal-form-content').html(msg);
-                        //$('.modal-body').append('<div class="btn-outer btn-outer-center"><button class="btn btn-gm " data-dismiss="modal" id="js-btn-callback-finish">Продолжить</button></div>');
+                    if(response.status == 'ok'){
 
-                        $('#js-modal-form').modal({
-                            keyboard: true,
-                            show: true
-                        });
+                        __hideForm(form);
+
+                        __showSuccessMessage(response.message);
                     }
-                });
 
-
+                }
             });
+
+        };
+
+        var __hideForm = function(form){
+
+            if(form.length > 0){
+                form.addClass('move_right_out');
+            }
+
+        };
+
+        var __showSuccessMessage = function(message){
+
+            if(message.length > 0){
+
+                var block = $(options.finalMessageOuter);
+                var textBlock = $(options.finalMessageContainer);
+
+                textBlock.text(message);
+                block.addClass('move_right_in');
+
+            }
 
         };
 
@@ -92,6 +153,8 @@
                 var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
                     is_email = re.test(val);
                 __addErrorClass(is_email, element, message);
+
+                return is_email;
             }
 
         };
@@ -100,10 +163,13 @@
 
             var element = $('[name = "' + name + '"]');
 
-            if (!is_val) {
+            if (!is_val ) {
+
                 element.addClass(options.error);
 
-                if(message){ console.log('__addErrorClass:', element);
+                options.status = false;
+
+                if(message){
                     __addErrorMessage(element, message);
                 }
 
@@ -119,34 +185,28 @@
 
             if (message) {
 
-                __delErrorMessage(element);
-
                 var container = '<span class="' + options.messageClass + '" >' + message + '</span>';
 
                 element.parent().append(container);
             }
         };
 
-        var __delErrorMessage = function (element) {
+        var __delErrorMessage = function (form) {
 
-            if(element){
-                /**
-                 * TODO: delete message
-                 */
-                var container = element.parent().find('span');
-                console.log(container);
-                container.remove();
+            var errors = $(form).find('.' + options.messageClass);
+
+            if(errors.length > 0){
+
+                $.each( errors, function( key, element ) {
+
+                    element.remove();
+
+                });
 
             }
 
         };
 
-        //Listen for click - More posts, makes ajax call,insert result to DOM
-        var sendData = function(){
-
-
-
-        };
 
 
         initSendEvent(form);

@@ -14,7 +14,7 @@
 
             messages: {
                 'invalidEmail': 'Please provide a valid email.',
-                'required': 'This field id required'
+                'required': 'This field is required'
             }
         };
 

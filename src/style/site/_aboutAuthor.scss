@@ -4,16 +4,16 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  height: $author_hero_image_height;
+  //height: $author_hero_image_height;
 
 
   @include media-query(1500px, 'max-width') {
-    height: $post_image_height_notebook;
+    //height: $post_image_height_notebook;
   }
 
   @include media-query(1200px, 'max-width') {
 
-    height: $post_image_height_notebook_sm;
+   // height: $post_image_height_notebook_sm;
 
   }
 

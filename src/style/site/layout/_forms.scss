@@ -113,3 +113,26 @@
 
 }
 
+
+.form_ts_outer{
+
+
+  input::placeholder, textarea::placeholder {
+    color: $ts_grey_6;
+  }
+
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $ts_grey_6;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: $ts_grey_6;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: $ts_grey_6;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    color: $ts_grey_6;
+  }
+
+}
+

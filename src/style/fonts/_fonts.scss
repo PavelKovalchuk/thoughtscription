@@ -43,6 +43,14 @@
   font-family: 'Lora';
   font-style: normal;
   font-weight: 300;
+  src: url("build/fonts/Lora/Lora-Regular.ttf") format('truetype');
+
+}
+
+@font-face {
+  font-family: 'Lora-Italic';
+  font-style: normal;
+  font-weight: 300;
   src: url("build/fonts/Lora/Lora-Italic.ttf") format('truetype');
 
 }

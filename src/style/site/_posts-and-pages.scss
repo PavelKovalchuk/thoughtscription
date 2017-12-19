@@ -725,6 +725,57 @@ main {
   z-index: 1;
 }
 
+/*Common*/
+
+.grayscale{
+  //filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale"); /* Firefox 10+, Firefox on Android */
+
+  //-webkit-filter: grayscale(100%);
+
+  -moz-filter: grayscale(100%);
+  -moz-transition: .5s ease-in-out;
+  -o-filter: grayscale(100%);
+  -o-transition: .5s ease-in-out;
+  -webkit-filter: grayscale(100%);
+  filter: gray; /* IE6-9 */
+  -webkit-transition: .5s ease-in-out;
+
+  //filter: url('build/img/gray.svg#grayscale');
+
+  &:hover{
+
+    -moz-filter: grayscale(0%);
+    -moz-transition: .5s ease-in-out;
+    -o-filter: grayscale(0%);
+    -o-transition: .5s ease-in-out;
+    -webkit-filter: grayscale(0%);
+    -webkit-transition: .5s ease-in-out;
+
+  }
+
+
+}
+
+.bottom-animated.ts_animated{
+
+  opacity:1;
+
+  /*-webkit-animation:fadeBottom 1.5s 1 cubic-bezier(0.77,0,.175,2);
+  -moz-animation:fadeBottom 1.5s 1 cubic-bezier(0.77,0,.175,2);
+  -o-animation:fadeBottom 1.3s 1 cubic-bezier(0.77,0,.175,2);
+  animation:fadeBottom 1.3s 1 cubic-bezier(0.77,0,.175,2);*/
+
+  -webkit-animation:fadeBottom 1.0s 0 cubic-bezier(0.77,0,.175,2);
+  -moz-animation:fadeBottom 1.0s 0 cubic-bezier(0.77,0,.175,2);
+  -o-animation:fadeBottom 1.0s 0 cubic-bezier(0.77,0,.175,2);
+  animation:fadeBottom 1.0s 0 cubic-bezier(0.77,0,.175,2);
+
+}
+
+.ts_waypoint{
+  opacity: 0;
+}
+
 
 
 

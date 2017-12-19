@@ -261,6 +261,7 @@ function get_template_carousel($title, $text, $items, $carousel_id, $container =
 
                     <div class="owl-carousel owl-theme" id="<?php echo $carousel_id; ?>">
 
+                        <?php if(is_array($items) && count($items) > 0){ ?>
 				        <?php foreach ($items as $item){ ?>
 
                             <div class="carousel_item">
@@ -333,6 +334,8 @@ function get_template_carousel($title, $text, $items, $carousel_id, $container =
                             </div>
 
 				        <?php } ?>
+
+                    <?php } ?>
 
                     </div>
 

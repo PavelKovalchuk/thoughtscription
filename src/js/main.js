@@ -20,6 +20,14 @@
 
 /* BOOTSTRAP FRAMEWORK END*/
 
+
+
+/* CounterUp Lib - for counter on scroll START*/
+
+//= ../../js/libs/counterup/jquery.counterup.min.js
+
+/* CounterUp Lib - for scrolling effects END*/
+
 /*
  * Custom
  */

@@ -22,6 +22,10 @@ jQuery(document).ready(function($){
 
     initPostCarousel();
 
+    counterUpInit();
+
+    //animatedInit();
+
     //enableLeftScrollNav();
 
 
@@ -31,6 +35,33 @@ jQuery(document).ready(function($){
 
 
 
+    function counterUpInit(){
+
+        $('#js-scrolled-counter').counterUp({
+            delay: 10,
+            time: 1500
+        });
+
+    }
+
+    function animatedInit(){
+
+        var className = 'ts_animated';
+
+        var waypoints = $('.ts_waypoint').waypoint({
+            handler: function(direction) {
+
+                if($(this.element).hasClass(className)){
+                    return;
+                }
+
+                console.log('Scrolled to waypoint!');
+                console.log(this.element);
+                $(this.element).addClass(className);
+            }
+        });
+
+    }
 
     function enableLeftScrollNav(){
         $('[data-toggle="slide-collapse"]').on('click', function() {

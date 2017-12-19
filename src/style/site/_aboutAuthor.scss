@@ -254,10 +254,11 @@
 
 .author_name{
 
-    font-size: 5.8rem;
-    font-family: $font-family-playfair;
+    font-size: 90px;
+    //font-family: $font-family-playfair;
+    font-family: $font-family-playfair-bold;
     color: $ts_playfair_grey;
-    font-weight: bold;
+    //font-weight: bold;
     line-height: 1.2;
     text-align: left;
     margin: 20px 0 0 0;
@@ -300,8 +301,9 @@
 
 .author_position{
 
-  font-size: 1.7rem;
-  font-family: $font-family-lora;
+  //font-size: 1.7rem;
+  font-size: 26px;
+  font-family: $font-family-lora-italic;
   color: $ts_playfair_grey;
 
   text-align: center;
@@ -401,7 +403,7 @@
   font-family: $font-family-playfair;
   line-height: 1.2;
   text-align: left;
-
+  margin-bottom: $site_title_margin_sm;
   margin-right: 30px;
 
   @include media-query($author_first_break_width, 'max-width') {
@@ -411,10 +413,12 @@
   @include media-breakpoint-down(lg) {
     font-size: 1.5rem;
 
+    margin-right: 0px;
+
   }
 
-  @include media-breakpoint-down(lg) {
-    margin-right: 0px;
+  @include media-breakpoint-down(sm) {
+    //margin-bottom: $site_title_margin_xs;
 
   }
 
@@ -533,9 +537,9 @@
 
 .marketing_title{
 
-  //font-size: 90px;
-  font-size: 5.6rem;
-  font-family: $font-family-playfair;
+  font-size: 90px;
+  //font-size: 5.6rem;
+  font-family: $font-family-playfair-bold;
   color: $ts_playfair_grey;
   font-weight: bold;
   line-height: 1.2;
@@ -543,9 +547,8 @@
   margin-bottom: $ts_standart_padding;
   margin-top: -25px;
 
-
   @include media-query(1400px, 'max-width') {
-    font-size: 5.3rem;
+    font-size: 5rem;
   }
 
   @include media-breakpoint-down(lg) {
@@ -607,7 +610,7 @@
 .marketing_text_1{
 
   font-size: 16px;
-  font-family: $font-family-open-sans-bold;
+  //font-family: $font-family-open-sans-bold;
   text-align: left;
   background-color: $white;
   padding: 35px 65px 20px 20px;

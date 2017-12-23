@@ -108,9 +108,11 @@ get_header();
             <div class="row ts_btn_more_posts_row">
                 <div class="col-lg-12 ts_btn_more_posts_outer text-center">
 
+	                <?php if(count($posts) >= get_option('posts_per_page')){  ?>
                     <button id="js_more_posts" type="button" class="btn btn-outline-primary btn-lg ts_btn_blue ts_btn_more_posts ">
                         <?php echo $more_posts ? $more_posts : 'More' ; ?>
                     </button>
+	                <?php } ?>
 
                 </div>
             </div>

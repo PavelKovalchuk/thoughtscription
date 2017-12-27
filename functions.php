@@ -144,7 +144,7 @@ function get_responsive_image(){
 function strappress_content_width() {
     $GLOBALS['content_width'] = apply_filters( 'strappress_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'strappress_content_width', 0 );
+//add_action( 'after_setup_theme', 'strappress_content_width', 0 );
 
 
 /**

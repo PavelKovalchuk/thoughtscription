@@ -56,8 +56,15 @@ function get_form($form_class){
             <div class="col-lg-12 col-xl-6 form_btn_outer">
                 <div class="d-flex align-items-center h-100  justify-content-center justify-content-xl-start form_ts_cell">
 
-                    <div class="d-flex form_btn_inner">
-                        <button type="button" id="js-form-btn" class="btn btn-outline-primary btn-lg ts_btn_white btn-ts-arrow">Submit</button>
+                    <div class="d-flex form_btn_inner animate_link_outer">
+                        <!--<button type="button" id="js-form-btn" class="btn btn-outline-primary btn-lg ts_btn_white btn-ts-arrow">
+                            <span class="animate_link_text blog_item_link_text">Submit</span>
+                        </button>-->
+                        <button type="button" id="js-form-btn" class="btn btn-lg btn_form_animate">
+                            <div class="btn_form_animate_text_outer">
+                                <span class="btn_form_animate_text">Submit</span>
+                            </div>
+                        </button>
                     </div>
 
                 </div>

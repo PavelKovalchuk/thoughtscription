@@ -89,6 +89,10 @@ $delay = '0.6s';
                                              alt="<?php echo $data['author_photo_1']['alt']; ?>"
                                              data-wow-duration="<?php echo $duration; ?>" data-wow-delay="<?php echo $delay; ?>" />
 
+                                        <p class="position_description position_description_mobile wow fadeInUp" data-wow-duration="<?php echo $duration; ?>" data-wow-delay="<?php echo $delay; ?>">
+		                                    <?php echo $data['author_position_description']; ?>
+                                        </p>
+
                                     </div>
 
                                     <div class="author_blog_aim">
@@ -133,7 +137,7 @@ $delay = '0.6s';
                                             <img src="<?php echo $data['author_photo_2']['url']; ?>" class="grayscale author_content_image author_speaker" alt="<?php echo $data['author_photo_2']['alt']; ?>" />
                                         </div>
 
-                                        <p class="position_description wow fadeInUp" data-wow-duration="<?php echo $duration; ?>" data-wow-delay="<?php echo $delay; ?>">
+                                        <p class="position_description position_description_desktop wow fadeInUp" data-wow-duration="<?php echo $duration; ?>" data-wow-delay="<?php echo $delay; ?>">
 	                                        <?php echo $data['author_position_description']; ?>
                                         </p>
 

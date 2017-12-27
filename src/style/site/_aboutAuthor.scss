@@ -351,6 +351,10 @@
   width: 80%;
   padding: 0 0 65px 0;
 
+  &.position_description_mobile{
+    display: none;
+  }
+
   @include media-breakpoint-down(lg) {
 
     padding: 0 0 25px 0;
@@ -360,6 +364,15 @@
   @include media-breakpoint-down(sm) {
     margin: 0 0 0 0;
     width: 100%;
+
+    &.position_description_mobile{
+      display: block;
+      padding: $ts_standart_padding_sm 0 0;
+    }
+
+    &.position_description_desktop{
+      display: none;
+    }
   }
 
 }

@@ -141,7 +141,7 @@ $delay = '0.6s';
 	                                        <?php echo $data['author_position_description']; ?>
                                         </p>
 
-                                        <div class="author_place_img_outer wow fadeInUp" data-wow-duration="<?php echo $duration; ?>" data-wow-delay="<?php echo $delay; ?>">
+                                        <div class="author_place_img_outer d-none d-md-block wow fadeInUp" data-wow-duration="<?php echo $duration; ?>" data-wow-delay="<?php echo $delay; ?>">
                                             <img src="<?php echo $data['author_photo_3']['url']; ?>" class="grayscale author_content_image author_place" alt="<?php echo $data['author_photo_3']['alt']; ?>" />
                                         </div>
 

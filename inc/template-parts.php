@@ -148,6 +148,11 @@ function get_social_sharing_buttons() {
             <a class="d-inline-flex d-sm-flex align-items-center justify-content-center social_item share_social_item" href="<?php echo $googleURL; ?>" target="_blank">
                 <i class="social_icon share_social_icon icon_google_plus" aria-hidden="true"></i>
             </a>
+
+            <a class="d-inline-flex d-sm-flex align-items-center justify-content-center social_item share_social_item" href="<?php echo get_bloginfo_rss('rss2_url'); ?>" target="_blank">
+                <i class="social_icon share_social_icon icon_rss" aria-hidden="true"></i>
+            </a>
+
         </div>
 <?php
 	}

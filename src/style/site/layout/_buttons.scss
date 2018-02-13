@@ -290,6 +290,11 @@
     content: "\f099";
   }
 
+  .icon_rss::before{
+    font-family: $font-family-fontawesome;
+    content: "\f09e";
+  }
+
   .social_icon{
     font-size: 24px;
     font-style: normal;
@@ -322,6 +327,10 @@
       &:hover{
         background-color: $ts_blue;
         transition: color 0.3s ease-in, background-color 0.3s ease-in;
+      }
+
+      &:focus{
+        text-decoration: none;
       }
     }
 

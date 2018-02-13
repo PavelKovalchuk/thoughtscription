@@ -269,7 +269,10 @@ function get_template_carousel($title, $text, $items, $carousel_id, $container =
                     <div class="owl-carousel owl-theme" id="<?php echo $carousel_id; ?>">
 
                         <?php if(is_array($items) && count($items) > 0){ ?>
-				        <?php foreach ($items as $item){ ?>
+				        <?php foreach ($items as $item){
+
+				            $link_target = get_permalink($item->ID);
+				            ?>
 
                             <div class="carousel_item">
 
@@ -294,45 +297,47 @@ function get_template_carousel($title, $text, $items, $carousel_id, $container =
 
                                         <figcaption class="d-flex flex-column carousel_item_text">
 
-                                            <div class="carousel_post_cat_outer">
-                                                <h4 class="carousel_post_cat">
-			                                        <?php echo get_the_category( $item->ID )[0]->cat_name; ?>
-                                                </h4>
-                                            </div>
+                                            <a href="<?php echo $link_target; ?>" class="figcaption_link"></a>
 
-                                            <div class="carousel_post_title_outer">
-                                                <h5 class="carousel_post_title">
-                                                    <a class="carousel_post_title_link" href="<?php echo get_permalink($item->ID); ?>">
-                                                        <?php echo $item->post_title; ?>
+                                                <div class="carousel_post_cat_outer">
+                                                    <h4 class="carousel_post_cat">
+                                                        <?php echo get_the_category( $item->ID )[0]->cat_name; ?>
+                                                    </h4>
+                                                </div>
+
+                                                <div class="carousel_post_title_outer">
+                                                    <h5 class="carousel_post_title">
+                                                        <a class="carousel_post_title_link" href="<?php echo $link_target; ?>">
+                                                            <?php echo $item->post_title; ?>
+
+                                                        </a>
+                                                    </h5>
+                                                </div>
+
+                                                <?php if( has_excerpt($item->ID) ){ ?>
+
+                                                    <div class="carousel_post_excerpt_outer">
+                                                    <p class="carousel_post_excerpt">
+                                                        <?php the_excerpt_max_charlength( 220 , $item->ID); ?>
+                                                    </p>
+                                                </div>
+                                                <?php } ?>
+
+                                                <div class="d-flex align-items-end h-100 animate_link_outer carousel_post_link_outer">
+                                                    <a href="<?php echo $link_target; ?>" class="btn animate_link_white carousel_post_link">
+
+                                                        <span class="animate_link_text carousel_post_link_text">
+                                                            <?php
+                                                            if($btn){
+                                                                echo $btn;
+                                                            }else{
+                                                                echo 'Read full post';
+                                                            } ?>
+                                                        </span>
+
 
                                                     </a>
-                                                </h5>
-                                            </div>
-
-	                                        <?php if( has_excerpt($item->ID) ){ ?>
-
-                                            <div class="carousel_post_excerpt_outer">
-                                                <p class="carousel_post_excerpt">
-			                                        <?php the_excerpt_max_charlength( 220 , $item->ID); ?>
-                                                </p>
-                                            </div>
-                                            <?php } ?>
-
-                                            <div class="d-flex align-items-end h-100 animate_link_outer carousel_post_link_outer">
-                                                <a href="<?php echo get_permalink($item->ID); ?>" class="btn animate_link_white carousel_post_link">
-
-                                                    <span class="animate_link_text carousel_post_link_text">
-                                                        <?php
-                                                        if($btn){
-	                                                        echo $btn;
-                                                        }else{
-	                                                        echo 'Read full post';
-                                                        } ?>
-                                                    </span>
-
-
-                                                </a>
-                                            </div>
+                                                </div>
 
 
                                         </figcaption>
@@ -465,7 +470,7 @@ function get_template_article_preview_string($post_item, $btn = false){
 
         if($img){
 
-            $html .= "<img class='blog_item_img' src='$img' alt=' $post_item->post_title' />";
+            $html .= "<a href='$link' class='blog_item_img_link' ><img class='blog_item_img' src='$img' alt=' $post_item->post_title' /></a>";
 
          }
 
@@ -490,7 +495,7 @@ function get_template_article_preview_string($post_item, $btn = false){
         //Excerpt block start
         if( $post_item->post_excerpt ){
 
-            $html .= "<div class='col-lg-12 blog_item_excerpt_outer'><p class='blog_item_excerpt'>$post_item->post_excerpt</p></div>";
+            $html .= "<div class='col-lg-12 blog_item_excerpt_outer'><p class='blog_item_excerpt'><a href='$link' class='blog_item_excerpt_link' >$post_item->post_excerpt</a></p></div>";
 
         }
         //Excerpt block end

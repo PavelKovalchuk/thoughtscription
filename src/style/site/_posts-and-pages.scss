@@ -203,6 +203,14 @@ blockquote{
   }
 }
 
+.post_share{
+
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+
+}
+
 .share_buttons_outer{
   width: 33px;
   display: block;

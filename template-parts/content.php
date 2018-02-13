@@ -80,7 +80,7 @@
                         </header><!-- .entry-header -->
 
                         <div class="row entry-content post_content_container">
-                            <?php  get_social_sharing_buttons(); ?>
+                            <div class="post_share"><?php  get_social_sharing_buttons(); ?></div>
                             <div class="post_element post_content">
 
 			                    <?php

@@ -114,7 +114,7 @@
 
 	                    <?php
 
-	                    $recent_posts = get_random_posts();
+	                    $recent_posts = get_random_posts( get_the_ID() );
 
 	                    $slider_text = get_option( '_thoughtscription_option_page_options' )['slider_post_text'];
 

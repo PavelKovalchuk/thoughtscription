@@ -77,19 +77,28 @@ function the_excerpt_max_charlength( $charlength , $post_id){
 	}
 }
 
-function get_random_posts(){
+function get_random_posts($current_post_id = false){
 
 	$posts_id_raw = get_option( '_thoughtscription_option_page_options' )['slider_posts_id'];
 
 	$posts_id_trimed = preg_replace('/\s+/', '', $posts_id_raw);
 
+	$exclude_arr = [];
+	$current_post_id = intval($current_post_id);
+	if($current_post_id && is_int($current_post_id) && $current_post_id > 0){
+		$exclude_arr[] = $current_post_id;
+	}
+
 	$posts_id_array = explode(",", $posts_id_trimed);
+
+	//Everything except current post
+	$result_posts_id = array_diff($posts_id_array, $exclude_arr);
 
 	$max = get_option( '_thoughtscription_option_page_options' )['slider_number_items'];
 
-	shuffle($posts_id_array);
+	shuffle($result_posts_id);
 
-	$posts_id = array_slice($posts_id_array, 0, $max);
+	$posts_id = array_slice($result_posts_id, 0, $max);
 
 	$args = array(
 		//'numberposts' => 3,
@@ -97,7 +106,7 @@ function get_random_posts(){
 		'orderby'     => 'post__in',
 		'order'       => 'DESC',
 		'include'     => $posts_id,
-		'exclude'     => array(),
+		'exclude'     => implode(',', $exclude_arr),
 		'meta_key'    => '',
 		'meta_value'  =>'',
 		'post_type'   => 'post',

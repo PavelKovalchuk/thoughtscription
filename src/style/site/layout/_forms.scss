@@ -136,3 +136,23 @@
 
 }
 
+.form_privacy_policy_row{
+
+  .form_privacy_policy_text{
+    font-size: 14px;
+  }
+
+  a{
+
+    color: $black;
+    text-decoration: none;
+
+    &:hover{
+      color: $black;
+      text-decoration: none;
+    }
+
+  }
+
+}
+

@@ -70,13 +70,19 @@ function get_form($form_class){
                 </div>
             </div>
 
-
-
         </div>
 
+        <?php if(current_user_can('manage_options')){ ?>
 
+        <div class="row form_group_ts form_privacy_policy_row">
+            <div class="col-lg-12">
+                <p class="form_privacy_policy_text">
+                    By clicking on "Submit", you agree to our <a href="/privacy-and-cookies/" target="_blank" >Privacy Policy</a>
+                </p>
+            </div>
+        </div>
 
-
+        <?php } ?>
 
     </form>
 

@@ -8,6 +8,8 @@
  */
 
 
+require_once(get_template_directory() . '/inc/constants.php');
+
 /* Disable WordPress Admin Bar for all users but admins. */
 show_admin_bar(false);
 
@@ -101,24 +103,6 @@ if ( ! function_exists( 'gm_wp_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'gm_wp_setup' );
 
-/*
-if ( ! function_exists( 'gm_custom_sizes' ) ) :
-    function gm_custom_sizes( $sizes ) {
-        return array_merge( $sizes, array(
-            'two-images-1' => __('Two images collection. Image 1 (Big)'),
-            'two-images-2' => __('Two images collection. Image 2 (Small)'),
-            'three-images-1' => __('Three images collection. Image 1'),
-            'three-images-2' => __('Three images collection. Image 2'),
-            'three-images-3' => __('Three images collection. Image 3'),
-            'related-post-thumbnail' => __('related-post-thumbnail'),
-            'size-645-459' => __('size-645-459'),
-            'size-318-459' => __('size-318-459'),
-            'big-973-500' => __('big-973-500'),
-        ) );
-    }
-endif;
-add_filter( 'image_size_names_choose', 'gm_custom_sizes' );*/
-
 
 function get_responsive_image(){
 
@@ -150,49 +134,47 @@ function strappress_content_width() {
 /**
  * Add CSS/JS Scritps
  */
-require get_template_directory() . '/inc/scripts.php';
+require_once( INCLUDES_DIR . 'scripts.php');
 
 /**
  * Register Widget Areas
  */
-require get_template_directory() . '/inc/widgets.php';
+require_once( INCLUDES_DIR . 'widgets.php');
 
 /**
  * Custom template tags for this theme.
  */
-require get_template_directory() . '/inc/template-tags.php';
+require_once( INCLUDES_DIR . 'template-tags.php');
 
 /**
  * Custom functions that act independently of the theme templates.
  */
-require get_template_directory() . '/inc/extras.php';
+require_once( INCLUDES_DIR . 'extras.php');
 
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+require_once( INCLUDES_DIR . 'customizer.php');
 
 /**
  * Bootstrap Walker.
  */
-require get_template_directory() . '/inc/bootstrap-walker.php';
-
+require_once( INCLUDES_DIR . 'bootstrap-walker.php');
 
 /**
  * Custom templates 
  */
-require get_template_directory() . '/inc/template-parts.php';
+require_once( INCLUDES_DIR . 'template-parts.php');
 
 /**
  * Custom ajax handler
  */
-require get_template_directory() . '/inc/ajax_handler.php';
-
+require_once( INCLUDES_DIR . 'ajax_handler.php');
 
 /**
  * Custom functions in the admin panel
  */
-require get_template_directory() . '/inc/admin_functions.php';
+require_once( INCLUDES_DIR . 'admin_functions.php');
 
 
 

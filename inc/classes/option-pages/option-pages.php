@@ -96,9 +96,12 @@ class OptionPages{
 								array(
 									'id'	=> 'footer_copyright_text',
 									'title'	=> 'Footer copyright text',
-									'type'	=> 'text',
+									'type'	=> 'textarea',
 									'description' => 'Appears in the footer.',
 									'value' => 'Value',
+									'args' => array(
+										'html' => true
+									)
 								),
 
 								array(

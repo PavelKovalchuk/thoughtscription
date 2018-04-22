@@ -9,17 +9,17 @@
 
     protected $generalSubpages = array(
 	    array(
-		    'page_title'	=> 'proMX General Options',
-		    'menu_title'	=> 'proMX General Options',
+		    'page_title'	=> 'Thoughtscription Options',
+		    'menu_title'	=> 'Thoughtscription Options',
 		    'capability'	=> 'manage_options',
-		    'menu_slug'		=> 'promx_option_pages',
+		    'menu_slug'		=> 'thoughtscription_options',
 		    'icon_url'		=> 'dashicons-editor-code',
 		    'position'		=> 101,
 		    'sections'		=> array(
 			    //			A new section
-			    array(
+			   array(
 				    'id'	=> 'general_custom_data_id',
-				    'title'	=> 'ProMX 2017',
+				    'title'	=> 'Empty page',
 				    'fields'		=> array(
 					    //					A new field
 

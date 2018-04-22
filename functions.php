@@ -167,6 +167,11 @@ require_once( INCLUDES_DIR . 'bootstrap-walker.php');
 require_once( INCLUDES_DIR . 'template-parts.php');
 
 /**
+ * Forms templates
+ */
+require_once( FORMS_TEMPLATE_DIR . 'forms-index.php');
+
+/**
  * Custom ajax handler
  */
 require_once( INCLUDES_DIR . 'ajax_handler.php');
@@ -186,8 +191,10 @@ require_once( INCLUDES_DIR . 'admin_functions.php');
 
 if ( is_admin() ) {
 
-	require get_template_directory() . '/inc/classes/option-pages/option-pages.php';
+	/*require get_template_directory() . '/inc/classes/option-pages/option-pages.php';
 
-	$ts_options_page = new OptionPages();
+	$ts_options_page = new OptionPages();*/
+
+	require_once( OPTION_PAGES_MAIN_DIR . 'option-pages-index.php');
 }
 

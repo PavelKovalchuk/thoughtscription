@@ -28,12 +28,11 @@ get_header(); ?>
 
                         <div class="col-lg-12 text-center">
                             <h1 class="not_found_page_title">
-                                Looks like you are in a maze
+	                            <?php echo get_option( '_th_404_page_options' )['404_page_title']; ?>
                             </h1>
 
                             <p class="not_found_page_text">
-                                Use the keyboard with control the bolt to<br/>
-                                maze exit to return to the home,  or
+	                            <?php echo get_option( '_th_404_page_options' )['404_page_text']; ?>
                             </p>
 
                             <a href="<?php echo get_home_url(); ?>" class="not_found_page_link">

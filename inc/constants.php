@@ -31,16 +31,16 @@ define("AJAX_HANDLERS_DIR", AJAX_HANDLERS_MAIN_DIR . "handlers/");
 define("CORE_CHANGES_MAIN_DIR", INCLUDES_DIR . "core_changes/");
 define("CORE_CHANGES_DIR", CORE_CHANGES_MAIN_DIR . "changes/");
 
-define("FORMS_MAIN_DIR", INCLUDES_DIR . "forms/");
+/*define("FORMS_MAIN_DIR", INCLUDES_DIR . "forms/");
 define("FORMS_CLASSES_DIR", FORMS_MAIN_DIR . "classes/");
 define("FORMS_ABSTRACT_CLASSES_DIR", FORMS_CLASSES_DIR . "abstracts/");
 define("FORMS_TRAITS_DIR", FORMS_CLASSES_DIR . "traits/");
 define("FORMS_HELPERS_DIR", FORMS_CLASSES_DIR . "helpers/");
 define("FORMS_MODELS_DIR", FORMS_MAIN_DIR . "models/");
 define("FORMS_MODELS_FORMS_DIR", FORMS_MODELS_DIR . "forms/");
-define("FORMS_MODELS_FETCHERS_DIR", FORMS_MODELS_DIR . "fetchers/");
+define("FORMS_MODELS_FETCHERS_DIR", FORMS_MODELS_DIR . "fetchers/");*/
 define("FORMS_TEMPLATE_DIR", TEMPLATE_PARTS_MAIN_DIR . "forms/");
-define("FORMS_LOGS_DIR", FORMS_MAIN_DIR . "logs/");
+//define("FORMS_LOGS_DIR", FORMS_MAIN_DIR . "logs/");
 
 
 //common used variables

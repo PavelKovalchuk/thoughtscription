@@ -24,6 +24,7 @@ get_header(); ?>
 
             </div>
         </div>
+	    <?php get_subscribe_section(); ?>
     </main><!-- #main -->
 
 <?php

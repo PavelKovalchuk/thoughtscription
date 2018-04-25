@@ -7,14 +7,15 @@
             'valid': 'valid',
             'status': true,
             'messageClass': 'js_message_wrapper',
+            'formMessageClass': 'js_message_holder',
             'btn': '#js-form-btn',
             'dataCaptcha': false,
             'finalMessageOuter': '#js-form_success_message_outer',
             'finalMessageContainer': '#js-form_success_message',
 
             messages: {
-                'invalidEmail': 'Please provide a valid email.',
-                'required': 'This field is required'
+                'invalidEmail': 'Please, provide a valid email.',
+                'required': 'This field is required.'
             }
         };
 
@@ -40,12 +41,17 @@
                     emailField = fdata[1],
                     messageField = fdata[2];
 
-                var captchaResponse = grecaptcha.getResponse();
+                if(typeof grecaptcha === 'object'){
 
-                if(captchaResponse.length == 0){
-                    options.dataCaptcha = false;
+                    var captchaResponse = grecaptcha.getResponse();
+
+                    if(captchaResponse.length == 0){
+                        options.dataCaptcha = false;
+                    }else{
+                        options.dataCaptcha = captchaResponse;
+                    }
                 }else{
-                    options.dataCaptcha = captchaResponse;
+                    options.dataCaptcha = 'none';
                 }
 
                 if(nameField.name == 'contact_name'){
@@ -90,15 +96,12 @@
                     __performSend(data, form);
                 }
 
-
             });
-
 
         };
 
 
         var __performSend = function(data, form){
-
 
             jQuery.ajax({
                 url: SiteParams.ajaxurl,
@@ -107,13 +110,17 @@
                 type: 'POST',
                 success: function(response){
 
-                    //console.log(response);
-
                     if(response.status == 'ok'){
 
                         __hideForm(form);
 
+                        __delFormMessage();
+
                         __showSuccessMessage(response.message);
+                    }
+
+                    if(response.status == 'error' && response.message.length > 0){
+                        __addFormMessage(response.message);
                     }
 
                 }
@@ -203,6 +210,24 @@
                 });
 
             }
+
+        };
+
+        var __addFormMessage = function( message) {
+
+            if (message) {
+
+                var container = $('.' + options.formMessageClass);
+
+                container.html(message);
+            }
+        };
+
+        var __delFormMessage = function () {
+
+            var container = $('.' + options.formMessageClass);
+
+            container.html();
 
         };
 

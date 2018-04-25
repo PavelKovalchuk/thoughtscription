@@ -6,7 +6,7 @@
  * Time: 22:47
  */
 
-function get_form($form_class){
+function get_form_author($form_class){
 
 	?>
 
@@ -20,6 +20,8 @@ function get_form($form_class){
 	</div>
 
 	<form class="form_ts_outer <?php echo $form_class; ?>" id="contact_form">
+
+        <div class="text-center text-danger js_message_holder"></div>
 
 		<div class="row form_ts_row">
 

@@ -8,6 +8,10 @@
   color: $ts_black;
   margin-bottom: $site_title_margin_sm;
 
+  &.color-white{
+    color: $white;
+  }
+
   @include media-breakpoint-down(sm) {
 
     font-size: 2.0rem;
@@ -15,6 +19,8 @@
   }
 
 }
+
+
 
 .form_group_ts{
 
@@ -54,7 +60,7 @@
 }
 
 .js_message_wrapper{
-    margin-top: .25rem;
+   margin-top: .25rem;
   font-size: .875rem;
   color: $ts_error;
 }
@@ -63,6 +69,13 @@
 
   position: relative;
   overflow: hidden;
+}
+
+.subscribe_form_container{
+  @extend .author_form_container;
+
+  max-width: $subscribe_form_width;
+  margin: auto;
 }
 
 .author_form{
@@ -153,6 +166,45 @@
     }
 
   }
+
+}
+
+.subscribe_form{
+
+  .form-control{
+
+    padding: 1rem 1.5rem;
+
+  }
+
+  .form_ts_row{
+
+    @include media-breakpoint-down(md) {
+
+      .form_ts_cell{
+        flex-basis: 100%;
+      }
+
+    }
+  }
+
+  .btn_form_subscribe_col{
+
+    @include media-breakpoint-down(md) {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+
+    }
+
+  }
+
+}
+
+.padding-block{
+
+  padding-right: 15px;
+  padding-left: 15px;
 
 }
 

@@ -124,6 +124,8 @@ get_header();
         
     </section>
 
+    <?php get_subscribe_section(); ?>
+
 
 </div><!-- Wrapper end -->
 </main>

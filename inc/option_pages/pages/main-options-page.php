@@ -140,6 +140,14 @@ $options_storage->addSubpageToPromxOptionPages(
 						)
 					),
 
+					array(
+						'id'	=> 'subscribe_form_header',
+						'title'	=> 'Subscribe form header',
+						'type'	=> 'text',
+						'description' => '',
+						'value' => 'Subscribe to the newsletter',
+					),
+
 
 				),
 			),

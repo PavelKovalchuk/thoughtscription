@@ -13,8 +13,6 @@ get_header();
 
 	<div class="wrapper" id="wrapper-bloh">
 
-
-
 		<section class="container-fluid section_style blog_section ">
 
 
@@ -72,7 +70,7 @@ get_header();
 
 					/* Start the Loop */
 					while ( have_posts() ) : the_post();
-
+						$cat_data = get_the_category( $post->ID );
                         ?><div class="grid__brick col-sm-12 col-md-6 col-lg-4 col-xl-3 shuffle-item shuffle-item--visible" data-groups='["<?php echo $cat_data[0]->slug; ?>"]' >
 
                         <?php echo get_template_article_preview_string($post, $data['blog_button_text'] ); ?>
@@ -105,6 +103,8 @@ get_header();
 
 
 		</section>
+
+		<?php get_subscribe_section(); ?>
 
 
 	</div><!-- Wrapper end -->

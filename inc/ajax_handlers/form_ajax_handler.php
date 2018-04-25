@@ -12,8 +12,6 @@ add_action('wp_ajax_ajax_contact', 'ts_ajax_form' );
 function ts_ajax_form(){
 
 	//var_dump($_POST);
-
-
 	$response_status = 'ok';
 	$response_message = '';
 
@@ -91,6 +89,11 @@ function check_recaptcha($data){
 
 	if(!$data){
 		return false;
+	}
+
+	//if form doesn't have recaptcha
+	if($data == 'none'){
+		return true;
 	}
 
 	$secret = get_option( '_thoughtscription_option_page_options' )['recaptcha_secret_key'];

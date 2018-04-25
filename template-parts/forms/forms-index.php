@@ -7,3 +7,4 @@
  */
 
 require_once( FORMS_TEMPLATE_DIR . 'author-form.php');
+require_once( FORMS_TEMPLATE_DIR . 'subscribe-form.php');

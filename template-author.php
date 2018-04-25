@@ -220,7 +220,7 @@ $delay = '0.6s';
 	                                            <?php echo $data['form_header']; ?>
                                             </h2>
 
-                                            <?php get_form('author_form') ;?>
+                                            <?php get_form_author('author_form') ;?>
 
                                         </div>
 

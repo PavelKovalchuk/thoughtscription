@@ -1,6 +1,28 @@
 <?php
 
+function get_subscribe_section(){
 
+    if(!current_user_can('manage_options')){
+        return;
+    }
+    ?>
+    <section class="container-fluid section_style blue_bg_block ">
+
+        <div class="container">
+
+            <div class="row no-gutters subscribe_form_container">
+                <div class="col-lg-12">
+                    <h2 class="form-header color-white"><?php echo get_option( '_thoughtscription_option_page_options' )['subscribe_form_header']; ?></h2>
+					<?php get_form_subscribe('subscribe_form'); ?>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <?php
+
+}
 
 function get_siblings_links(){
 

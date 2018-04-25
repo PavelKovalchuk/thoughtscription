@@ -77,9 +77,9 @@ get_header(); ?>
 
     $recent_posts = get_posts( $args );
 
-    //var_dump($data['slider_items']); ?>
-    <?php get_template_carousel($data['slider_block_title'], $data['slider_block_text'], $recent_posts, 'home_articles', true, $data['slider_button_text']); ?>
+    get_template_carousel($data['slider_block_title'], $data['slider_block_text'], $recent_posts, 'home_articles', true, $data['slider_button_text']);
 
+    get_subscribe_section(); ?>
 </div><!-- Wrapper end -->
 
 </main>

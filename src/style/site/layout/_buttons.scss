@@ -207,6 +207,23 @@
   font-weight: 300;
   overflow: hidden;
 
+  &.btn_form_subscribe{
+    width: 180px;
+    color: $white;
+    border-color: $white;
+    background-color: $ts_blue;
+
+    &:hover{
+      color: $ts_blue;
+      border-color: $white;
+    }
+
+    @include media-breakpoint-down(md) {
+      margin-top: 1rem;
+    }
+
+  }
+
   &:hover{
 
     color: $white;
@@ -219,12 +236,23 @@
       background-color: $ts_blue;
       transition: width $ts-standart-tansition-duration ease-in-out;
 
+      &.btn_form_subscribe_text_outer{
+
+        background-color: $white;
+
+        .btn_form_subscribe_text{
+          margin-left: 0;
+          transition:  margin-left 0.1s ease-in-out;
+          transition-delay: 0.2s;
+        }
+      }
+
       .btn_form_animate_text{
         content: none;
+
       }
 
     }
-
 
   }
 
@@ -236,6 +264,10 @@
     position: relative;
     width: 0%;
     transition: width $ts-standart-tansition-duration ease-in-out;
+
+    &.btn_form_subscribe_text_outer{
+      height: 57px;
+    }
 
     .btn_form_animate_text{
       width: 100%;
@@ -257,9 +289,24 @@
 
 
       }
+
+      &.btn_form_subscribe_text{
+
+        font-size: 16px;
+        margin-left: 24px;
+
+        &:after{
+
+          background-image:url(build/img/ts_arrow_white-min.png);
+          left: 100%;
+          top: 50%;
+          margin-top: -8px;
+          margin-left: 93px;
+
+
+        }
+      }
     }
-
-
 
   }
 

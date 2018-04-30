@@ -2,9 +2,6 @@
 
 function get_subscribe_section(){
 
-    if(!current_user_can('manage_options')){
-        return;
-    }
     ?>
     <section class="container-fluid section_style blue_bg_block ">
 

@@ -313,6 +313,22 @@
 
 }
 
+.author_page_form{
+
+  .btn_form_animate {
+
+    &.btn_form_subscribe {
+
+      @include media-breakpoint-down(md) {
+        margin-top: 0;
+      }
+
+    }
+
+  }
+
+}
+
 
 .social_block{
 

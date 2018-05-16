@@ -27,13 +27,13 @@ function get_form_author($form_class){
 
 			<div class="col-lg-6 form_ts_cell">
 				<div class="form-group required_field form_group_ts">
-					<input type="text" name="contact_name" class="form-control form-control-lg" id="form_ts_name" placeholder="NAME">
+					<input type="text" name="contact_name" class="form-control form-control-lg" id="form_ts_name" placeholder="Name*">
 				</div>
 			</div>
 
 			<div class="col-lg-6 form_ts_cell">
 				<div class="form-group required_field form_group_ts">
-					<input type="text" name="contact_email" class="form-control form-control-lg" id="form_ts_email" placeholder="EMAIL">
+					<input type="text" name="contact_email" class="form-control form-control-lg" id="form_ts_email" placeholder="Email*">
 				</div>
 			</div>
 
@@ -43,7 +43,7 @@ function get_form_author($form_class){
 
 			<div class="col-lg-12 form_ts_cell">
 				<div class="form-group form_group_ts">
-					<textarea class="form-control form-control-lg " name="contact_message" id="form_ts_message" placeholder="MESSAGE" rows="7"></textarea>
+					<textarea class="form-control form-control-lg " name="contact_message" id="form_ts_message" placeholder="Message" rows="7"></textarea>
 				</div>
 			</div>
 
@@ -51,7 +51,7 @@ function get_form_author($form_class){
 
 		<div class="row form_group_ts form_ts_row">
 
-			<div class="col-lg-12 col-xl-6 form_ts_cell g_recaptcha_outer">
+			<!--<div class="col-lg-12 col-xl-6 form_ts_cell g_recaptcha_outer">
 				<div class="d-flex align-items-center h-100  justify-content-center justify-content-xl-end">
 
 					<div class="d-flex required_field  h-100 align-items-center g_recaptcha_inner">
@@ -59,20 +59,26 @@ function get_form_author($form_class){
 					</div>
 
 				</div>
-			</div>
+			</div>-->
 
-			<div class="col-lg-12 col-xl-6 form_btn_outer">
-				<div class="d-flex align-items-center h-100  justify-content-center justify-content-xl-start form_ts_cell">
+			<div class="col-lg-12 col-xl-12 form_btn_outer">
+				<div class="d-flex align-items-center h-100  justify-content-center justify-content-xl-center form_ts_cell">
 
 					<div class="d-flex form_btn_inner animate_link_outer">
-						<!--<button type="button" id="js-form-btn" class="btn btn-outline-primary btn-lg ts_btn_white btn-ts-arrow">
-							<span class="animate_link_text blog_item_link_text">Submit</span>
-						</button>-->
-						<button type="button" id="js-form-btn" class="btn btn-lg btn_form_animate">
+
+						<!--<button type="button" id="js-form-btn" class="btn btn-lg btn_form_animate">
 							<div class="btn_form_animate_text_outer">
 								<span class="btn_form_animate_text">Submit</span>
 							</div>
-						</button>
+						</button>-->
+
+                        <button type="button" id="js-form-btn" class="btn btn-lg btn_form_animate btn_form_subscribe">
+                            <div class="btn_form_animate_text_outer btn_form_subscribe_text_outer">
+                                <span class="btn_form_animate_text btn_form_subscribe_text">Submit</span>
+                            </div>
+                        </button>
+
+
 					</div>
 
 				</div>

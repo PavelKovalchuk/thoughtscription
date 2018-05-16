@@ -27,13 +27,13 @@ function get_form_subscribe($form_class){
 
 			<div class="col d-flex form_ts_cell">
 				<div class="form-group w-100 required_field form_group_ts">
-					<input type="text" name="contact_name" class="form-control form-control-lg" id="form_ts_name" placeholder="Enter your name*">
+					<input type="text" name="contact_name" class="form-control form-control-lg" id="form_ts_name" placeholder="Name*">
 				</div>
 			</div>
 
 			<div class="col d-flex form_ts_cell">
 				<div class="form-group w-100 required_field form_group_ts">
-					<input type="text" name="contact_email" class="form-control form-control-lg" id="form_ts_email" placeholder="Enter your email*">
+					<input type="text" name="contact_email" class="form-control form-control-lg" id="form_ts_email" placeholder="Email*">
 				</div>
 			</div>
 

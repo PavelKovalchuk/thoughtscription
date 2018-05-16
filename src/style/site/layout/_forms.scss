@@ -6,6 +6,7 @@
   line-height: 1.2;
   text-align: center;
   color: $ts_black;
+
   margin-bottom: $site_title_margin_sm;
 
   &.color-white{
@@ -42,7 +43,7 @@
 
   @include media-breakpoint-down(lg) {
 
-    margin-top: 1rem;
+    //margin-top: 1rem;
 
   }
 
@@ -153,15 +154,21 @@
 
   .form_privacy_policy_text{
     font-size: 14px;
+    color: $white;
+    text-align: left;
+
+   /* @include media-breakpoint-down(lg) {
+      text-align: left;
+    }*/
   }
 
   a{
 
-    color: $black;
+    color: $white;
     text-decoration: none;
 
     &:hover{
-      color: $black;
+      color: $white;
       text-decoration: none;
     }
 

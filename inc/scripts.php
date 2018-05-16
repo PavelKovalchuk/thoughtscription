@@ -42,8 +42,8 @@ function ts_scripts() {
 	//Author page
 	if( is_page( 11 ) ){
 
-		wp_register_script( 'captcha', 'https://www.google.com/recaptcha/api.js#asyncload', array(), '2', false);
-		wp_enqueue_script( 'captcha' );
+		//wp_register_script( 'captcha', 'https://www.google.com/recaptcha/api.js#asyncload', array(), '2', false);
+		//wp_enqueue_script( 'captcha' );
 
 		wp_enqueue_script( 'waypoints', get_template_directory_uri() . '/bower_components/waypoints/lib/jquery.waypoints.min.js', array('jquery'), '4.0.0', true);
 	}

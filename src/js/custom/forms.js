@@ -42,7 +42,7 @@
                     messageField = fdata[2];
 
                 if(typeof grecaptcha === 'object'){
-
+console.log('grecaptcha ', grecaptcha);
                     var captchaResponse = grecaptcha.getResponse();
 
                     if(captchaResponse.length == 0){

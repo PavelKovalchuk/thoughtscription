@@ -186,6 +186,27 @@
 
 }
 
+
+.author_page_form{
+
+  .author_content_outer{
+    margin-top: 0;
+  }
+
+  .author_content{
+    padding-top: 0;
+
+    @include media-breakpoint-down(lg) {
+
+      padding-top: 0;
+
+    }
+
+  }
+
+}
+
+
 .author_content_image{
 
   padding: $ts-standart_padding;

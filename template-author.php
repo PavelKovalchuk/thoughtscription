@@ -208,29 +208,6 @@ $delay = '0.6s';
                             </div>
 
 
-                            <div class="row no-gutters author_form_outer section_style">
-
-                                <div class="col-lg-12 author_form_inner">
-
-                                    <div class="row no-gutters author_form_container">
-
-                                        <div class="col-lg-12 wow fadeInUp " data-wow-duration="<?php echo $duration; ?>" data-wow-delay="0.3s">
-
-                                            <h2 class="form-header">
-	                                            <?php echo $data['form_header']; ?>
-                                            </h2>
-
-                                            <?php get_form_author('author_form') ;?>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-
                         </div>
 
 
@@ -245,6 +222,49 @@ $delay = '0.6s';
 
         
     </section>
+
+    <section class="author_page_form blue_bg_block">
+
+        <div class="container">
+
+            <div class="row no-gutters author_content_outer">
+
+                <div class="col-lg-12 author_content_inner">
+
+                    <div class="row no-gutters author_content_container blue_bg_block">
+                        <div class="author_content">
+                            <div class="row no-gutters author_form_outer section_style">
+
+                                <div class="col-lg-12 author_form_inner">
+
+                                    <div class="row no-gutters author_form_container">
+
+                                        <div class="col-lg-12 wow fadeInUp " data-wow-duration="<?php echo $duration; ?>" data-wow-delay="0.3s">
+
+                                            <h2 class="form-header color-white">
+                                                <?php echo $data['form_header']; ?>
+                                            </h2>
+
+                                            <?php get_form_author('author_form') ;?>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
 
 
 
